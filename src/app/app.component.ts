@@ -9,7 +9,7 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -25,6 +25,16 @@ export class MyApp {
         projectId: "fazpramim-4bbe8",
         storageBucket: "fazpramim-4bbe8.appspot.com",
         messagingSenderId: "639256908870"
+      });
+
+      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+          this.rootPage = 'LoginPage';
+          unsubscribe();
+        } else {
+          this.rootPage = HomePage;
+          unsubscribe();
+        }
       });
 
     });
