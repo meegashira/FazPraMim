@@ -1,3 +1,65 @@
 page-home {
+	/*tags modificadas*/
+	*{
+		font-family: Noto Sans, sans-serif;
+	}
 
+	ion-header{
+		background: #02173E !important;
+		text-align: center;
+	}
+
+	ion-content{
+		background: #09A38C !important;
+	}
+
+	img {
+		object-fit: resize;
+		height: auto !important;
+		width: 70%;	
+	}
+
+	/*classes*/
+	img.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
+	}
+
+	button.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
+	}
+
+	/*id's*/
+	#header3{
+		color:#FFFFFF;
+		font-weight:600;
+		text-align:center;
+	}
+
+	#header4{
+		color:#FFFFFF;
+		font-weight:400;
+		text-align:center;
+	}
+
+	#botoes{
+		background-color: #BF0C2B; /*laranjinha forte*/
+		font-weight:600;
+		color:#FFFFFF;
+		font-size:20px;
+	}
+
+	/*Spacer*/
+	#spacer1{
+		width: auto !important;
+		height: 5px;
+	}
+
+	#spacerBotoes{
+		width: auto !important;
+		height: 10px;
+	}
 }

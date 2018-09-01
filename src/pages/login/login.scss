@@ -1,4 +1,8 @@
 page-login {
+	ion-content {
+		background: primary; /*cor do background*/
+	}
+
     .invalid {
         border-bottom: 1px solid #ff6153;
       }
