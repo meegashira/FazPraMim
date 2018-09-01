@@ -7,10 +7,9 @@ import { IonicPage,
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
-import { HomePage } from '../home/home';
 
 @IonicPage({
-  name: 'signup'
+  name: 'SignupPage'
 })
 @Component({
   selector: 'page-signup',
@@ -42,7 +41,7 @@ export class SignupPage {
           this.signupForm.value.password)
         .then(() => {
           this.loading.dismiss().then( () => {
-            this.navCtrl.setRoot(HomePage);
+            this.navCtrl.setRoot('UserProfilePage');
           });
         }, (error) => {
           this.loading.dismiss().then( () => {

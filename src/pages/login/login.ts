@@ -18,7 +18,9 @@ import { HomePage } from '../home/home';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name: 'LoginPage'
+})
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -50,7 +52,7 @@ export class LoginPage {
         this.loginForm.value.password)
       .then( authData => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot('UserProfilePage');
         });
       }, error => {
         this.loading.dismiss().then( () => {
