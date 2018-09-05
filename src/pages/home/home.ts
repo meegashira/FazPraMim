@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomeClientePage } from '../home-cliente/home-cliente';
+import { HomeVendedorPage } from '../home-vendedor/home-vendedor';
 
 @Component({
   selector: 'page-home',
@@ -10,21 +11,14 @@ import { HomeClientePage } from '../home-cliente/home-cliente';
 export class HomePage {
 	constructor(public navCtrl: NavController) {}
 
-	proxPage(){
+	goToHomeCliente(){
 		this.navCtrl.push(HomeClientePage); 
 	}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
-<<<<<<< HEAD
-
-  goToSignin(): void {
-    this.navCtrl.push('LoginPage');
+  goToHomeVendedor(): void {
+    this.navCtrl.push(HomeVendedorPage);
   }
 
-=======
->>>>>>> master
 }
 
 

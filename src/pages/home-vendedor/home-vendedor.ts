@@ -4,25 +4,24 @@ import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
 
 @IonicPage({
-  name: 'HomeClientePage'
+  name: 'HomeVendedorPage'
 })
 @Component({
-  selector: 'page-home-cliente',
-  templateUrl: 'home-cliente.html',
+  selector: 'page-home-vendedor',
+  templateUrl: 'home-vendedor.html',
 })
-export class HomeClientePage {
+export class HomeVendedorPage {
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams
   ) { }
-
+  
   goToLogin(): void {
     this.navCtrl.push(LoginPage);
   }
 
-  signUpClient(): void {
+  goToSignUpFreelancer(): void {
     this.navCtrl.push(SignupPage);
   }
-
 }
