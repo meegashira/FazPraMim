@@ -11,7 +11,7 @@ import { AuthProvider } from '../providers/auth/auth';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { AuthProvider } from '../providers/auth/auth';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
   ],
   providers: [
     StatusBar,
