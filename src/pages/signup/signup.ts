@@ -8,6 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
 
+import { UserProfilePage } from '../../pages/user-profile/user-profile';
+import { EndSignUpPage } from '../../pages/end-sign-up/end-sign-up';
+
 @IonicPage({
   name: 'SignupPage'
 })
@@ -42,6 +45,7 @@ export class SignupPage {
         .then(() => {
           this.loading.dismiss().then( () => {
             this.navCtrl.setRoot('UserProfilePage');
+            this.navCtrl.push('EndSignUpPage');
           });
         }, (error) => {
           this.loading.dismiss().then( () => {
