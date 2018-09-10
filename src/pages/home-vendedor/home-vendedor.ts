@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
+import { SignupFreelancerPage } from '../signup-freelancer/signup-freelancer';
 
 @IonicPage({
   name: 'HomeVendedorPage'
@@ -22,6 +22,6 @@ export class HomeVendedorPage {
   }
 
   goToSignUpFreelancer(): void {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.push(SignupFreelancerPage);
   }
 }
