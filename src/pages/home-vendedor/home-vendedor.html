@@ -7,14 +7,25 @@
 	</ion-header>
 
 <ion-content padding>
+	<img src="assets/imgs/cliente_icon2.png" class="center">
+	<h2 id="titulo_Cliente">Vendedor</h2>
+
+		<ion-navbar>
+			<ion-title>
+				Faz Pra Mim
+			</ion-title>
+		</ion-navbar>
+	</ion-header>
+
+<ion-content padding>
 	<img src="assets/imgs/cliente_icon.png" class="center">
 	<h2 id="titulo_Vendedor">Vendedor</h2>
 	<h4 id="h4_style">Identifique-se para anunciar seus serviços</h4>
-	<div id=spacer2></div>
 	<div id=spacer1>
 		<button id="botoes" ion-button block class="button-assertive center" (click)="goToLogin()">Login</button>
 	</div>
 	<div id=spacer2></div>
+	<div id=spacer2></div>
 	<h4 id="h4_style2">Ainda não é cadastrado?</h4>
-	<button id="botoes" ion-button block class="button-assertive center" (click)="goToSignUpFreelancer()">Cadastre-se</button>
+	<button id="botoes2" ion-button small clear class="button-assertive center" (click)="goToSignUpFreelancer()">Cadastre-se</button>
 </ion-content>
