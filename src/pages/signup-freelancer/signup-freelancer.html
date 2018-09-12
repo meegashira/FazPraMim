@@ -45,8 +45,44 @@
     </ion-item>
 
     <ion-item>
-      <ion-label fixed  ></ion-label>
+      <ion-label fixed  >Confirme Senha</ion-label>
       <ion-input formControlName="password" type="password" placeholder="Confirme sua senha"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed  >Endereco:</ion-label>
+      <ion-input formControlName="Endereco" type="text" placeholder="Rua/Av/Estrada"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Número:</ion-label>
+      <ion-input formControlName="numeroCasa" type="text" placeholder="Número: 100 "></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Complemento:</ion-label>
+      <ion-input formControlName="complemento" type="text" placeholder="Apartamento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Bairro:</ion-label>
+      <ion-input formControlName="bairro" type="text" placeholder="Bairro"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Cidade:</ion-label>
+      <ion-input formControlName="cidade" type="text" placeholder="Cidade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >UF:</ion-label>
+      <ion-input formControlName="uf" type="text" placeholder="Digite o estado. Ex: SP"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >CEP</ion-label>
+      <ion-input formControlName="cep" type="text" placeholder="digite seu cep"></ion-input>
     </ion-item>
 
     <button ion-button block type="submit" [disabled]="!signupForm.valid">

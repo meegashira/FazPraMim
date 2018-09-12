@@ -15,16 +15,16 @@ export class AuthProvider {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 
-  signupUser(name: string, surname: string, rg: string, cpf: string, email: string, password: string, userType: string): Promise<any> {
+  signupUser(name: string, surname: string, rg: string, cpf: string, email: string, password: string,Endereco: string,numeroCasa:number,complemento:string,bairro:string,cidade:string,uf:string,cep:number, userType: string): Promise<any> {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then( newUser => {
         firebase
         .database()
-        .ref('/userProfile/'+userType)
+        .ref('/userProfile/'+ userType)
         .child(newUser.uid)
-        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf});
+        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, Endereco:Endereco,numeroCasa: numeroCasa,complemento: complemento, bairro: bairro, cidade: cidade, uf:  uf, cep: cep});
       });
   }
 

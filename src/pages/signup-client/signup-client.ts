@@ -34,7 +34,14 @@ export class SignupClientPage {
       email: ['',
         Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['',
-        Validators.compose([Validators.minLength(6), Validators.required])]
+        Validators.compose([Validators.minLength(6), Validators.required])],
+        Endereco: ['', Validators.required],
+        numeroCasa:['', Validators.required],
+        complemento: ['', Validators.required],
+        bairro: ['', Validators.required],
+        cidade:['', Validators.required],
+        uf: ['',Validators.required],
+        cep: ['',Validators.required]
     });
   }
 
@@ -49,6 +56,13 @@ export class SignupClientPage {
         this.signupForm.value.cpf,
         this.signupForm.value.email,
         this.signupForm.value.password,
+        this.signupForm.value.Endereco,
+        this.signupForm.value.numeroCasa, 
+        this.signupForm.value.complemento,
+        this.signupForm.value.bairro,
+        this.signupForm.value.cidade,
+        this.signupForm.value.uf,
+        this.signupForm.value.cep,
         'Client'
       )
       .then(() => {
