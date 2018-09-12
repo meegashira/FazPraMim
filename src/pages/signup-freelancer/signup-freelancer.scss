@@ -1,3 +1,40 @@
 page-signup-freelancer {
+	*{
+		font-family: Noto Sans, sans-serif;
+	}
+
+	ion-content{
+		background: #610B1C !important;
+	}
+
+	ion-label{
+		color:#F5C05E;
+	}
+
+	img {
+		object-fit: resize;
+		height: auto !important;
+		width: 30%;	
+	}
+
+	/*classes*/
+	img.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
+	}
+
+	/*id's*/
+	#header3{
+		color:#F5C05E;
+		font-weight:600;
+		text-align:center;
+	}
+
+	#header4{
+		color:#F5C05E;
+		font-weight:400;
+		text-align:center;
+	}
 
 }

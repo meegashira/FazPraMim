@@ -7,6 +7,7 @@ import { IonicPage,
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
+import { CadastroConcluidoPage } from '../cadastro-concluido/cadastro-concluido';
 
 @IonicPage()
 @Component({
@@ -59,6 +60,10 @@ export class SignupFreelancerPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
     }
+  }
+
+   goToVerifyAccount(): void {
+    this.navCtrl.push(CadastroConcluidoPage);
   }
 
 }

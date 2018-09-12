@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
+import {UserProfilePage} from '../pages/user-profile/user-profile';
 
 @Component({
   templateUrl: 'app.html'

@@ -15,6 +15,9 @@ import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
 import { LoginPage } from '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
+import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
+import { UserProfilePage } from '../pages/user-profile/user-profile';
+import { CadastroConcluidoPage } from '../pages/cadastro-concluido/cadastro-concluido';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -33,7 +36,9 @@ const firebaseConfig = {
     HomeVendedorPage,
     LoginPage,
     SignupPage,
-    ResetPasswordPage,
+    SignupFreelancerPage,
+    UserProfilePage,
+    CadastroConcluidoPage,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,9 @@ const firebaseConfig = {
     HomeVendedorPage,
     LoginPage,
     SignupPage,
-    ResetPasswordPage
+    SignupFreelancerPage,
+    UserProfilePage,
+    CadastroConcluidoPage,
   ],
   providers: [
     StatusBar,
