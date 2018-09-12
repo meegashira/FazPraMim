@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
+import { SignupClientPage } from '../signup-client/signup-client';
 
 @IonicPage({
   name: 'HomeClientePage'
@@ -22,7 +22,7 @@ export class HomeClientePage {
   }
 
   signUpClient(): void {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.push(SignupClientPage);
   }
 
 }

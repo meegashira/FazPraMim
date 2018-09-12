@@ -7,9 +7,10 @@ import { IonicPage,
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
-import { CadastroConcluidoPage } from '../cadastro-concluido/cadastro-concluido';
 
-@IonicPage()
+@IonicPage({
+  name: 'SignupFreelancerPage'
+})
 @Component({
   selector: 'page-signup-freelancer',
   templateUrl: 'signup-freelancer.html',
@@ -26,6 +27,10 @@ export class SignupFreelancerPage {
     public alertCtrl: AlertController
   ) { 
     this.signupForm = formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      rg: ['', Validators.required],
+      cpf: ['', Validators.required],
       email: ['',
         Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['',
@@ -37,11 +42,19 @@ export class SignupFreelancerPage {
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
-      this.authProvider.signupUser(this.signupForm.value.email,
-        this.signupForm.value.password)
+      this.authProvider.signupUser(
+        this.signupForm.value.name,
+        this.signupForm.value.surname,
+        this.signupForm.value.rg,
+        this.signupForm.value.cpf,
+        this.signupForm.value.email,
+        this.signupForm.value.password,
+        'Seller'
+      )
       .then(() => {
         this.loading.dismiss().then( () => {
           this.navCtrl.setRoot('UserProfilePage');
+          this.navCtrl.push('EndSignUpPage');
         });
       }, (error) => {
         this.loading.dismiss().then( () => {
@@ -60,10 +73,6 @@ export class SignupFreelancerPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
     }
-  }
-
-   goToVerifyAccount(): void {
-    this.navCtrl.push(CadastroConcluidoPage);
   }
 
 }

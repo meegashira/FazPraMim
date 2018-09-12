@@ -7,17 +7,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpModule } from '@angular/http';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
 import { LoginPage } from '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
-import { SignupPage } from '../pages/signup/signup';
+import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
-import { UserProfilePage } from '../pages/user-profile/user-profile';
-import { CadastroConcluidoPage } from '../pages/cadastro-concluido/cadastro-concluido';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -35,17 +32,16 @@ const firebaseConfig = {
     HomeClientePage,
     HomeVendedorPage,
     LoginPage,
-    SignupPage,
+    SignupClientPage,
     SignupFreelancerPage,
-    UserProfilePage,
-    CadastroConcluidoPage,
+    ResetPasswordPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,16 +50,15 @@ const firebaseConfig = {
     HomeClientePage,
     HomeVendedorPage,
     LoginPage,
-    SignupPage,
+    SignupClientPage,
     SignupFreelancerPage,
-    UserProfilePage,
-    CadastroConcluidoPage,
+    ResetPasswordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
   ]
 })
 export class AppModule {}

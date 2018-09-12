@@ -15,16 +15,16 @@ export class AuthProvider {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 
-  signupUser(email: string, password: string): Promise<any> {
+  signupUser(name: string, surname: string, rg: string, cpf: string, email: string, password: string, userType: string): Promise<any> {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then( newUser => {
         firebase
         .database()
-        .ref('/userProfile')
-        //.child(newUser.uid)
-        .set({ email: email });
+        .ref('/userProfile/'+userType)
+        .child(newUser.uid)
+        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf});
       });
   }
 
@@ -33,6 +33,12 @@ export class AuthProvider {
   }
 
   logoutUser(): Promise<void> {
+    //return firebase.auth().signOut();
+    const userId: string = firebase.auth().currentUser.uid;
+    firebase
+      .database()
+      .ref(`/userProfile/${userId}`)
+      .off();
     return firebase.auth().signOut();
   }
 }

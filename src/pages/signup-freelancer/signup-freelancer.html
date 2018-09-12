@@ -14,22 +14,22 @@
 
     <ion-item>
       <ion-label fixed  >Nome</ion-label>
-      <ion-input type="text" placeholder="Primeiro nome"></ion-input>
+      <ion-input formControlName="name" type="text" placeholder="Primeiro nome"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed  >Sobrenome</ion-label>
-      <ion-input type="text" placeholder="Demais nomes"></ion-input>
+      <ion-input formControlName="surname" type="text" placeholder="Demais nomes"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed  >RG</ion-label>
-      <ion-input type="text" placeholder="Apenas números"></ion-input>
+      <ion-input formControlName="rg" type="text" placeholder="Apenas números"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed  >CPF</ion-label>
-      <ion-input type="text" placeholder="Apenas números"></ion-input>
+      <ion-input formControlName="cpf" type="text" placeholder="Apenas números"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -49,7 +49,7 @@
       <ion-input formControlName="password" type="password" placeholder="Confirme sua senha"></ion-input>
     </ion-item>
 
-    <button ion-button block type="submit" [disabled]="!signupForm.valid" (click)="goToVerifyAccount()">
+    <button ion-button block type="submit" [disabled]="!signupForm.valid">
       Criar uma conta
     </button>
   </form>

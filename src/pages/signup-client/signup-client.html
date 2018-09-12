@@ -7,20 +7,46 @@
   </ion-header>
 
 <ion-content padding>
+  <img src="assets/imgs/client_icon.png" class="center">
+  <h3 id="header3">Cliente</h3>
+  <h4 id="header4">Preencha os dados abaixo e participe da nossa rede de vendedores!</h4>
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
 
     <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Email"
-        [class.invalid]="!signupForm.controls.email.valid && blur">
+      <ion-label fixed  >Nome</ion-label>
+      <ion-input formControlName="name" type="text" placeholder="Primeiro nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Sobrenome</ion-label>
+      <ion-input formControlName="surname" type="text" placeholder="Demais nomes"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >RG</ion-label>
+      <ion-input formControlName="rg" type="text" placeholder="Apenas números"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >CPF</ion-label>
+      <ion-input formControlName="cpf" type="text" placeholder="Apenas números"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >E-mail</ion-label>
+      <ion-input formControlName="email" type="email" [class.invalid]="!signupForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Senha</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Senha"
-        [class.invalid]="!signupForm.controls.password.valid && blur">
+      <ion-label fixed  >Senha</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Mínimo de 6 caracteres" [class.invalid]="!signupForm.controls.password.valid && blur">
       </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  ></ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Confirme sua senha"></ion-input>
     </ion-item>
 
     <button ion-button block type="submit" [disabled]="!signupForm.valid">
