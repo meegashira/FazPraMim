@@ -5,7 +5,8 @@ page-home-vendedor {
 }
 
 ion-content{
-    background: #02173E !important;
+    //background: #0B3A61 !important;
+    background: #610B1C !important;
 }
 
 img {
@@ -28,6 +29,9 @@ button.center{
 }
 
 /*id's*/
+#titulo_Cliente{
+    color:#F25F2C;
+}
 #titulo_Vendedor{
     color:#FFFFFF;
     font-weight:600;
@@ -35,18 +39,29 @@ button.center{
 }
 
 #h4_style{
-    color:#FFFFFF;
+    color:#F1FCFB;
     text-align:center;
 }
 
 #h4_style2{
-    color:#FFFFFF;
-    font-weight:300;
+    color:#F1FCFB;
+    //font-weight:300;
     text-align:center;
 }
 
 #botoes{
-    background-color: #BF0C2B; 
+    background-color:#F5C05E;
+    //background-color: #F25F2C;
+    //background-color: #BF0C2B; 
+    color: #BF0C2B;
+    //color: #F5C05E;
+    font-weight:600;
+    font-size:25px;
+}
+
+#botoes2{
+    //background-color: #BF0C2B; 
+    color: #BF0C2B;
     font-weight:600;
     font-size:25px;
 }
