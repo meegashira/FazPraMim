@@ -35,14 +35,12 @@ export class SignupFreelancerPage {
         Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['',
         Validators.compose([Validators.minLength(6), Validators.required])],
-      Endereco: ['', Validators.required],
-      numeroCasa:['', Validators.required],
-      complemento: ['', Validators.required],
-      bairro: ['', Validators.required],
-      cidade:['', Validators.required],
-      uf: ['',Validators.required],
+      address: ['', Validators.required],
+      complement: ['', Validators.required],
+      neighborhood: ['', Validators.required],
+      city:['', Validators.required],
+      state: ['',Validators.required],
       cep: ['',Validators.required]
-
     });
   }
 
@@ -57,12 +55,11 @@ export class SignupFreelancerPage {
         this.signupForm.value.cpf,
         this.signupForm.value.email,
         this.signupForm.value.password,
-        this.signupForm.value.Endereco,
-        this.signupForm.value.numeroCasa, 
-        this.signupForm.value.complemento,
-        this.signupForm.value.bairro,
-        this.signupForm.value.cidade,
-        this.signupForm.value.uf,
+        this.signupForm.value.address, 
+        this.signupForm.value.complement,
+        this.signupForm.value.neighborhood,
+        this.signupForm.value.city,
+        this.signupForm.value.state,
         this.signupForm.value.cep,
         'Seller'
       )

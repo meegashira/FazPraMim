@@ -14,12 +14,12 @@
 
     <ion-item>
       <ion-label fixed  >Nome</ion-label>
-      <ion-input formControlName="name" type="text" placeholder="Primeiro nome"></ion-input>
+      <ion-input formControlName="name" type="text" placeholder="Nome"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed  >Sobrenome</ion-label>
-      <ion-input formControlName="surname" type="text" placeholder="Demais nomes"></ion-input>
+      <ion-input formControlName="surname" type="text" placeholder="Sobrenome"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -47,6 +47,36 @@
     <ion-item>
       <ion-label fixed  ></ion-label>
       <ion-input formControlName="password" type="password" placeholder="Confirme sua senha"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Endereco</ion-label>
+      <ion-input formControlName="address" type="text" placeholder="Rua/Av/Estrada"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Complemento</ion-label>
+      <ion-input formControlName="complement" type="text" placeholder="Apartamento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Bairro</ion-label>
+      <ion-input formControlName="neighborhood" type="text" placeholder="Bairro"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >Cidade</ion-label>
+      <ion-input formControlName="city" type="text" placeholder="Cidade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >UF</ion-label>
+      <ion-input formControlName="state" type="text" placeholder="Digite o estado. Ex: SP"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed  >CEP</ion-label>
+      <ion-input formControlName="cep" type="text" placeholder="Digite seu cep"></ion-input>
     </ion-item>
 
     <button ion-button block type="submit" [disabled]="!signupForm.valid">
