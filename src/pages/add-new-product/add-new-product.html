@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Novo Produto
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-list>
+      <!-- Cadastro do nome do produto-->
+      <ion-item>
+        <ion-label fixed color = "primary"><strong>Produto</strong></ion-label>
+        <ion-input placeholder="Nome do Produto"></ion-input>
+      </ion-item>
+      <!-- Cadastro do valor do produto-->
+      <ion-item>
+        <ion-label fixed color="primary"><strong>Valor</strong></ion-label>
+        <ion-input placeholder="Ex.:10,00" type = "number"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label fixed color = "primary"><strong>por</strong></ion-label>
+        <ion-select [(ngModel)]="unidadeMedida" placeholder = "tipo">
+          <ion-option value = "un">unidade</ion-option>
+          <ion-option value = "dez">dezena</ion-option>
+          <ion-option value = "dz">dúzia</ion-option>
+          <ion-option value = "m">metro</ion-option>
+          <ion-option value = "cm">centimetro</ion-option>
+          <ion-option value = "g">grama</ion-option>
+          <ion-option value = "kg">kilograma</ion-option>
+          <!-- Se tiver outras unidades para add, só add-->
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label stacked color = "primary"><strong>Descrição</strong></ion-label>
+        <ion-textarea>digite aqui...</ion-textarea>
+      </ion-item>
+    </ion-list>
+  
+    <button ion-button round full>Adicionar Produto</button>
+    
+  </ion-content>
+  
