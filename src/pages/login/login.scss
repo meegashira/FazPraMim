@@ -1,9 +1,60 @@
 page-login {
-	ion-content {
-		background: primary; /*cor do background*/
+	*{
+    	font-family: Noto Sans, sans-serif;
+	}
+
+	ion-content{
+	    background: #0B3A61 !important;
+	}
+
+	img {
+	    object-fit: resize;
+	    height: auto !important;
+	    width: 50%;	
+	}
+
+	/*classes*/
+	img.center{
+	    display:block;
+	    margin-left:auto;
+	    margin-right:auto;
+	}
+
+	button.center{
+	    display:block;
+	    margin-left:auto;
+	    margin-right:auto;
 	}
 
     .invalid {
         border-bottom: 1px solid #ff6153;
-      }
+    }
+
+    /*id's*/
+	#titulo_Vendedor{
+	    color: #FFCF40;
+	    //color: #00C29C;
+	    //color:#FFFFFF;
+	    font-weight:600;
+	    text-align:center;
+	}
+
+	#spacer2{
+	    width: auto !important;
+	    height: 40px;
+	}
+
+	#botoes{
+	    background-color: #0D60BF;
+	    color: #EEEC91;
+	    font-weight:600;
+	    font-size:20px;
+	}
+
+	#botoes2{
+	    //background-color: #BF0C2B; 
+	    color: #FFFFFF;
+	    font-weight:600;
+	    font-size:15px;
+	}
 }

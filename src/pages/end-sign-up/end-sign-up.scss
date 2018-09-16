@@ -1,14 +1,52 @@
 page-end-sign-up {
-*{
-     font-family: Noto Sans, sans-serif;
-}
+	*{
+	     font-family: Noto Sans, sans-serif;
+	}
 
-ion-content{
-    background: #02173E !important;
-}
+	ion-content{
+	    background: #F1FCFB!important;
+		text-align: center;
+	}
 
-#h4_style{
-    color:#FFFFFF;
-    text-align:center;
-}
+	img {
+	    object-fit: resize;
+	    height: auto !important;
+	    width: 50%;	
+	}
+
+	/*classes*/
+	img.center{
+	    display:block;
+	    margin-left:auto;
+	    margin-right:auto;
+	}
+
+	button.center{
+	    display:block;
+	    margin-left:auto;
+	    margin-right:auto;
+	}
+
+	/*id's*/
+	#botoes{
+		background-color: #FFCF40;
+		font-weight:600;
+		color:#0B1A61;
+		font-size:20px;
+	}
+	
+	#h4_style{
+	    color:#0D60BF;
+	    text-align:center;
+	}
+
+	#spacer1{
+    width: auto !important;
+    height: 15px;
+	}
+
+	#spacer2{
+	    width: auto !important;
+	    height: 48px;
+	}
 }

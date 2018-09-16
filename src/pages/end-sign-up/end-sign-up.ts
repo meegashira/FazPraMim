@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { UserProfilePage } from '../../pages/user-profile/user-profile';
+import { HomePage } from '../../pages/home/home';
 
 /**
  * Generated class for the EndSignUpPage page.
@@ -23,8 +23,8 @@ export class EndSignUpPage {
     public navParams: NavParams
   ) { }
 
-  goToProfilePage(): void {
-    this.navCtrl.push(UserProfilePage);
+  goToHomePage(): void {
+    this.navCtrl.push(HomePage);
   }
 
 }

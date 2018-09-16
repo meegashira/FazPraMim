@@ -1,4 +1,4 @@
-page-signup-client {
+page-login-cliente {
 	*{
 		font-family: Noto Sans, sans-serif;
 	}
@@ -36,6 +36,11 @@ page-signup-client {
 		text-align:center;
 	}
 
+	#h4_style{
+		color:#F1FCFB;
+		text-align:center;
+	}
+
 	#h4_style2{
 		color:#F1FCFB;
 		font-weight:300;
@@ -47,6 +52,17 @@ page-signup-client {
 		color: #BF0C2B;
 		font-weight:600;
 		font-size:20px;
+	}
+
+	#botoes2{
+		color: #BF0C2B;
+    	font-weight:600;
+    	font-size:15px;
+	}
+
+	#spacer2{
+		width: auto !important;
+		height: 40px;
 	}
 
 }

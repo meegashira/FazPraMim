@@ -15,6 +15,7 @@ import { LoginPage } from '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
+import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -35,6 +36,7 @@ const firebaseConfig = {
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,
+    LoginClientePage,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ const firebaseConfig = {
     LoginPage,
     SignupClientPage,
     SignupFreelancerPage,
-    ResetPasswordPage
+    ResetPasswordPage,
+    LoginClientePage,
   ],
   providers: [
     StatusBar,

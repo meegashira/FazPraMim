@@ -5,7 +5,7 @@ page-home-cliente {
 	}
 
 	ion-content{
-		background: #0B3A61 !important;
+		background: #610B1C !important;
 		//background: #BF0C2B !important;
 	}
 
@@ -49,20 +49,16 @@ page-home-cliente {
 	}
 
 	#botoes{
-		background-color: #0D60BF;
-		//background-color: #02173E; /*azul escurao*/
-		color: #EEEC91;
-		//color: #90EE90;
+		background-color: #F5C05E;
+		color: #BF0C2B;
 		font-weight:600;
 		font-size:25px;
 	}
 
 	#botoes2{
-		//background-color: #BF0C2B; 
-		color: #EEEC91;
-		//color: #90EE90;
-		font-weight:600;
-		font-size:25px;
+		color: #BF0C2B;
+    	font-weight:600;
+    	font-size:25px;
 	}
 
 	#spacer1{
@@ -74,7 +70,4 @@ page-home-cliente {
 		width: auto !important;
 		height: 48px;
 	}
-
-
-
 }

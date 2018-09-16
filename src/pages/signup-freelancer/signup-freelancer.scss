@@ -4,7 +4,7 @@ page-signup-freelancer {
 	}
 
 	ion-content{
-		background: #610B1C !important;
+		background: #0B3A61 !important;
 	}
 
 	ion-label{
@@ -25,15 +25,22 @@ page-signup-freelancer {
 	}
 
 	/*id's*/
+	#botoes{
+	    background-color: #0D60BF;
+	    color: #EEEC91;
+	    font-weight:600;
+		font-size:20px;
+	}
+
 	#header3{
-		color:#F5C05E;
+		color:#FFCF40;
 		font-weight:600;
 		text-align:center;
 	}
 
 	#header4{
-		color:#F5C05E;
-		font-weight:400;
+		color:#FFFFFF;
+		font-weight:300;
 		text-align:center;
 	}
 
