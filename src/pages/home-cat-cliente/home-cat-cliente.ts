@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SearchResultPage } from '../search-result/search-result';
 
 /**
  * Generated class for the HomeCatClientePage page.
@@ -22,4 +23,7 @@ export class HomeCatClientePage {
     console.log('ionViewDidLoad HomeCatClientePage');
   }
 
+  goToSearchPage():void {
+  	this.navCtrl.push(SearchResultPage)
+  }
 }

@@ -1,18 +1,106 @@
-<!--
-  Generated template for the HomeCatClientePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>HomeCatCliente</ion-title>
+    <ion-title>Categorias de serviços</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+	<ion-searchbar
+	  [(ngModel)]="myInput"
+	  [showCancelButton]="shouldShowCancel"
+	  (ionInput)="onInput($event)"
+	  (ionCancel)="onCancel($event)"
+	  placeholder="Pesquise diretamente o serviço desejado aqui">
+	</ion-searchbar>
+
+	<div id="spacer1"></div>
+
+	<ion-grid>
+	  <ion-row>
+	    <ion-col col-4>
+	      <button ion-button block id="botao1" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img id="img1" src="assets/imgs/food_icon.png">
+		      	<p>Alimentação</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	    <ion-col col-4>
+	      <button ion-button block id="botao2" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img src="assets/imgs/repair-icon.png" id="img2">
+		      	<p id="p2">Assistência<br>Técnica</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	    <ion-col col-4>
+	      <button ion-button block id="botao3" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img src="assets/imgs/education-icon.png">
+		      	<p id="p3">Educação</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	  </ion-row>
+
+	  <ion-row>
+	  	<ion-col col-4>
+	      <button ion-button block id="botao4" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img src="assets/imgs/auto-icon.png">
+		      	<p id="p4">Auto</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	    <ion-col col-4>
+	      <button ion-button block id="botao5" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img src="assets/imgs/beauty-icon.png">
+		      	<p id="p5">Beleza<br>& Estética</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	    <ion-col col-4>
+	      <button ion-button block id="botao6" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img id="img6" src="assets/imgs/construction-icon.png">
+		      	<p>Construção<br>& Reformas</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	  </ion-row>
+
+	  <ion-row>
+	  	<ion-col col-4>
+	      <button ion-button block id="botao7" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img id="img7" src="assets/imgs/design-icon.png">
+		      	<p id="p7">Design &<br>Serviços Web</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	    <ion-col col-4>
+	      <button ion-button block id="botao8" class="default" (click)="goToSearchPage()">
+	      	<div>
+		      	<img src="assets/imgs/fashion-icon.png">
+		      	<p id="p7">Moda</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	    <ion-col col-4>
+	      <button ion-button block class="default">
+	      	<div>
+		      	<img id="img9" src="assets/imgs/domestic-icon.png" (click)="goToSearchPage()">
+		      	<p id="p9">Serviços<br>Domésticos</p>
+	      	</div>
+	      </button>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<div id="spacer1"></div>
 
 </ion-content>
