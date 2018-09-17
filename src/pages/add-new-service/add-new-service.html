@@ -32,8 +32,21 @@
         <ion-textarea>digite aqui...</ion-textarea>
       </ion-item>
     </ion-list>
+
+    <ion-item>
+      <ion-label fixed color = "primary"><strong>Categoria</strong></ion-label>
+      <ion-select [(ngModel)]="categoria" placeholder = "tipo">
+        <ion-option value = "alimentos">Alimentos</ion-option>
+        <ion-option value = "beleza">Beleza</ion-option>
+        <ion-option value = "conserto">Conserto</ion-option>
+        <ion-option value = "educacao">Educação</ion-option>
+        <ion-option value = "limpeza">Limpeza</ion-option>
+        <ion-option value = "moda">Moda</ion-option>
+        <!-- Se tiver outras unidades para add, só add-->
+      </ion-select>
+    </ion-item>
   
     <button ion-button round full>Adicionar Serviço</button>
     
   </ion-content>
-  
+ 
