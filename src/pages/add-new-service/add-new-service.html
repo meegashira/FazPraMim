@@ -1,52 +1,51 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        Novo Serviço
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-  
-    <ion-list>
-      <!-- Cadastro do nome do produto-->
-      <ion-item>
-        <ion-label fixed color = "primary"><strong>Serviço</strong></ion-label>
-        <ion-input placeholder="Nome do Serviço"></ion-input>
-      </ion-item>
-  
-      <!-- Cadastro do valor do serviço-->
-      <ion-item>
-        <ion-label fixed color = "primary"><strong>Valor/Hora</strong></ion-label>
-        por hora
-        <ion-input placeholder = "Ex. 40,00"></ion-input>
-      </ion-item>
-      <!-- Cadastro do valor da visita -->
-      <ion-item>
-        <ion-label color = "primary"><strong>Valor da Visita</strong></ion-label>
-        <ion-input placeholder = "Ex. 40,00"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label stacked color = "primary"><strong>Descrição</strong></ion-label>
-        <ion-textarea>digite aqui...</ion-textarea>
-      </ion-item>
-    </ion-list>
+  <ion-navbar>
+    <ion-title>
+      Novo Serviço
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <!-- Cadastro do nome do produto-->
+    <ion-item>
+      <ion-label fixed color = "primary"><strong>Serviço</strong></ion-label>
+      <ion-input placeholder="Nome do Serviço"></ion-input>
+    </ion-item>
+
+    <!-- Cadastro do valor do serviço-->
+    <ion-item>
+      <ion-label fixed color = "primary"><strong>Valor/Hora</strong></ion-label>
+      por hora
+      <ion-input placeholder = "Ex. 40,00"></ion-input>
+    </ion-item>
+    <!-- Cadastro do valor da visita -->
+    <ion-item>
+      <ion-label color = "primary"><strong>Valor da Visita</strong></ion-label>
+      <ion-input placeholder = "Ex. 40,00"></ion-input>
+    </ion-item>
 
     <ion-item>
-      <ion-label fixed color = "primary"><strong>Categoria</strong></ion-label>
-      <ion-select [(ngModel)]="categoria" placeholder = "tipo">
-        <ion-option value = "alimentos">Alimentos</ion-option>
-        <ion-option value = "beleza">Beleza</ion-option>
-        <ion-option value = "conserto">Conserto</ion-option>
-        <ion-option value = "educacao">Educação</ion-option>
-        <ion-option value = "limpeza">Limpeza</ion-option>
-        <ion-option value = "moda">Moda</ion-option>
-        <!-- Se tiver outras unidades para add, só add-->
-      </ion-select>
+      <ion-label stacked color = "primary"><strong>Descrição</strong></ion-label>
+      <ion-textarea>digite aqui...</ion-textarea>
     </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label fixed color = "primary"><strong>Categoria</strong></ion-label>
+    <ion-select [(ngModel)]="categoria" placeholder = "tipo">
+      <ion-option value = "alimentos">Alimentos</ion-option>
+      <ion-option value = "beleza">Beleza</ion-option>
+      <ion-option value = "conserto">Conserto</ion-option>
+      <ion-option value = "educacao">Educação</ion-option>
+      <ion-option value = "limpeza">Limpeza</ion-option>
+      <ion-option value = "moda">Moda</ion-option>
+      <!-- Se tiver outras unidades para add, só add-->
+    </ion-select>
+  </ion-item>
+
+  <button ion-button round full>Adicionar Serviço</button>
   
-    <button ion-button round full>Adicionar Serviço</button>
-    
-  </ion-content>
- 
+</ion-content>

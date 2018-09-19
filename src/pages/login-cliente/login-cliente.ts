@@ -49,7 +49,7 @@ export class LoginClientePage {
         this.loginForm.value.password)
       .then( authData => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot('UserProfilePage');
+          this.navCtrl.setRoot('Home_Cat_Cliente');
         });
       }, error => {
         this.loading.dismiss().then( () => {
