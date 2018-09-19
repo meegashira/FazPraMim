@@ -10,13 +10,14 @@ page-home {
 	}
 
 	ion-content{
-		background: #09A38C !important;
+		background: #F1FCFB!important;
+		//background: #09A38C !important;
 	}
 
 	img {
 		object-fit: resize;
 		height: auto !important;
-		width: 70%;	
+		width: 50%;	
 	}
 
 	/*classes*/
@@ -34,21 +35,25 @@ page-home {
 
 	/*id's*/
 	#header3{
-		color:#FFFFFF;
+		color: #0D60BF;
+		//color:#FFFFFF;
 		font-weight:600;
 		text-align:center;
 	}
 
 	#header4{
-		color:#FFFFFF;
+		color:#0B1A61;
+		//color:#FFFFFF;
 		font-weight:400;
 		text-align:center;
 	}
 
 	#botoes{
-		background-color: #BF0C2B; /*laranjinha forte*/
+		background-color: #FFCF40;
+		//background-color: #00C29C;
+		//background-color: #BF0C2B; /*laranjinha forte*/
 		font-weight:600;
-		color:#FFFFFF;
+		color:#0B1A61;
 		font-size:20px;
 	}
 

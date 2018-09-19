@@ -1,0 +1,74 @@
+page-home-vendedor {
+/*tags modificadas*/
+*{
+    font-family: Noto Sans, sans-serif;
+}
+
+ion-content{
+    background: #0B3A61 !important;
+}
+
+img {
+    object-fit: resize;
+    height: auto !important;
+    width: 50%;	
+}
+
+/*classes*/
+img.center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+button.center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*id's*/
+#titulo_Vendedor{
+    color: #FFCF40;
+    //color: #00C29C;
+    //color:#FFFFFF;
+    font-weight:600;
+    text-align:center;
+}
+
+#h4_style{
+    color:#F1FCFB;
+    text-align:center;
+}
+
+#h4_style2{
+    color:#F1FCFB;
+    //font-weight:300;
+    text-align:center;
+}
+
+#botoes{
+    background-color: #0D60BF;
+    color: #EEEC91;
+    font-weight:600;
+    font-size:25px;
+}
+
+#botoes2{
+    //background-color: #BF0C2B; 
+    color: #EEEC91;
+    //color: #90EE90;
+    font-weight:600;
+    font-size:25px;
+}
+
+#spacer1{
+    width: auto !important;
+    height: 15px;
+}
+
+#spacer2{
+    width: auto !important;
+    height: 48px;
+}
+}

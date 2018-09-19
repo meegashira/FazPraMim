@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login - Cliente
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="assets/imgs/cliente_icon2.png" class="center">
+  <h2 id="titulo_Cliente">Cliente</h2>
+  <div id=spacer2></div>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+    <ion-item>
+      <ion-label color="light" stacked>E-mail</ion-label>
+      <ion-input formControlName="email" type="email" 
+        [class.invalid]="!loginForm.controls.email.valid && blur"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light" stacked>Senha</ion-label>
+      <ion-input formControlName="password" type="password" 
+        [class.invalid]="!loginForm.controls.password.valid && blur"></ion-input>
+    </ion-item>
+
+    <button id="botoes" ion-button block type="submit" [disabled]="!loginForm.valid">
+      Login
+    </button>
+  </form>
+
+  <button id="botoes2" ion-button block clear (click)="goToResetPassword()">
+    Esqueci minha senha
+  </button>
+
+</ion-content>

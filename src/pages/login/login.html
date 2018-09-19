@@ -1,30 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login - Vendedor
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding>
+  <img src="assets/imgs/seller_icon.png" class="center">
+  <h2 id="titulo_Vendedor">Vendedor</h2>
+  <div id=spacer2></div>
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
     <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Email"
+      <ion-label color="light" stacked>E-mail</ion-label>
+      <ion-input formControlName="email" type="email" 
         [class.invalid]="!loginForm.controls.email.valid && blur"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Senha"
+      <ion-label color="light" stacked>Senha</ion-label>
+      <ion-input formControlName="password" type="password" 
         [class.invalid]="!loginForm.controls.password.valid && blur"></ion-input>
     </ion-item>
 
-    <button ion-button block type="submit" [disabled]="!loginForm.valid">
+    <button id="botoes" ion-button block type="submit" [disabled]="!loginForm.valid">
       Login
     </button>
-
   </form>
 
-  <button ion-button block clear (click)="goToSignup()">
-    Create a new account
-  </button>
-
-  <button ion-button block clear (click)="goToResetPassword()">
-    I forgot my password
+  <button id="botoes2" ion-button block clear (click)="goToResetPassword()">
+    Esqueci minha senha
   </button>
 
 </ion-content>

@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 
-/*
-  Generated class for the AuthProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthProvider {
   constructor() { }
@@ -15,16 +9,16 @@ export class AuthProvider {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 
-  signupUser(email: string, password: string): Promise<any> {
+  signupUser(name: string, surname: string, rg: string, cpf: string, email: string, password: string,address: string, complement:string, neighborhood:string, city:string, state:string, cep:number, userType: string): Promise<any> {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then( newUser => {
         firebase
         .database()
-        .ref('/userProfile')
-        //.child(newUser.uid)
-        .set({ email: email });
+        .ref('/userProfile/'+ userType)
+        .child(newUser.uid)
+        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep});
       });
   }
 
@@ -34,5 +28,11 @@ export class AuthProvider {
 
   logoutUser(): Promise<void> {
     return firebase.auth().signOut();
+    //const userId: string = firebase.auth().currentUser.uid;
+    //firebase
+    //  .database()
+    //  .ref(`/userProfile/${userId}`)
+    //  .off();
+    //return firebase.auth().signOut();
   }
 }
