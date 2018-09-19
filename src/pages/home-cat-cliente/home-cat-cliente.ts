@@ -9,7 +9,9 @@ import { SearchResultPage } from '../search-result/search-result';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name: 'Home_Cat_Cliente'
+})
 @Component({
   selector: 'page-home-cat-cliente',
   templateUrl: 'home-cat-cliente.html',
@@ -24,6 +26,6 @@ export class HomeCatClientePage {
   }
 
   goToSearchPage():void {
-  	this.navCtrl.push(SearchResultPage)
+  	this.navCtrl.push('SearchResultPage')
   }
 }
