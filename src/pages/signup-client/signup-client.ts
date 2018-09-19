@@ -6,14 +6,11 @@ import { IonicPage,
   AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
+import { CpfValidator } from '../../validators/cpf';
 import { EmailValidator } from '../../validators/email';
 
 @IonicPage({
-<<<<<<< HEAD:src/pages/signup/signup.ts
-  name: 'SignupPage'
-=======
   name: 'SignupClientPage'
->>>>>>> master:src/pages/signup-client/signup-client.ts
 })
 @Component({
   selector: 'page-signup-client',
@@ -34,7 +31,7 @@ export class SignupClientPage {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       rg: ['', Validators.required],
-      cpf: ['', Validators.required],
+      cpf: ['', [Validators.required, CpfValidator.isValid]],
       email: ['',
         Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['',
