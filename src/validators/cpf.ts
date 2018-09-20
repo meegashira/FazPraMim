@@ -5,15 +5,15 @@ export class CpfValidator {
     let cpf:string = control.value;
 
   if (cpf == null) {
-      return false;
+    return {invalidcpf: true};
   }
   if (cpf.length != 11) {
-      return false;
+    return {invalidcpf: true};
   }
 
   //mais comuns
   if ((cpf == '00000000000') || (cpf == '11111111111') || (cpf == '22222222222') || (cpf == '33333333333') || (cpf == '44444444444') || (cpf == '55555555555') || (cpf == '66666666666') || (cpf == '77777777777') || (cpf == '88888888888') || (cpf == '99999999999')) {
-      return false;
+    return {invalidcpf: true};
   }
 
 
@@ -30,7 +30,7 @@ export class CpfValidator {
       for (let i: number = 0; i < 9; i++) {
           caracter = cpfAux.charAt(i);
           if (numeros.search(caracter) == -1) {
-              return false;
+            return {invalidcpf: true};
           }
           numero = Number(caracter);
           somatorio = somatorio + (numero * j);
@@ -61,7 +61,7 @@ export class CpfValidator {
 
 
   if (cpf != cpfAux) {
-      return false;
+    return {invalidcpf: true};
   }
   else {
       return null;

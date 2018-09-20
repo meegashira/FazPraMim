@@ -31,7 +31,7 @@ export class SignupClientPage {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       rg: ['', Validators.required],
-      cpf: ['', [Validators.required, CpfValidator.isValid]],
+      cpf: ['', Validators.compose([Validators.required, CpfValidator.isValid])],
       email: ['',
         Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['',
