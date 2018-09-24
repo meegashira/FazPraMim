@@ -9,11 +9,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
 
 @IonicPage({
-<<<<<<< HEAD:src/pages/signup/signup.ts
-  name: 'SignupPage'
-=======
   name: 'SignupClientPage'
->>>>>>> master:src/pages/signup-client/signup-client.ts
 })
 @Component({
   selector: 'page-signup-client',

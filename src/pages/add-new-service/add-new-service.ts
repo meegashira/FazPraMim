@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import firebase from 'firebase';
 
 /**
  * Generated class for the AddNewServicePage page.
@@ -24,8 +25,12 @@ export class AddNewServicePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddNewServicePage');
+  signupUser(name: string, surname: string, rg: string, cpf: string, email: string, password: string,address: string, complement:string, neighborhood:string, city:string, state:string, cep:number, userType: string): Promise<any> {
+    return firebase
+        .database()
+        .ref('/product/'+'123')
+        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep});
+      ;
   }
 
 }
