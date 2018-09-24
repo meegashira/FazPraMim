@@ -6,6 +6,7 @@ import { IonicPage,
   AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
+import { CpfValidator } from '../../validators/cpf';
 import { EmailValidator } from '../../validators/email';
 
 @IonicPage({
@@ -30,7 +31,7 @@ export class SignupClientPage {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       rg: ['', Validators.required],
-      cpf: ['', Validators.required],
+      cpf: ['', Validators.compose([Validators.required, CpfValidator.isValid])],
       email: ['',
         Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['',
