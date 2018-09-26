@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { CpfValidator } from '../../validators/cpf';
 import { EmailValidator } from '../../validators/email';
+import { CepValidator } from '../../validators/cep';
 
 @IonicPage({
   name: 'SignupClientPage'
@@ -41,9 +42,16 @@ export class SignupClientPage {
       neighborhood: ['', Validators.required],
       city:['', Validators.required],
       state: ['',Validators.required],
-      cep: ['',Validators.required]
+      cep:  ['', Validators.compose([Validators.required, CepValidator.isValid])]
     });
   }
+ /*
+                document.getElementById('address').value="...";
+                document.getElementById('neighborhood').value="...";
+                document.getElementById('city').value="...";
+                document.getElementById('state').value="...";
+                
+*/
 
   signupUser(){
     if (!this.signupForm.valid){

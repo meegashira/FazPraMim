@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
 import { CpfValidator } from '../../validators/cpf';
-
+import { CepValidator } from '../../validators/cep';
 @IonicPage({
   name: 'SignupFreelancerPage'
 })
@@ -41,7 +41,8 @@ export class SignupFreelancerPage {
       neighborhood: ['', Validators.required],
       city:['', Validators.required],
       state: ['',Validators.required],
-      cep: ['',Validators.required]
+      cep: ['',
+      Validators.compose([Validators.required, CepValidator.isValid])]
     });
   }
 
