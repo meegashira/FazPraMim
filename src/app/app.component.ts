@@ -1,23 +1,46 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
 import {UserProfilePage} from '../pages/user-profile/user-profile';
+import { initializeApp } from 'firebase/app';
+import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = HomePage;
+  @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
+  pages: Array<{title: string, component: any}>;
+
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public menu: MenuController) {
+    this.initializeApp();
+    this.menu.enable(true,'menu');
+
+    this.pages = [
+      {title: 'Meu Perfil', component: UserProfilePage},
+      {title: 'Categorias', component: HomeCatClientePage}
+    ];  
+  }
+
+    openPage(page){
+      this.nav.setRoot(page.component);
+    }
+
+    /*platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
-      splashScreen.hide();
+      splashScreen.hide();*/
+
+      initializeApp(){
+        this.platform.ready().then(() =>{
+          this.statusBar.styleDefault();
+          this.splashScreen.hide();
 
       firebase.initializeApp({
         apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",

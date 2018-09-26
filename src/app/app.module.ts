@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
@@ -16,7 +17,8 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
-import { SearchResultPage } from '../pages/search-result/search-result';
+//import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
+//import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -38,7 +40,8 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    SearchResultPage,
+    //HomeCatClientePage,
+    //UserProfilePage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    SearchResultPage,
+    //HomeCatClientePage,
+    //UserProfilePage
   ],
   providers: [
     StatusBar,
