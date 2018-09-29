@@ -10,6 +10,11 @@ import { AuthProvider } from '../providers/auth/auth';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
+
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
 import { LoginPage } from '../pages/login/login';
@@ -17,8 +22,11 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
-//import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
-//import { UserProfilePage } from '../pages/user-profile/user-profile';
+import { CadastroLojaPage } from '../pages/cadastro-loja/cadastro-loja';
+import { AdicionarAnuncioPage} from '../pages/adicionar-anuncio/adicionar-anuncio';
+import { ProfileVendedorPage } from '../pages/profile-vendedor/profile-vendedor';
+
+
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -40,8 +48,9 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    //HomeCatClientePage,
-    //UserProfilePage
+    CadastroLojaPage,
+    AdicionarAnuncioPage,
+    ProfileVendedorPage
   ],
   imports: [
     BrowserModule,
@@ -61,14 +70,19 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    //HomeCatClientePage,
-    //UserProfilePage
+    CadastroLojaPage,
+    AdicionarAnuncioPage,
+    ProfileVendedorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    File,
+    Transfer,
+    Camera,
+    FilePath
   ]
 })
 export class AppModule {}
