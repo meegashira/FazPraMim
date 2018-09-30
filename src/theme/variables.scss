@@ -36,12 +36,22 @@ $app-direction: ltr;
 $colors: (
   primary:    #0B3A61,
   secondary:  #0D60BF,
-  danger:     #f5900E,
-  light:      #FFCF40,
-  darkblue:   #02173E,
-  dark: 	  #222
+  danger:     #FFCF40,
+  light:      #EEEC91,
+  darkblue:   #0B3A61,
+  //darkblue:   #02173E,
+  FundoClaro: #F1FCFB,
+  dark: 	    #222,
+
+  //Cores do perfil cliente
+  primaryTwo:    #610B1C,
+  secondaryTwo:  #BF0C2B,
+  dangerTwo:     #F25F2C,
+  lightTwo:      #F5C05E,
 );
 
+
+$button-md-text-transform: none;
 
 // App iOS Variables
 // --------------------------------------------------

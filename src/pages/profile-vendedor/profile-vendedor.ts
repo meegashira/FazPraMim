@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-import { HomePage } from '../../pages/home/home';
-import { AdicionarAnuncioPage } from '../adicionar-anuncio/adicionar-anuncio';
-import { CadastroLojaPage } from '../cadastro-loja/cadastro-loja';
+/*import { AdicionarAnuncioPage } from '../adicionar-anuncio/adicionar-anuncio';
+import { CadastroLojaPage } from '../cadastro-loja/cadastro-loja';*/
 
 /**
  * Generated class for the ProfileVendedorPage page.
@@ -25,7 +24,7 @@ export class ProfileVendedorPage {
               public app: App) {
   }
 
-  goToAnuncioPage(){
+  /*goToAnuncioPage(){
 		this.navCtrl.push(AdicionarAnuncioPage); 
   }
   
@@ -37,7 +36,7 @@ export class ProfileVendedorPage {
     this.authProvider.logoutUser();
     var nav = this.app.getRootNav();
     nav.setRoot(HomePage);
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfileVendedorPage');

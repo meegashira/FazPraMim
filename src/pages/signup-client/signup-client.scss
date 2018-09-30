@@ -1,11 +1,18 @@
 page-signup-client {
 	*{
-		font-family: Noto Sans, sans-serif;
+		//font-family: Noto Sans, sans-serif;
 	}
 
 	ion-content{
+		font-family: Noto Sans, sans-serif;
 		background: #610B1C !important;
 		//background: #BF0C2B !important;
+	}
+
+	.label[floating],
+	.label[stacked],
+	.input-has-focus .label[floating] {
+    	color: #F25F2C;
 	}
 
 	img {
@@ -21,6 +28,14 @@ page-signup-client {
   		margin-right:auto;
 	}
 
+	.Fundo{
+		background-color: #610B1C;
+	}
+
+	.Texto{
+		color: #F1FCFB; 
+	}
+
 	button.center{
 		display:block;
   		margin-left:auto;
@@ -29,7 +44,7 @@ page-signup-client {
 
 	/*id's*/
 	#titulo_Cliente{
-		color: #FFCF40;
+		color: #F25F2C;
 		//color: #00C29C;
 		//color:#FFFFFF;
 		font-weight:600;
@@ -49,4 +64,8 @@ page-signup-client {
 		font-size:20px;
 	}
 
+	#spacer2{
+		width: auto !important;
+		height: 48px;
+	}
 }

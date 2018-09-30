@@ -1,14 +1,17 @@
 page-signup-freelancer {
 	*{
-		font-family: Noto Sans, sans-serif;
+		//font-family: Noto Sans, sans-serif;
 	}
 
 	ion-content{
+		font-family: Noto Sans, sans-serif;
 		background: #0B3A61 !important;
 	}
 
-	ion-label{
-		color:#F5C05E;
+	.label[floating],
+	.label[stacked],
+	.input-has-focus .label[floating] {
+    	color: #FFCF40 ;
 	}
 
 	img {
@@ -24,6 +27,13 @@ page-signup-freelancer {
   		margin-right:auto;
 	}
 
+	.Fundo{
+		background-color: #0B3A61;
+	}
+	.Texto{
+		color: #F1FCFB; 
+	}
+
 	/*id's*/
 	#botoes{
 	    background-color: #0D60BF;
@@ -33,15 +43,19 @@ page-signup-freelancer {
 	}
 
 	#header3{
-		color:#FFCF40;
+		color:#F1FCFB;
 		font-weight:600;
 		text-align:center;
 	}
 
 	#header4{
-		color:#FFFFFF;
+		color:#F1FCFB;
 		font-weight:300;
 		text-align:center;
 	}
 
+	#spacer2{
+		width: auto !important;
+		height: 48px;
+	}
 }

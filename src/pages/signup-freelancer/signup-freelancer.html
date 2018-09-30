@@ -12,73 +12,74 @@
   <h4 id="header4">Preencha os dados abaixo e integre o maior catálogo de serviços do Brasil</h4>
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
 
-    <ion-item>
-      <ion-label color="light" fixed>Nome</ion-label>
-      <ion-input formControlName="name" type="text" placeholder="Nome"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Nome</ion-label>
+      <ion-input class="Texto" formControlName="name" type="text" ></ion-input> <!--placeholder="Nomes"--> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Sobrenome</ion-label>
-      <ion-input formControlName="surname" type="text" placeholder="Sobrenomes"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Sobrenome</ion-label>
+      <ion-input class="Texto" formControlName="surname" type="text" ></ion-input><!--placeholder="Sobrenomes"-->
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>RG</ion-label>
-      <ion-input formControlName="rg" type="text" placeholder="Apenas números"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>RG</ion-label>
+      <ion-input class="Texto" formControlName="rg" type="text" placeholder="'       Apenas números"></ion-input> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>CPF</ion-label>
-      <ion-input formControlName="cpf" type="text" placeholder="Apenas números"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>CPF</ion-label>
+      <ion-input class="Texto" formControlName="cpf" type="text" placeholder="'        Apenas números"></ion-input> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>E-mail</ion-label>
-      <ion-input formControlName="email" type="email" [class.invalid]="!signupForm.controls.email.valid && blur">
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>E-mail</ion-label>
+      <ion-input class="Texto" formControlName="email" type="email" [class.invalid]="!signupForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Senha</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Mínimo de 6 caracteres" [class.invalid]="!signupForm.controls.password.valid && blur">
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Senha</ion-label>
+      <ion-input class="Texto" formControlName="password" type="password" placeholder="'            Mínimo de 6 caracteres" [class.invalid]="!signupForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Confirme Senha</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Confirme sua senha"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Confirme sua Senha</ion-label>
+      <ion-input class="Texto" formControlName="password" type="password" ></ion-input> <!--placeholder="Confirme sua senha"--> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Endereco</ion-label>
-      <ion-input formControlName="address" type="text" placeholder="Rua/Av/Estrada"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Logradouro</ion-label>
+      <ion-input class="Texto" formControlName="address" type="text" ></ion-input> <!--placeholder="Rua/Av/Estrada"--> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Complemento</ion-label>
-      <ion-input formControlName="complement" type="text" placeholder="Apartamento"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Complemento</ion-label>
+      <ion-input class="Texto" formControlName="complement" type="text" ></ion-input> <!--placeholder="Apartamento"--> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Bairro</ion-label>
-      <ion-input formControlName="neighborhood" type="text" placeholder="Bairro"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Bairro</ion-label>
+      <ion-input class="Texto" formControlName="neighborhood" type="text" ></ion-input> <!--placeholder="Bairro"--> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>Cidade</ion-label>
-      <ion-input formControlName="city" type="text" placeholder="Cidade"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>Cidade</ion-label>
+      <ion-input class="Texto" formControlName="city" type="text" ></ion-input> <!--placeholder="Cidade"--> 
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>UF</ion-label>
-      <ion-input formControlName="state" type="text" placeholder="Digite o estado. Ex: SP"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>UF</ion-label>
+      <ion-input class="Texto" formControlName="state" type="text" placeholder="'      Ex: SP"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label color="light" fixed>CEP</ion-label>
-      <ion-input formControlName="cep" type="text" placeholder="Digite seu cep"></ion-input>
+    <ion-item class="Fundo">
+      <ion-label color="danger" floating>CEP</ion-label>
+      <ion-input class="Texto" formControlName="cep" type="text" placeholder="'        Apenas números"></ion-input>
     </ion-item>
 
+    <div id=spacer2></div>
     <button id="botoes" ion-button block type="submit" [disabled]="!signupForm.valid">
       Criar uma conta
     </button>

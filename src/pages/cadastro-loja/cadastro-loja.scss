@@ -1,9 +1,10 @@
 page-cadastro-loja {
     *{
-		font-family: Noto Sans, sans-serif;
+		//font-family: Noto Sans, sans-serif;
 	}
-
+	
 	ion-content{
+		font-family: Noto Sans, sans-serif;
 		background: #0B3A61 !important;
 	}
 
@@ -22,6 +23,13 @@ page-cadastro-loja {
 		display:block;
   		margin-left:auto;
   		margin-right:auto;
+	}
+
+	.Fundo{
+		background-color: #0B3A61;
+	}
+	.Texto{
+		color: #F1FCFB; 
 	}
 
 	/*id's*/
@@ -44,4 +52,8 @@ page-cadastro-loja {
 		text-align:center;
 	}
 
+	#spacer2{
+		width: auto !important;
+		height: 48px;
+	}
 }

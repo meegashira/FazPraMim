@@ -1,9 +1,10 @@
 page-profile-vendedor {
     *{
-        font-family: Noto Sans, sans-serif;
-    }
-    
+       // font-family: Noto Sans, sans-serif;
+    }	
+
     ion-content{
+        font-family: Noto Sans, sans-serif;
         background: #0B3A61 !important;
     }
 
@@ -33,7 +34,7 @@ page-profile-vendedor {
     
     #botoes{
         background-color:#0D60BF; 
-    }
+    }	
 
    #avatar{
     height: 200px; 

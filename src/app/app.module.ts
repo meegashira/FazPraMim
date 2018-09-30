@@ -22,11 +22,7 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
-import { CadastroLojaPage } from '../pages/cadastro-loja/cadastro-loja';
-import { AdicionarAnuncioPage} from '../pages/adicionar-anuncio/adicionar-anuncio';
-import { ProfileVendedorPage } from '../pages/profile-vendedor/profile-vendedor';
-
-
+import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -48,9 +44,7 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    CadastroLojaPage,
-    AdicionarAnuncioPage,
-    ProfileVendedorPage
+    SideMenuVendedorPage,
   ],
   imports: [
     BrowserModule,
@@ -70,9 +64,7 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    CadastroLojaPage,
-    AdicionarAnuncioPage,
-    ProfileVendedorPage
+    SideMenuVendedorPage,
   ],
   providers: [
     StatusBar,

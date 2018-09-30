@@ -1,10 +1,11 @@
 page-home-cliente {
 /*tags modificadas*/
 	*{
-		font-family: Noto Sans, sans-serif;
+		//font-family: Noto Sans, sans-serif;
 	}
 
 	ion-content{
+		font-family: Noto Sans, sans-serif;
 		background: #610B1C !important;
 		//background: #BF0C2B !important;
 	}
@@ -30,7 +31,7 @@ page-home-cliente {
 
 	/*id's*/
 	#titulo_Cliente{
-		color: #FFCF40;
+		color: #F25F2C;
 		//color: #00C29C;
 		//color:#FFFFFF;
 		font-weight:600;
