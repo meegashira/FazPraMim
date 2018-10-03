@@ -27,9 +27,6 @@ export class SideMenuVendedorPage {
     
   ]
 
-  /*constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }*/
-
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public authProvider: AuthProvider,
@@ -38,7 +35,6 @@ export class SideMenuVendedorPage {
 
   openPage(page: PageInterface){
     this.nav.setRoot(page.pageName);
-
   }
 
   isActive(page: PageInterface){
@@ -54,9 +50,4 @@ export class SideMenuVendedorPage {
     /*var nav = this.app.getRootNav();
     nav.setRoot(HomePage);*/
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SideMenuVendedorPage');
-  }
-
 }
