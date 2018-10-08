@@ -11,7 +11,7 @@ import { CadastroLojaPage } from '../cadastro-loja/cadastro-loja';*/
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage( {name: 'ProfileVendedorPage'} ) 
 @Component({
   selector: 'page-profile-vendedor',
   templateUrl: 'profile-vendedor.html',

@@ -16,9 +16,13 @@ export class AuthProvider {
       .then( newUser => {
         firebase
         .database()
-        .ref('/userProfile/'+ userType)
+        .ref(`/userProfile/` + userType)
         .child(newUser.uid)
         .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep});
+      })
+      .catch(error => {
+        console.error(error);
+        throw new Error(error);
       });
   }
 
@@ -27,12 +31,11 @@ export class AuthProvider {
   }
 
   logoutUser(): Promise<void> {
+    const userId: string = firebase.auth().currentUser.uid;
+    firebase
+      .database()
+      .ref(`/userProfile/${userId}`)
+      .off();
     return firebase.auth().signOut();
-    //const userId: string = firebase.auth().currentUser.uid;
-    //firebase
-    //  .database()
-    //  .ref(`/userProfile/${userId}`)
-    //  .off();
-    //return firebase.auth().signOut();
   }
 }

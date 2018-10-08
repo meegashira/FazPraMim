@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import {UserProfilePage} from '../pages/user-profile/user-profile';
 import { initializeApp } from 'firebase/app';
 import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
+import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
+import { FirebaseAppProvider } from 'angularfire2';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +19,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public menu: MenuController) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    public menu: MenuController,
+  ) {
     this.initializeApp();
     this.menu.enable(true,'menu');
 
@@ -50,13 +57,13 @@ export class MyApp {
         storageBucket: "fazpramim-4bbe8.appspot.com",
         messagingSenderId: "639256908870"
       });
-
+      
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
         } else {
-          this.rootPage = 'UserProfilePage'; 
+          this.rootPage = 'ProfileVendedorPage'; 
           unsubscribe();
         }
       });

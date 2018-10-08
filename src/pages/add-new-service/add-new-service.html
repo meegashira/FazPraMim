@@ -7,35 +7,35 @@
 </ion-header>
 
 <ion-content padding>
-
+  <form [formGroup]="createNewServiceForm" (submit)="addNewService()" novalidate>
   <ion-list>
     <!-- Cadastro do nome do produto-->
     <ion-item>
       <ion-label fixed color = "primary"><strong>Serviço</strong></ion-label>
-      <ion-input placeholder="Nome do Serviço"></ion-input>
+      <ion-input placeholder="Nome do Serviço" formControlName="name"></ion-input>
     </ion-item>
 
     <!-- Cadastro do valor do serviço-->
     <ion-item>
       <ion-label fixed color = "primary"><strong>Valor/Hora</strong></ion-label>
       por hora
-      <ion-input placeholder = "Ex. 40,00"></ion-input>
+      <ion-input placeholder = "Ex. 40,00" formControlName="valueHour"></ion-input>
     </ion-item>
     <!-- Cadastro do valor da visita -->
     <ion-item>
       <ion-label color = "primary"><strong>Valor da Visita</strong></ion-label>
-      <ion-input placeholder = "Ex. 40,00"></ion-input>
+      <ion-input placeholder = "Ex. 40,00" formControlName="valueVisit"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color = "primary"><strong>Descrição</strong></ion-label>
-      <ion-textarea>digite aqui...</ion-textarea>
+      <ion-input type="text" formControlName="description">digite aqui...</ion-input>
     </ion-item>
   </ion-list>
 
   <ion-item>
     <ion-label fixed color = "primary"><strong>Categoria</strong></ion-label>
-    <ion-select [(ngModel)]="categoria" placeholder = "tipo">
+    <ion-select [(ngModel)]="categoria" placeholder = "tipo" formControlName="category">
       <ion-option value = "alimentos">Alimentos</ion-option>
       <ion-option value = "beleza">Beleza</ion-option>
       <ion-option value = "conserto">Conserto</ion-option>
@@ -46,6 +46,7 @@
     </ion-select>
   </ion-item>
 
-  <button ion-button round full>Adicionar Serviço</button>
+  <button ion-button round full [disabled]="!createNewServiceForm.valid">Adicionar Serviço</button>
+  </form>
   
 </ion-content>
