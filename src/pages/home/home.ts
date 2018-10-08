@@ -18,6 +18,7 @@ export class HomePage {
   goToHomeVendedor(): void {
     this.navCtrl.push(HomeVendedorPage);
   }
+  
 
 }
 

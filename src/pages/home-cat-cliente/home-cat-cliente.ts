@@ -28,4 +28,11 @@ export class HomeCatClientePage {
   goToSearchPage():void {
   	this.navCtrl.push('SearchResultPage')
   }
+
+  goToMAP():void
+  {
+    this.navCtrl.push('MapsPage')
+
+  }
+  
 }
