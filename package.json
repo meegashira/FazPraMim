@@ -33,6 +33,7 @@
     "@ionic/pro": "2.0.3",
     "@ionic/storage": "2.1.3",
     "@types/firebase": "^3.2.1",
+    "angular": "^1.7.1",
     "angularfire2": "5.0.0-rc.3",
     "br-cidades-estados": "^1.1.0",
     "cordova-android": "7.0.0",
