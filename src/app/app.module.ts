@@ -23,14 +23,7 @@ import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
-<<<<<<< HEAD
-import { Geolocation } from '@ionic-native/geolocation';
-import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
-
-
-=======
 import { ProfileProvider } from '../providers/profile/profile';
->>>>>>> master
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -83,13 +76,7 @@ const firebaseConfig = {
     Transfer,
     Camera,
     FilePath,
-<<<<<<< HEAD
-    Geolocation,
-    GoogleMapsProvider,
-
-=======
     ProfileProvider
->>>>>>> master
   ]
 })
 export class AppModule {}
