@@ -64,7 +64,7 @@ export class MyApp {
           this.rootPage = HomePage;
           unsubscribe();
         } else {
-          this.rootPage = SideMenuVendedor;          
+          this.rootPage = SideMenuVendedorPage;          
           unsubscribe();
         }
       });
