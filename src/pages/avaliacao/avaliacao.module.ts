@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { StarRatingModule } from 'ionic3-star-rating';
 import { IonicPageModule } from 'ionic-angular';
 import { AvaliacaoPage } from './avaliacao';
 
@@ -7,6 +8,7 @@ import { AvaliacaoPage } from './avaliacao';
     AvaliacaoPage,
   ],
   imports: [
+    StarRatingModule,
     IonicPageModule.forChild(AvaliacaoPage),
   ],
 })

@@ -1,4 +1,8 @@
-page-avaliacao {
+page-historico-compras {/*tags modificadas*/
+	*{
+		//font-family: Noto Sans, sans-serif;
+	}
+
 	ion-content{
 		font-family: Noto Sans, sans-serif;
 		background: #610B1C !important;
@@ -47,8 +51,8 @@ page-avaliacao {
 	#botoes{
 		background-color: #F5C05E;
 		color: #BF0C2B;
-		font-weight:600;
-		font-size:25px;
+		font-weight:300;
+		font-size:15px;
 	}
 
 	#botoes2{
@@ -66,4 +70,5 @@ page-avaliacao {
 		width: auto !important;
 		height: 48px;
 	}
+
 }

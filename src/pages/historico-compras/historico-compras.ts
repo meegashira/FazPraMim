@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AvaliacaoConcluidaPage } from '../avaliacao-concluida/avaliacao-concluida';
+import { AvaliacaoPage } from '../avaliacao/avaliacao';
 
 /**
- * Generated class for the AvaliacaoPage page.
+ * Generated class for the HistoricoComprasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +11,19 @@ import { AvaliacaoConcluidaPage } from '../avaliacao-concluida/avaliacao-conclui
 
 @IonicPage()
 @Component({
-  selector: 'page-avaliacao',
-  templateUrl: 'avaliacao.html',
+  selector: 'page-historico-compras',
+  templateUrl: 'historico-compras.html',
 })
-export class AvaliacaoPage {
+export class HistoricoComprasPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AvaliacaoPage');
+    console.log('ionViewDidLoad HistoricoComprasPage');
   }
 
-  goToThanksPage(): void{
-    this.navCtrl.push(AvaliacaoConcluidaPage);
+  goToAvaliacaoPage(): void {
+    this.navCtrl.push(AvaliacaoPage);
   }
-
 }

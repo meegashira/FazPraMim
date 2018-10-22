@@ -14,6 +14,7 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { StarRatingModule } from 'ionic3-star-rating';
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -24,7 +25,10 @@ import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelanc
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { ProfileProvider } from '../providers/profile/profile';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
-
+import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
+import { HistoricoComprasPage } from '../pages/historico-compras/historico-compras';
+import { AlterarCadastroClientePage } from '../pages/alterar-cadastro-cliente/alterar-cadastro-cliente';
+import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -47,6 +51,10 @@ const firebaseConfig = {
     ResetPasswordPage,
     LoginClientePage,
     SideMenuVendedorPage,
+    AvaliacaoPage,
+    HistoricoComprasPage,
+    AlterarCadastroClientePage,
+    AvaliacaoConcluidaPage
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,7 @@ const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    StarRatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -67,6 +76,10 @@ const firebaseConfig = {
     ResetPasswordPage,
     LoginClientePage,
     SideMenuVendedorPage,
+    AvaliacaoPage,
+    HistoricoComprasPage,
+    AlterarCadastroClientePage,
+    AvaliacaoConcluidaPage
   ],
   providers: [
     StatusBar,
