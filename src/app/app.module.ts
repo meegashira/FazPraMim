@@ -26,8 +26,6 @@ import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { ProfileProvider } from '../providers/profile/profile';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
-import { HistoricoComprasPage } from '../pages/historico-compras/historico-compras';
-import { AlterarCadastroClientePage } from '../pages/alterar-cadastro-cliente/alterar-cadastro-cliente';
 import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 
 const firebaseConfig = { 
@@ -52,8 +50,6 @@ const firebaseConfig = {
     LoginClientePage,
     SideMenuVendedorPage,
     AvaliacaoPage,
-    HistoricoComprasPage,
-    AlterarCadastroClientePage,
     AvaliacaoConcluidaPage
   ],
   imports: [
@@ -77,8 +73,6 @@ const firebaseConfig = {
     LoginClientePage,
     SideMenuVendedorPage,
     AvaliacaoPage,
-    HistoricoComprasPage,
-    AlterarCadastroClientePage,
     AvaliacaoConcluidaPage
   ],
   providers: [
