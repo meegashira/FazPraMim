@@ -27,6 +27,7 @@ import { ProfileProvider } from '../providers/profile/profile';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
 import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
+import { StoreProvider } from '../providers/store/store';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -84,7 +85,8 @@ const firebaseConfig = {
     Transfer,
     Camera,
     FilePath,
-    ProfileProvider
+    ProfileProvider,
+    StoreProvider
   ]
 })
 export class AppModule {}

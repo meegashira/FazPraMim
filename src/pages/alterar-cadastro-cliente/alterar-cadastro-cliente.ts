@@ -101,6 +101,9 @@ export class AlterarCadastroClientePage {
     });
     alert.present();
   }
+
+
+  
   
   /*ionViewDidLoad() {
     this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
