@@ -9,7 +9,7 @@ import { UserProfilePage } from '../user-profile/user-profile';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage( {name: 'AvaliacaoConcluidaPage'} )
 @Component({
   selector: 'page-avaliacao-concluida',
   templateUrl: 'avaliacao-concluida.html',

@@ -7,8 +7,6 @@ import { IonicPage,
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreProvider } from '../../providers/store/store';
 
-import { UserProfilePage } from '../user-profile/user-profile';
-
 /**
  * Generated class for the CadastroLojaPage page.
  *
@@ -16,7 +14,7 @@ import { UserProfilePage } from '../user-profile/user-profile';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage( {name: 'CadastroLojaPage'} )
 @Component({
   selector: 'page-cadastro-loja',
   templateUrl: 'cadastro-loja.html',
@@ -41,17 +39,16 @@ export class CadastroLojaPage {
   }
     
 
-  signupStore(){
+  signupStore(): void {
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
-      this.storeProvider.signupStore(
+      this.storeProvider.createStore(
         this.signupForm.value.name,
         this.signupForm.value.categoria,
-        this.signupForm.value.descricao)
+        this.signupForm.value.descricao);
 
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
+      this.navCtrl.push('CadastroLojaPage');
     }
   }
 

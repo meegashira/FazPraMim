@@ -54,7 +54,7 @@ export class ProfileProvider {
       .reauthenticateWithCredential(credential)
       .then(user => {
         this.currentUser.updatePassword(newPassword).then(user => {
-          console.log('Password Changed');
+          console.log('Senha foi mudada com sucesso.');
         });
       })
       .catch(error => {

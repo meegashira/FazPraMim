@@ -23,19 +23,13 @@ export class ProfileVendedorPage {
     ) {
   }
 
-  /*goToAnuncioPage(){
-		this.navCtrl.push(AdicionarAnuncioPage); 
+  goToAnuncioPage(){
+		this.navCtrl.push("AdicionarAnuncioPage"); 
   }
   
   goToCadastroLoja(){
-		this.navCtrl.push(CadastroLojaPage); 
+		this.navCtrl.push("CadastroLojaPage"); 
 	}
-
-  logOut(): void {
-    this.authProvider.logoutUser();
-    var nav = this.app.getRootNav();
-    nav.setRoot(HomePage);
-  }*/
 
   logOut(): void {
     this.authProvider.logoutUser();
@@ -45,15 +39,15 @@ export class ProfileVendedorPage {
 
   updateEmail(): void {
     let alert: Alert = this.alertCtrl.create({
-      inputs: [{ name: 'newEmail', placeholder: 'Your new email' },
-      { name: 'password', placeholder: 'Your password', type: 'password' }],
+      inputs: [{ name: 'newEmail', placeholder: 'Seu novo email' },
+      { name: 'password', placeholder: 'Sua senha', type: 'password' }],
       buttons: [
-        { text: 'Cancel' },
-        { text: 'Save',
+        { text: 'Cancelar' },
+        { text: 'Salvar',
           handler: data => {
             this.profileProvider
               .updateEmail(data.newEmail, data.password)
-              .then(() => { console.log('Email Changed Successfully'); })
+              .then(() => { console.log('Email foi mudado com sucesso!'); })
               .catch(error => { console.log('ERROR: ' + error.message); });
         }}]
     });
@@ -63,11 +57,11 @@ export class ProfileVendedorPage {
   updatePassword(): void {
     let alert: Alert = this.alertCtrl.create({
       inputs: [
-        { name: 'newPassword', placeholder: 'New password', type: 'password' },
-        { name: 'oldPassword', placeholder: 'Old password', type: 'password' }],
+        { name: 'newPassword', placeholder: 'Nova senha', type: 'password' },
+        { name: 'oldPassword', placeholder: 'Senha antiga', type: 'password' }],
       buttons: [
-        { text: 'Cancel' },
-        { text: 'Save',
+        { text: 'Cancelar' },
+        { text: 'Salvar',
           handler: data => {
             this.profileProvider.updatePassword(
               data.newPassword,
@@ -82,25 +76,25 @@ export class ProfileVendedorPage {
 
   updateName(): void {
     const alert: Alert = this.alertCtrl.create({
-      message: "Your first name & last name",
+      message: "Seu nome e sobrenome",
       inputs: [
         {
-          name: "firstName",
-          placeholder: "Your first name",
-          value: this.userProfile.firstName
+          name: "name",
+          placeholder: "Seu nome",
+          value: this.userProfile.name
         },
         {
-          name: "lastName",
-          placeholder: "Your last name",
-          value: this.userProfile.lastName
+          name: "surname",
+          placeholder: "Seu sobrenome",
+          value: this.userProfile.surname
         }
       ],
       buttons: [
-        { text: "Cancel" },
+        { text: "Cancelar" },
         {
-          text: "Save",
+          text: "Salvar",
           handler: data => {
-            this.profileProvider.updateName(data.firstName, data.lastName);
+            this.profileProvider.updateName(data.name, data.surname);
           }
         }
       ]
@@ -109,6 +103,8 @@ export class ProfileVendedorPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfileVendedorPage');
+    this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
+      this.userProfile = userProfileSnapshot.val();
+    });
   }
 }

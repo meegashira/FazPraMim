@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-//import firebase from 'firebase';
-import { UserProfilePage } from '../../pages/user-profile/user-profile';
-import { ProfileVendedorPageModule } from '../../pages/profile-vendedor/profile-vendedor.module';
 import firebase, { User } from 'firebase/app';
+import 'firebase/database';
+
 /*
   Generated class for the StoreProvider provider.
 
@@ -12,16 +11,36 @@ import firebase, { User } from 'firebase/app';
 @Injectable()
 
 export class StoreProvider {
-  public currentUser: User;
-  public StoreSeller: firebase.database.Reference;
+  public StoreSeller: User;
+  public store: firebase.database.Reference;
 
-    constructor() {
-    }
+  constructor() {
+    firebase.auth().onAuthStateChanged( user => {
+      if(user){
+        this.StoreSeller = user;
+        this.store = firebase.database().ref(`/store`);
+        }
+    });
+  }
+
+  createStore(name: string, categoria: string, descricao: string): firebase.database.ThenableReference {    
+    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid })
+  }
+
+
+
+
+
+
+
+
+
+//Codigo antigo para referencias
 
 
 /*
   PARTE DEFINIDA PARA CRUD DE LOJA 
-*/
+
   signupStore(name: string, categoria: string, descricao: string) {    
      return  firebase.auth().onAuthStateChanged( user => {
       if(user){
@@ -39,7 +58,7 @@ export class StoreProvider {
 
   /*
     PARTE DEFINIDA PARA CRUD DE SERVICOS PRESTADOS 
-  */
+  
 
  signupProduct(nameProduto: string, valorProduto: string, tipoUnidadeProduto: string,descricaoProduto: string, CategoriaProduto:string) {    
   return  firebase.auth().onAuthStateChanged( user => {
@@ -62,7 +81,7 @@ export class StoreProvider {
   
   /*
     PARTE DEFINIDA PARA CRUD DE PRODUTOS OFERECIDOS  
-  */
+
 
 
  signupService(nameService: string, valorService: string, tipoUnidadeService: string,descricaoService: string, CategoriaService:string) {    
@@ -80,5 +99,5 @@ export class StoreProvider {
 }
 
 
-
+*/
 }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams} from 'ionic-angular';
-import { AlterarCadastroClientePage } from '../alterar-cadastro-cliente/alterar-cadastro-cliente';
-import { HistoricoComprasPage } from '../historico-compras/historico-compras';
+import { IonicPage, NavController, NavParams, App, Alert, AlertController } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { HomePage } from '../../pages/home/home';
+import { ProfileProvider } from "../../providers/profile/profile";
 
 @IonicPage({
   name: 'UserProfilePage'
@@ -10,27 +11,35 @@ import { HistoricoComprasPage } from '../historico-compras/historico-compras';
   selector: 'page-user-profile',
   templateUrl: 'user-profile.html',
 })
-
 export class UserProfilePage {
+  public userProfile: any;
+  public birthDate: string;
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {}
+    public navParams: NavParams,
+    public authProvider: AuthProvider,
+    public app: App,
+    public profileProvider: ProfileProvider,
+    public alertCtrl: AlertController,
+  ) { }
 
-    goToAlterarCadastro(): void {
-      this.navCtrl.push(AlterarCadastroClientePage);
-    }
+  logOut(): void {
+    this.authProvider.logoutUser();
+    var nav = this.app.getRootNav();
+    nav.setRoot(HomePage);
+  }
 
   updateEmail(): void {
     let alert: Alert = this.alertCtrl.create({
-      inputs: [{ name: 'newEmail', placeholder: 'Your new email' },
-      { name: 'password', placeholder: 'Your password', type: 'password' }],
+      inputs: [{ name: 'newEmail', placeholder: 'Seu novo Email' },
+      { name: 'password', placeholder: 'Sua senha', type: 'password' }],
       buttons: [
-        { text: 'Cancel' },
-        { text: 'Save',
+        { text: 'Cancelar' },
+        { text: 'Salvar',
           handler: data => {
             this.profileProvider
               .updateEmail(data.newEmail, data.password)
-              .then(() => { console.log('Email Changed Successfully'); })
+              .then(() => { console.log('Email mudado com sucesso!'); })
               .catch(error => { console.log('ERROR: ' + error.message); });
         }}]
     });
@@ -40,8 +49,8 @@ export class UserProfilePage {
   updatePassword(): void {
     let alert: Alert = this.alertCtrl.create({
       inputs: [
-        { name: 'newPassword', placeholder: 'New password', type: 'password' },
-        { name: 'oldPassword', placeholder: 'Old password', type: 'password' }],
+        { name: 'newPassword', placeholder: 'Nova senha', type: 'password' },
+        { name: 'oldPassword', placeholder: 'Senha antiga', type: 'password' }],
       buttons: [
         { text: 'Cancel' },
         { text: 'Save',
@@ -59,25 +68,25 @@ export class UserProfilePage {
 
   updateName(): void {
     const alert: Alert = this.alertCtrl.create({
-      message: "Your first name & last name",
+      message: "Seu nome e sobrenome",
       inputs: [
         {
-          name: "firstName",
-          placeholder: "Your first name",
-          value: this.userProfile.firstName
+          name: "name",
+          placeholder: "Seu primeiro nome",
+          value: this.userProfile.name
         },
         {
-          name: "lastName",
+          name: "surname",
           placeholder: "Your last name",
-          value: this.userProfile.lastName
+          value: this.userProfile.surname
         }
       ],
       buttons: [
-        { text: "Cancel" },
+        { text: "Cancelar" },
         {
-          text: "Save",
+          text: "Salvar",
           handler: data => {
-            this.profileProvider.updateName(data.firstName, data.lastName);
+            this.profileProvider.updateName(data.name, data.surname);
           }
         }
       ]
@@ -91,7 +100,4 @@ export class UserProfilePage {
     });
   }
 
-    goToHistoricoCompras(): void{
-      this.navCtrl.push(HistoricoComprasPage);
-    }
 }

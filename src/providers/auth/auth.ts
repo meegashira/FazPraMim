@@ -16,9 +16,9 @@ export class AuthProvider {
       .then( newUser => {
         firebase
         .database()
-        .ref(`/userProfile/` + userType)
+        .ref(`/userProfile`)
         .child(newUser.uid)
-        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep});
+        .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep, userType: userType});
       })
       .catch(error => {
         console.error(error);

@@ -23,15 +23,16 @@
     <h3 id="header3">Caro Vendedor</h3>
     <h4 id="header4">Preencha os dados abaixo sobre o seu negócio</h4>
 
-    <form>
+    <form [formGroup]="signupForm" (submit)="signupStore()" novalidate>
+
       <ion-item class="Fundo">
         <ion-label color="danger" fixed>Nome</ion-label>
-        <ion-input class="Texto" type="text" placeholder="Nome da Loja"></ion-input>
+        <ion-input class="Texto" type="text" placeholder="Nome da Loja" formControlName="name" [class.invalid]="!signupForm.controls.name.valid && blur"></ion-input>
       </ion-item>
 
       <ion-item class="Fundo">
           <ion-label color="danger" fixed>Categoria</ion-label>
-          <ion-select  placeholder="Selecione" class="Fundo">
+          <ion-select  placeholder="Selecione" class="Fundo" formControlName="categoria" [class.invalid]="!signupForm.controls.categoria.valid && blur">
               <ion-option>Alimentação</ion-option>
               <ion-option>Assistência Técnica</ion-option>
               <ion-option>Educação</ion-option>
@@ -46,7 +47,7 @@
 
       <ion-item class="Fundo">
           <ion-label color="danger" fixed>Descrição</ion-label>
-          <ion-textarea class="Texto"  placeholder="Descreva brevemente sua loja e os serviços oferecidos."></ion-textarea>
+          <ion-textarea class="Texto"  placeholder="Descreva brevemente sua loja e os serviços oferecidos." formControlName="descricao" [class.invalid]="!signupForm.controls.descricao.valid && blur"></ion-textarea>
       </ion-item>
       <div id=spacer2></div>
       <button id="botoes" ion-button block type="submit">
