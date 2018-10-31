@@ -18,7 +18,7 @@
     <ion-row>
       <img class="round-img" id="avatar" src="assets/imgs/no-picture_icon.png">
       <h2 id="Nome_Vendedor">Nome do Vendedor</h2>
-      <h4 id="E-mail">teste@teste.com</h4>
+      <h4 id="E-mail">teste_vendedor@teste.com</h4>
     </ion-row>
 
     <ion-row>
@@ -60,5 +60,49 @@
       </ion-col>  
     </ion-row> -->
   </ion-grid>
+
+  <ion-list>
+    <ion-list-header>
+      Informação Pessoal
+    </ion-list-header>
+    <ion-item (click)="updateName()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Nome </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.firstName || userProfile?.lastName">
+            {{userProfile?.firstName}} {{userProfile?.lastName}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" 
+          *ngIf="!userProfile?.firstName">
+            <span> Nome </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item (click)="updateEmail()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Email </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.email">
+            {{userProfile?.email}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
+            <span> Email </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    
+    <ion-item (click)="updatePassword()">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6> Senha </ion-col>
+            <ion-col col-6 class="placeholder-profile">
+              <span> Senha </span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
 
 </ion-content>

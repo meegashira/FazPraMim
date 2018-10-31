@@ -94,11 +94,10 @@ export class UserProfilePage {
     alert.present();
   }
   
-  /*ionViewDidLoad() {
+  ionViewDidLoad() {
     this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
       this.userProfile = userProfileSnapshot.val();
-      this.birthDate = userProfileSnapshot.val().birthDate;
     });
-  }*/
+  }
 
 }

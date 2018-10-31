@@ -63,7 +63,7 @@ export class MyApp {
           this.rootPage = HomePage;
           unsubscribe();
         } else {
-          this.rootPage = 'ProfileVendedorPage'; 
+          //this.rootPage = 'ProfileVendedorPage'; 
           unsubscribe();
         }
       });
