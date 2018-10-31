@@ -1,24 +1,41 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams} from 'ionic-angular';
-import { AlterarCadastroClientePage } from '../alterar-cadastro-cliente/alterar-cadastro-cliente';
-import { HistoricoComprasPage } from '../historico-compras/historico-compras';
+import { IonicPage, NavController, NavParams, App, Alert, AlertController } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { HomePage } from '../../pages/home/home';
+import { ProfileProvider } from "../../providers/profile/profile";
 
-@IonicPage({
-  name: 'UserProfilePage'
-})
+/**
+ * Generated class for the AlterarCadastroClientePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-user-profile',
-  templateUrl: 'user-profile.html',
+  selector: 'page-alterar-cadastro-cliente',
+  templateUrl: 'alterar-cadastro-cliente.html',
 })
+export class AlterarCadastroClientePage {
+  public userProfile: any;
+  public birthDate: string;
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public authProvider: AuthProvider,
+              public app: App,
+              public profileProvider: ProfileProvider,
+              public alertCtrl: AlertController,) {
+  }
 
-export class UserProfilePage {
-  constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams) {}
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AlterarCadastroClientePage');
+  }
 
-    goToAlterarCadastro(): void {
-      this.navCtrl.push(AlterarCadastroClientePage);
-    }
+  logOut(): void {
+    this.authProvider.logoutUser();
+    var nav = this.app.getRootNav();
+    nav.setRoot(HomePage);
+  }
 
   updateEmail(): void {
     let alert: Alert = this.alertCtrl.create({
@@ -84,14 +101,14 @@ export class UserProfilePage {
     });
     alert.present();
   }
+
+
   
-  ionViewDidLoad() {
+  
+  /*ionViewDidLoad() {
     this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
       this.userProfile = userProfileSnapshot.val();
+      this.birthDate = userProfileSnapshot.val().birthDate;
     });
-  }
-
-    goToHistoricoCompras(): void{
-      this.navCtrl.push(HistoricoComprasPage);
-    }
+  }*/
 }

@@ -23,8 +23,7 @@ export class SideMenuVendedorPage {
   pages: PageInterface[] = [
     {title: 'Inicio', pageName: 'ProfileVendedorPage', icon: 'home'},
     {title: 'Cadastrar Loja', pageName: 'CadastroLojaPage', icon: 'clipboard'},
-    {title: 'Adicionar Serviços', pageName: 'AdicionarAnuncioPage', icon: 'add'}
-    
+    {title: 'Adicionar Anúncios', pageName: 'AdicionarAnuncioPage', icon: 'add'}    
   ]
 
   constructor(public navCtrl: NavController, 

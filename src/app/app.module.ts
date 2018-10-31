@@ -14,6 +14,7 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { StarRatingModule } from 'ionic3-star-rating';
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -22,10 +23,11 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
-import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
-import { Geolocation } from '@ionic-native/geolocation';
-import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { ProfileProvider } from '../providers/profile/profile';
+import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
+import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
+import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
+import { StoreProvider } from '../providers/store/store';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -48,6 +50,8 @@ const firebaseConfig = {
     ResetPasswordPage,
     LoginClientePage,
     SideMenuVendedorPage,
+    AvaliacaoPage,
+    AvaliacaoConcluidaPage
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    StarRatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,6 +73,8 @@ const firebaseConfig = {
     ResetPasswordPage,
     LoginClientePage,
     SideMenuVendedorPage,
+    AvaliacaoPage,
+    AvaliacaoConcluidaPage
   ],
   providers: [
     StatusBar,
@@ -78,9 +85,8 @@ const firebaseConfig = {
     Transfer,
     Camera,
     FilePath,
-    Geolocation,
-    GoogleMapsProvider,
-    ProfileProvider
+    ProfileProvider,
+    StoreProvider
   ]
 })
 export class AppModule {}

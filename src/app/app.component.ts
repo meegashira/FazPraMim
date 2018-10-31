@@ -9,6 +9,7 @@ import { initializeApp } from 'firebase/app';
 import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { FirebaseAppProvider } from 'angularfire2';
+import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 
 @Component({
   templateUrl: 'app.html'
@@ -63,7 +64,7 @@ export class MyApp {
           this.rootPage = HomePage;
           unsubscribe();
         } else {
-          //this.rootPage = 'ProfileVendedorPage'; 
+          this.rootPage = SideMenuVendedorPage;          
           unsubscribe();
         }
       });

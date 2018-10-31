@@ -15,4 +15,18 @@
     (ionInput)="onInput($event)"
     (ionCancel)="onCancel($event)">
   </ion-searchbar>
-</ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="list"></ion-icon> &nbsp;	Ordenar Por
+      </ion-label>
+
+      <ion-select [(ngModel)]="ordem">
+        <ion-option value = "avaliacao">Avaliação</ion-option>
+        <ion-option value = "distancia">Distância</ion-option>
+        <ion-option value = "preco">Preço</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  </ion-content>

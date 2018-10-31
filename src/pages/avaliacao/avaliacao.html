@@ -1,0 +1,64 @@
+<!--
+  Generated template for the CadastroLojaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons left>
+          <button ion-button menuToggle>
+            <ion-icon side="right" name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>Formulário de Avaliação</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <img src="assets/imgs/rate_icon.png" class="center">
+    <h3 id="titulo_Cliente">Caro Cliente</h3>
+    <h4 id="h4_style2">Preencha os dados abaixo para avaliar o profissional</h4>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4 id="h4_style2">Nota</h4>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-3>
+        </ion-col>
+        <ion-col col-9>
+          <ionic3-star-rating
+            activeIcon = "ios-star"
+            defaultIcon = "ios-star-outline"
+            activeColor = "#FFFF00" 
+            defaultColor = "#f4f4f4"
+            readonly="false"
+            [rating]="5">
+          </ionic3-star-rating>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <div id="spacer2"></div>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+            <h4 id="h4_style2">Algo a acrescentar?</h4>
+            <ion-textarea class="Texto"  placeholder="Descreva mais sobre sua experiência de compra com esse vendedor."></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button id="botoes" ion-button block type="submit" (click)="goToThanksPage()">
+        Avaliar
+    </button>
+
+</ion-content>

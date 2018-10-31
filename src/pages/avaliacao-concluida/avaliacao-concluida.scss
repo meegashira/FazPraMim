@@ -1,0 +1,48 @@
+page-avaliacao-concluida {
+    ion-content{
+        background: #610B1C !important;
+        text-align: center;
+    }
+ 
+    img {
+        object-fit: resize;
+        height: auto !important;
+        width: 50%;	
+    }
+ 
+    /*classes*/
+    img.center{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+ 
+    button.center{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+ 
+    /*id's*/
+    #botoes{
+        background-color: #F5C05E;
+        font-weight:600;
+        color:#BF0C2B;
+        font-size:20px;
+    }
+    
+    #h4_style{
+        color:#F1FCFB;
+        text-align:center;
+    }
+ 
+    #spacer1{
+    width: auto !important;
+    height: 15px;
+    }
+ 
+    #spacer2{
+        width: auto !important;
+        height: 48px;
+    }
+}
