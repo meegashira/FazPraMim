@@ -46,12 +46,9 @@ export class CadastroLojaPage {
       this.storeProvider.createStore(
         this.signupForm.value.name,
         this.signupForm.value.categoria,
-        this.signupForm.value.descricao);
+        this.signupForm.value.descricao,0);
 
       this.navCtrl.push('CadastroLojaPage');
     }
   }
-
-
-
 }

@@ -9,6 +9,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
 import { CpfValidator } from '../../validators/cpf';
 import { CepValidator } from '../../validators/cep';
+
 @IonicPage({
   name: 'SignupFreelancerPage'
 })

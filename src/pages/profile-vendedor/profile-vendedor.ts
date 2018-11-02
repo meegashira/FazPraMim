@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, App, Alert, AlertController } from
 import { AuthProvider } from '../../providers/auth/auth';
 import { ProfileProvider } from "../../providers/profile/profile";
 import { HomePage } from '../../pages/home/home';
+import { AvaliacaoPage } from '../avaliacao/avaliacao';
 /*import { AdicionarAnuncioPage } from '../adicionar-anuncio/adicionar-anuncio';
 import { CadastroLojaPage } from '../cadastro-loja/cadastro-loja';*/
 
@@ -29,7 +30,11 @@ export class ProfileVendedorPage {
   
   goToCadastroLoja(){
 		this.navCtrl.push("CadastroLojaPage"); 
-	}
+  }
+  
+  goToAvaliacao(): void {
+    this.navCtrl.push(AvaliacaoPage);
+  }
 
   logOut(): void {
     this.authProvider.logoutUser();

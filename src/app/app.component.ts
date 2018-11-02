@@ -11,6 +11,7 @@ import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { FirebaseAppProvider } from 'angularfire2';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 
+
 @Component({
   templateUrl: 'app.html'
 })

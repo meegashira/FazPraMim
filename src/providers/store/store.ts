@@ -27,6 +27,10 @@ export class StoreProvider {
     return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid })
   }
 
+  getStoreList(): firebase.database.Reference {
+    return this.store;
+  }
+
 
 
 
