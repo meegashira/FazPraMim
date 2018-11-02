@@ -16,17 +16,24 @@
     (ionCancel)="onCancel($event)">
   </ion-searchbar>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>
-        <ion-icon name="list"></ion-icon> &nbsp;	Ordenar Por
-      </ion-label>
 
-      <ion-select [(ngModel)]="ordem">
-        <ion-option value = "avaliacao">Avaliação</ion-option>
-        <ion-option value = "distancia">Distância</ion-option>
-        <ion-option value = "preco">Preço</ion-option>
-      </ion-select>
+  <ion-item id="spacer2">
+    <ion-label>
+      <ion-icon name="list"></ion-icon> &nbsp;	Ordenar Por
+    </ion-label>
+
+    <ion-select [(ngModel)]="ordem" placeholder="Selecione">
+      <ion-option value = "avaliacao">Avaliação</ion-option>
+      <ion-option value = "distancia">Distância</ion-option>
+      <ion-option value = "preco">Preço</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+      <ion-item *ngFor="let event of eventList" (click)="goToEventDetail(event.id)">
+        <h2>{{event?.name}}</h2>
+        <p>Ticket: <strong>${{event?.category}}</strong></p>
+        <p>Date: <strong>{{event?.description}}</strong></p>
     </ion-item>
   </ion-list>
-  </ion-content>
+</ion-content>

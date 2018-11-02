@@ -32,7 +32,6 @@ export class StoreProvider {
     return this.avaliacao;
   }
 
-
   updateAvaliacao(avaliacao: number): Promise<any> {
     return this.store.update({ avaliacao });
   }

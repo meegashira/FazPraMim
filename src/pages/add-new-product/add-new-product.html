@@ -7,58 +7,74 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Novo Produto
+      Novo Produto ou Serviço
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <img src="assets/imgs/product-icon.png" class="center">
+  <h3 id="header3">Caro Vendedor</h3>
+  <h4 id="header4">Preencha os dados abaixo sobre o seu produto ou serviço.</h4>
 
-  <ion-list>
-    <!-- Cadastro do nome do produto-->
-    <ion-item>
-      <ion-label fixed color = "primary"><strong>Produto</strong></ion-label>
-      <ion-input placeholder="Nome do Produto"></ion-input>
-    </ion-item>
-    <!-- Cadastro do valor do produto-->
-    <ion-item>
-      <ion-label fixed color="primary"><strong>Valor</strong></ion-label>
-      <ion-input placeholder="Ex.:10,00" type = "number"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed color = "primary"><strong>por</strong></ion-label>
-      <ion-select [(ngModel)]="unidadeMedida" placeholder = "tipo">
-        <ion-option value = "un">unidade</ion-option>
-        <ion-option value = "dez">dezena</ion-option>
-        <ion-option value = "dz">dúzia</ion-option>
-        <ion-option value = "m">metro</ion-option>
-        <ion-option value = "cm">centimetro</ion-option>
-        <ion-option value = "g">grama</ion-option>
-        <ion-option value = "kg">kilograma</ion-option>
-        <!-- Se tiver outras unidades para add, só add-->
+  <form [formGroup]="signupForm">
+    <ion-item class="Fundo">
+      <ion-label color="danger" fixed>Tipo</ion-label>
+      <ion-select placeholder="Selecione" class="Fundo">
+        <ion-option value="produto">Produto</ion-option>
+        <ion-option value="servico">Serviço</ion-option>
       </ion-select>
     </ion-item>
 
-    <ion-item>
-      <ion-label stacked color = "primary"><strong>Descrição</strong></ion-label>
-      <ion-textarea>digite aqui...</ion-textarea>
+    <ion-item class="Fundo">
+      <ion-label color="danger" fixed>Nome</ion-label>
+      <ion-input class="Texto" type="text" placeholder="Insira o nome do produto"></ion-input>
     </ion-item>
-  </ion-list>
 
-  <ion-item>
-    <ion-label fixed color = "primary"><strong>Categoria</strong></ion-label>
-    <ion-select [(ngModel)]="categoria" placeholder = "tipo">
-      <ion-option value = "alimentos">Alimentos</ion-option>
-      <ion-option value = "beleza">Beleza</ion-option>
-      <ion-option value = "conserto">Conserto</ion-option>
-      <ion-option value = "educacao">Educação</ion-option>
-      <ion-option value = "limpeza">Limpeza</ion-option>
-      <ion-option value = "moda">Moda</ion-option>
-      <!-- Se tiver outras unidades para add, só add-->
-    </ion-select>
-  </ion-item>
+    <ion-item class="Fundo">
+        <ion-label color="danger" fixed>Categoria</ion-label>
+        <ion-select  placeholder="Selecione" class="Fundo">
+            <ion-option value="alimentacao">Alimentação</ion-option>
+            <ion-option value="assistencia">Assistência Técnica</ion-option>
+            <ion-option value="educacao">Educação</ion-option>
+            <ion-option value="auto">Auto</ion-option>
+            <ion-option value="beleza">Beleza & Estética</ion-option>
+            <ion-option value="construcao">Construção & Reformas</ion-option>
+            <ion-option value="design">Design & Serviços Web</ion-option>
+            <ion-option value="moda">Moda</ion-option>
+            <ion-option value="domestico">Serviços Domésticos</ion-option>
+        </ion-select>
+    </ion-item>
 
-  <button ion-button round full>Adicionar Produto</button>
+    <ion-item class="Fundo">
+      <ion-label color="danger" fixed>Preço(R$)</ion-label>
+      <ion-input class="Texto" type="text" placeholder="Ex. 10,00"></ion-input>
+    </ion-item>
+
+    <ion-item class="Fundo">
+      <ion-label color="danger" fixed>Por</ion-label>
+      <ion-select  placeholder="Selecione" class="Fundo">
+          <ion-option value = "un">Unidade</ion-option>
+          <ion-option value = "dz">Dezena</ion-option>
+          <ion-option value = "cnt">Cento</ion-option>
+          <ion-option value = "cm">Cm(Centímetro)</ion-option>
+          <ion-option value = "m">m(Metro)</ion-option>
+          <ion-option value = "cm2">cm²</ion-option>
+          <ion-option value = "m2">m²</ion-option>
+          <ion-option value = "g">Grama</ion-option>
+          <ion-option value = "kg">Kilograma</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="Fundo">
+        <ion-label color="danger" fixed>Descrição</ion-label>
+        <ion-textarea class="Texto" placeholder="Descreva brevemente seu produto."></ion-textarea>
+    </ion-item>
+    <div id=spacer2></div>
+    <button id="botoes" ion-button block type="submit">
+        Cadastrar Produto
+    </button>
+  </form>
+ 
   
 </ion-content>

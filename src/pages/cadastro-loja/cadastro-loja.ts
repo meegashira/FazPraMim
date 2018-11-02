@@ -51,7 +51,4 @@ export class CadastroLojaPage {
       this.navCtrl.push('CadastroLojaPage');
     }
   }
-
-
-
 }
