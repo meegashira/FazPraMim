@@ -100,4 +100,10 @@ export class StoreProvider {
 
 
 */
+
+
+
+signupProduct(nameProduto: string, valorProduto: string, tipoUnidadeProduto: string,descricaoProduto: string, CategoriaProduto:string) {    
+
+}
 }
