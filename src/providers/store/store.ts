@@ -13,6 +13,7 @@ import 'firebase/database';
 export class StoreProvider {
   public StoreSeller: User;
   public store: firebase.database.Reference;
+  public avaliacao: firebase.database.Reference;
 
   constructor() {
     firebase.auth().onAuthStateChanged( user => {
@@ -23,12 +24,18 @@ export class StoreProvider {
     });
   }
 
-  createStore(name: string, categoria: string, descricao: string): firebase.database.ThenableReference {    
-    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid })
+  createStore(name: string, categoria: string, descricao: string, avaliacao: number): firebase.database.ThenableReference {    
+    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid, avaliacao: avaliacao})
+  }
+
+  getAvaliacao(): firebase.database.Reference {
+    return this.avaliacao;
   }
 
 
-
+  updateAvaliacao(avaliacao: number): Promise<any> {
+    return this.store.update({ avaliacao });
+  }
 
 
 
