@@ -22,12 +22,12 @@ export interface PageInterface{
 })
 export class SideMenuClientePage {
 
-  rootPage = 'UserProfilePage';
+  rootPage = 'HomeCatClientePage';
 
   @ViewChild(Nav) nav: Nav
 
   pages: PageInterface[] = [
-    {title: 'Inicio', pageName: 'UserProfilePage', icon: 'home'},
+    {title: 'Inicio', pageName: 'HomeCatClientePage', icon: 'home'},
     {title: 'Alterar Cadastro', pageName: 'AlterarCadastroClientePage', icon: 'clipboard'},
     {title: 'Historico de Compras', pageName: 'HistoricoComprasPage', icon: 'add'} 
   ]

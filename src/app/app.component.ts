@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
-import {UserProfilePage} from '../pages/user-profile/user-profile';
 import { initializeApp } from 'firebase/app';
 import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
@@ -30,7 +29,7 @@ export class MyApp {
     this.menu.enable(true,'menu');
 
     this.pages = [
-      {title: 'Meu Perfil', component: UserProfilePage},
+      {title: 'Meu Perfil', component: 'ProfileClientePage'},
       {title: 'Categorias', component: HomeCatClientePage}
     ];  
   }

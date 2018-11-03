@@ -7,13 +7,6 @@ import { IonicPage,
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreProvider } from '../../providers/store/store';
 
-/**
- * Generated class for the CadastroLojaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage( {name: 'CadastroLojaPage'} )
 @Component({
   selector: 'page-cadastro-loja',

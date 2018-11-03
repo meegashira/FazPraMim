@@ -67,7 +67,7 @@ export class SignupFreelancerPage {
       )
       .then(() => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot('UserProfilePage');
+          this.navCtrl.setRoot('ProfileVendedorPage');
           this.navCtrl.push('EndSignUpPage');
         });
       }, (error) => {

@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams, App, Alert, AlertController } from
 import { AuthProvider } from '../../providers/auth/auth';
 import { ProfileProvider } from "../../providers/profile/profile";
 import { HomePage } from '../../pages/home/home';
-/*import { AdicionarAnuncioPage } from '../adicionar-anuncio/adicionar-anuncio';
-import { CadastroLojaPage } from '../cadastro-loja/cadastro-loja';*/
 
 @IonicPage( {name: 'ProfileVendedorPage'} ) 
 @Component({
@@ -22,14 +20,6 @@ export class ProfileVendedorPage {
     public alertCtrl: AlertController,
     ) {
   }
-
-  goToAnuncioPage(){
-		this.navCtrl.push("AdicionarAnuncioPage"); 
-  }
-  
-  goToCadastroLoja(){
-		this.navCtrl.push("CadastroLojaPage"); 
-	}
 
   logOut(): void {
     this.authProvider.logoutUser();
@@ -95,6 +85,88 @@ export class ProfileVendedorPage {
           text: "Salvar",
           handler: data => {
             this.profileProvider.updateName(data.name, data.surname);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  updateRG(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Seu RG",
+      inputs: [ { name: "rg", placeholder: "Seu RG", value: this.userProfile.rg } ],
+      buttons: [ 
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateRG(data.rg);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  updateCPF(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Seu CPF",
+      inputs: [ { name: "cpf", placeholder: "Seu CPF", value: this.userProfile.cpf } ],
+      buttons: [ 
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateCPF(data.cpf);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  updateAddress(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "CEP",
+      inputs: [
+        {
+          name: "CEP",
+          placeholder: "CEP",
+          value: this.userProfile.cep
+        },
+        {
+          name: "state",
+          placeholder: "Estado",
+          value: this.userProfile.state
+        },
+        {
+          name: "city",
+          placeholder: "Cidade",
+          value: this.userProfile.city
+        },
+        {
+          name: "neighborhood",
+          placeholder: "Bairro",
+          value: this.userProfile.neighborhood
+        },
+        {
+          name: "address",
+          placeholder: "Endereço",
+          value: this.userProfile.address
+        },
+        {
+          name: "complement",
+          placeholder: "Complemento",
+          value: this.userProfile.complement
+        }
+      ],
+      buttons: [
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateAddress(data.cep, data.state, data.city, data.neighborhood, data.address, data.complement);
           }
         }
       ]

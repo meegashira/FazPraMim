@@ -39,18 +39,18 @@ export class AddNewProductPage {
                 
 */
 
-  signupProduto(){
+  /*signupProduto(){
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
-      this.storeProductProvider.signupProduct(
+      this.storeProductProvider.createProduct(
         this.signupForm.value.nameProduto,
         this.signupForm.value.valorProduto,
         this.signupForm.value.tipoUnidadeProduto,
         this.signupForm.value.descricaoProduto,
         this.signupForm.value.CategoriaProduto 
       )
-      /*
+      
       .then(() => {
         this.loading.dismiss().then( () => {
           this.navCtrl.setRoot('UserProfilePage');
@@ -72,7 +72,7 @@ export class AddNewProductPage {
       });
       this.loading = this.loadingCtrl.create();
       this.loading.present();
-    }*/
+    }
   } 
-}
+}*/
 }
