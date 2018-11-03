@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, App, Alert, AlertController } from
 import { AuthProvider } from '../../providers/auth/auth';
 import { ProfileProvider } from "../../providers/profile/profile";
 import { HomePage } from '../../pages/home/home';
+import { AvaliacaoPage } from '../avaliacao/avaliacao';
 
 @IonicPage( {name: 'ProfileVendedorPage'} ) 
 @Component({
@@ -20,6 +21,14 @@ export class ProfileVendedorPage {
     public alertCtrl: AlertController,
     ) {
   }
+
+  goToAnuncioPage(){
+		this.navCtrl.push("AdicionarAnuncioPage"); 
+  }
+  
+  goToCadastroLoja(){
+		this.navCtrl.push("CadastroLojaPage"); 
+	}
 
   logOut(): void {
     this.authProvider.logoutUser();

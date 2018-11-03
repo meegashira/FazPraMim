@@ -13,6 +13,7 @@ import { StoreProvider } from '../../providers/store/store';
   selector: 'page-add-new-product',
   templateUrl: 'add-new-product.html',
 })
+
 export class AddNewProductPage {
   public signupForm: FormGroup;
   public loading: Loading;

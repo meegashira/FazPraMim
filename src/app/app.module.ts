@@ -15,6 +15,8 @@ import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { StarRatingModule } from 'ionic3-star-rating';
+import { AngularFireDatabase, AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
+
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -86,6 +88,7 @@ const firebaseConfig = {
     Camera,
     FilePath,
     ProfileProvider,
+    AngularFireDatabaseProvider,
     StoreProvider
   ]
 })
