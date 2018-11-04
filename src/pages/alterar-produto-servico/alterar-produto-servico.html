@@ -7,101 +7,108 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>alterar-produto-servico</ion-title>
+    <ion-title>Alteração de produto ou serviço</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <img src="assets/imgs/product-icon.png" class="center">
+    <h3 id="header3">Caro Vendedor</h3>
+    <h4 id="header4">Altere os dados que desejar do seu produto ou serviço.</h4>
+
   <ion-list>
 
-    <ion-list-header>
-      Product/Service Information
-    </ion-list-header>
-    
     <!--Exibirá o Nome do produto/servico (IMUTAVEL)-->
-    <ion-item>
+    <ion-item class="Fundo">
       <ion-grid>
         <ion-row>
-            <ion-col col-6> Name </ion-col>
-            <ion-col col-6 *ngIf="">
-                <!--Importar o nome do produto/serviço do BD-->
-            </ion-col>
+          <ion-col col-6> Nome </ion-col>
+          <ion-col col-6 *ngIf="">
+            <!--Importar o nome do produto/serviço do BD-->
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-    
-      <!--Exibirá o TIPO produto OU servico (IMUTAVEL)-->
-      <ion-item>
-          <ion-grid>
-            <ion-row>
-                <ion-col col-6> Type </ion-col>
-                <ion-col col-6 *ngIf="">
-                    <!--Importar o tipo produto ou serviço do BD-->
-                </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item> 
-      
-      <!--Exibirá o TIPO produto OU servico (IMUTAVEL)-->
-      <ion-item>
-          <ion-grid>
-            <ion-row>
-                <ion-col col-6> Category </ion-col>
-                <ion-col col-6 *ngIf="">
-                    <!--Importar a categoria do BD-->
-                </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item> 
 
-  <!--Exibirá o valor do produto/serviço (MUTAVEL)-->
-    <ion-item (click)="">
+    <!--Exibirá o TIPO produto OU servico (IMUTAVEL)-->
+    <ion-item class="Fundo">
       <ion-grid>
         <ion-row>
-          <ion-col col-6> Price </ion-col>
+          <ion-col col-6> Tipo </ion-col>
           <ion-col col-6 *ngIf="">
-            <!--Importar o preço do BD-->
+            <!--Importar o tipo produto ou serviço do BD-->
           </ion-col>
-          <ion-col col-6 class="" 
-          *ngIf="">
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <!--Exibirá a categoria produto OU servico (IMUTAVEL)-->
+    <ion-item class="Fundo">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Categoria </ion-col>
+          <ion-col col-6 *ngIf="">
+            <!--Importar a categoria do BD-->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <!--Exibirá o valor do produto/serviço (MUTAVEL)-->
+    <ion-item class="Fundo" (click)="updatePrice()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Preçp </ion-col>
+          <ion-col col-6 *ngIf="">
+
+          </ion-col>
+          <ion-col col-6 class="" *ngIf="">
             <span> Tap here to edit. </span>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
 
-      <!--Exibirá a unidade de medida do produto/serviço (MUTAVEL)-->
-      <ion-item (click)="">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-6> Unidade de medida </ion-col>
-              <ion-col col-6 *ngIf="">
-                <!--Importar o preço do BD-->
-              </ion-col>
-              <ion-col col-6 class="" 
-              *ngIf="">
-                <span> Tap here to edit. </span>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
+    <!--Exibirá a unidade de medida do produto/serviço (MUTAVEL)-->
+    <ion-item class="Fundo" (click)="updateMedida()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Medida </ion-col>
+          <ion-col col-6 *ngIf="">
 
-          <!--Exibirá a descrição do produto/serviço (MUTAVEL)-->
-    <ion-item (click)="">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6> Description </ion-col>
-            <ion-col col-6 *ngIf="">
-              <!--Importar o preço do BD-->
-            </ion-col>
-            <ion-col col-6 class="" 
-            *ngIf="">
-              <span> Tap here to edit. </span>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-    
+          </ion-col>
+          <ion-col col-6 class="" *ngIf="">
+            <span> Tap here to edit. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
 
+    <!--Exibirá a descrição do produto/serviço (MUTAVEL)-->
+    <ion-item class="Fundo" (click)="updateDescription()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Descrição </ion-col>
+          <ion-col col-6 *ngIf="">
+            
+          </ion-col>
+          <ion-col col-6 class="" *ngIf="">
+            <span> Tap here to edit. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>
+
+  <div id=spacer2></div>
+    <button id="botoes" ion-button block type="submit">
+        Enviar Alterações
+    </button>
+   <button id="botoes" ion-button block type="cancel"> <!--A função cancela pode somente trocar de página-->
+       Cancelar Alterações
+   </button>
+
+</ion-content>

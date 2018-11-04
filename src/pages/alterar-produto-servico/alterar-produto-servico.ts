@@ -21,5 +21,16 @@ export class AlterarProdutoServicoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlterarProdutoServicoPage');
   }
+  updatePrice(): void {
+    
+  }
 
+  updateMedida(): void{
+
+  }
+
+  updateDescription(): void{
+
+    
+  }
 }
