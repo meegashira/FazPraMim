@@ -46,7 +46,7 @@ export class LoginPage {
         this.loginForm.value.password)
       .then( authData => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot(SideMenuVendedorPage);
+          //this.navCtrl.setRoot(SideMenuVendedorPage);
           //this.navCtrl.setRoot(ProfileVendedorPage);
         });
       }, error => {

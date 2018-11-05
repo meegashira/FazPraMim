@@ -15,7 +15,9 @@ export interface PageInterface{
   icon: string;
 }
 
-@IonicPage()
+@IonicPage({
+  name: 'SideMenuClientePage'
+})
 @Component({
   selector: 'page-side-menu-cliente',
   templateUrl: 'side-menu-cliente.html',

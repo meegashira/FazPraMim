@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, MenuController } from 'ionic-angular';
+import { Platform, Nav, MenuController, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -21,6 +21,7 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(
+    public navCtrl: NavController,
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen, 
@@ -60,13 +61,24 @@ export class MyApp {
       });
       
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+        var UserRef = firebase.database().ref(`userProfile/${user.uid}`);
         if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
-        } else {
-          this.rootPage = SideMenuVendedorPage;          
-          unsubscribe();
-        }
+        } 
+        UserRef.on("value", function(snapshot) {
+          console.log(snapshot.val().userType);
+          if (snapshot.val().userType as String == "Seller") {
+            this.navCtrl.rootPage = 'SideMenuVendedorPage';          
+            unsubscribe();
+          }
+          else if (snapshot.val().userType as String == "Client") {
+            this.navCtrl.rootPage = 'SideMenuClientePage';          
+            unsubscribe();
+          }
+        }, function (errorObject) {
+          console.log("The read failed: " + errorObject.code);
+        });
       });
 
     });
