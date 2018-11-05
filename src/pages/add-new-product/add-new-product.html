@@ -17,7 +17,7 @@
   <h3 id="header3">Caro Vendedor</h3>
   <h4 id="header4">Preencha os dados abaixo sobre o seu produto ou serviço.</h4>
 
-  <form [formGroup]="signupForm">
+  <form [formGroup]="signupForm" (submit)="signupAnuncio()" novalidate>
     <ion-item class="Fundo">
       <ion-label color="danger" fixed>Tipo</ion-label>
       <ion-select placeholder="Selecione" class="Fundo">
@@ -58,6 +58,7 @@
           <ion-option value = "dz">Dezena</ion-option>
           <ion-option value = "cnt">Cento</ion-option>
           <ion-option value = "cm">Cm(Centímetro)</ion-option>
+          <ion-option value = "m">Hora</ion-option>
           <ion-option value = "m">m(Metro)</ion-option>
           <ion-option value = "cm2">cm²</ion-option>
           <ion-option value = "m2">m²</ion-option>
@@ -72,7 +73,7 @@
     </ion-item>
     <div id=spacer2></div>
     <button id="botoes" ion-button block type="submit">
-        Cadastrar Produto
+        Cadastrar Anuncio
     </button>
   </form>
  

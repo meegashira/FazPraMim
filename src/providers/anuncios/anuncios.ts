@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import firebase, { User } from 'firebase/app';
 import 'firebase/database';
 
@@ -12,21 +10,18 @@ import 'firebase/database';
 */
 @Injectable()
 export class AnunciosProvider {
-
-
   public AnuncioStore: User;
-  public store: firebase.database.Reference;
-
+  public anuncio: firebase.database.Reference;
   constructor() {
     firebase.auth().onAuthStateChanged( user => {
       if(user){
         this.AnuncioStore = user;
-        this.store = firebase.database().ref(`/anuncio`);
+        this.anuncio = firebase.database().ref(`/anuncio`);
         }
     });
   }
 
-  createAnuncio(name: string, categoria: string, descricao: string, tipo:string): firebase.database.ThenableReference {    
-    return this.store.push({name: name, category: categoria, description: descricao, type:tipo , seller: this.AnuncioStore.uid })
+  createAnuncio(tipoAnuncio:string, NomeAnuncio: string, CategoriaAnuncio: string, ValorAnuncio:string, UnidadeAnuncio:string, DescricaoAnuncio: string): firebase.database.ThenableReference {    
+    return this.anuncio.push({type:tipoAnuncio, name: NomeAnuncio, category: CategoriaAnuncio,price:ValorAnuncio,unidade:UnidadeAnuncio, description: DescricaoAnuncio , seller: this.AnuncioStore.uid })
   }
 }
