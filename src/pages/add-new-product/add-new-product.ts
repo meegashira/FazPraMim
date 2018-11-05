@@ -14,7 +14,7 @@ import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 })
 
 export class AddNewProductPage {
-  public testeAnuncio: FormGroup;
+  public createAnuncioForm: FormGroup;
   public loading: Loading;
   constructor(
     public navCtrl: NavController,
@@ -23,7 +23,7 @@ export class AddNewProductPage {
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController
   ) {
-    this.testeAnuncio = formBuilder.group({
+    this.createAnuncioForm = formBuilder.group({
       tipoAnuncio: ['', Validators.required],
       NomeAnuncio: ['', Validators.required],
       CategoriaAnuncio: ['', Validators.required],
@@ -34,18 +34,18 @@ export class AddNewProductPage {
     });
   }
   
-  signupAnuncio(): void{
-    if (!this.testeAnuncio.valid){
-      console.log(this.testeAnuncio.value);
+  createAnuncio(): void{
+    if (!this.createAnuncioForm.valid){
+      console.log(this.createAnuncioForm.value);
     } else {
       this.anuncioProvider.createAnuncio(
-        this.testeAnuncio.value.tipoAnuncio,
+        this.createAnuncioForm.value.tipoAnuncio,
 
-        this.testeAnuncio.value.NomeAnuncio,
-        this.testeAnuncio.value.CategoriaAnuncio,
-        this.testeAnuncio.value.ValorAnuncio,
-        this.testeAnuncio.value.UnidadeAnuncio,
-        this.testeAnuncio.value.DescricaoAnuncio);
+        this.createAnuncioForm.value.NomeAnuncio,
+        this.createAnuncioForm.value.CategoriaAnuncio,
+        this.createAnuncioForm.value.ValorAnuncio,
+        this.createAnuncioForm.value.UnidadeAnuncio,
+        this.createAnuncioForm.value.DescricaoAnuncio);
 
       this.navCtrl.push('ProfileVendedorPage');
     }

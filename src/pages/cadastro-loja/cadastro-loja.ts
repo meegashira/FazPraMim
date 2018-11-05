@@ -14,7 +14,7 @@ import { StoreProvider } from '../../providers/store/store';
 })
 export class CadastroLojaPage {
 
-  public signupForm: FormGroup;
+  public createStoreForm: FormGroup;
   public loading: Loading;
   constructor(
     public navCtrl: NavController,
@@ -24,7 +24,7 @@ export class CadastroLojaPage {
     public alertCtrl: AlertController
   ) {
 
-    this.signupForm = formBuilder.group({
+    this.createStoreForm = formBuilder.group({
       name: ['', Validators.required],
       categoria: ['', Validators.required],
       descricao: ['', Validators.required]
@@ -32,14 +32,14 @@ export class CadastroLojaPage {
   }
     
 
-  signupStore(): void {
-    if (!this.signupForm.valid){
-      console.log(this.signupForm.value);
+  createStore(): void {
+    if (!this.createStoreForm.valid){
+      console.log(this.createStoreForm.value);
     } else {
       this.storeProvider.createStore(
-        this.signupForm.value.name,
-        this.signupForm.value.categoria,
-        this.signupForm.value.descricao);
+        this.createStoreForm.value.name,
+        this.createStoreForm.value.categoria,
+        this.createStoreForm.value.descricao);
 
       this.navCtrl.push('CadastroLojaPage');
     }
