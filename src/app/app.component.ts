@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, MenuController, NavController } from 'ionic-angular';
+import { Platform, Nav, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -21,7 +21,6 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(
-    public navCtrl: NavController,
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen, 
@@ -40,12 +39,6 @@ export class MyApp {
       this.nav.setRoot(page.component);
     }
 
-    /*platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();*/
-
       initializeApp(){
         this.platform.ready().then(() =>{
           this.statusBar.styleDefault();
@@ -62,23 +55,24 @@ export class MyApp {
       
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         var UserRef = firebase.database().ref(`userProfile/${user.uid}`);
-        if (!user) {
+        this.rootPage = HomePage;
+        /*if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
         } 
         UserRef.on("value", function(snapshot) {
           console.log(snapshot.val().userType);
           if (snapshot.val().userType as String == "Seller") {
-            this.navCtrl.rootPage = 'SideMenuVendedorPage';          
+            this.nav.rootPage = 'SideMenuVendedorPage';          
             unsubscribe();
           }
           else if (snapshot.val().userType as String == "Client") {
-            this.navCtrl.rootPage = 'SideMenuClientePage';          
+            this.nav.rootPage = 'SideMenuClientePage';          
             unsubscribe();
           }
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
-        });
+        });*/
       });
 
     });
