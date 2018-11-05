@@ -30,6 +30,7 @@ import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vend
 import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
 import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 import { StoreProvider } from '../providers/store/store';
+import { AnunciosProvider } from '../providers/anuncios/anuncios';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -88,8 +89,13 @@ const firebaseConfig = {
     Camera,
     FilePath,
     ProfileProvider,
+<<<<<<< Updated upstream
     AngularFireDatabaseProvider,
     StoreProvider
+=======
+    StoreProvider,
+    AnunciosProvider
+>>>>>>> Stashed changes
   ]
 })
 export class AppModule {}

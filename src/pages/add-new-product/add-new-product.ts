@@ -40,7 +40,7 @@ export class AddNewProductPage {
                 
 */
 
-  signupProduto(){
+/*  signupProduto(){
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
@@ -74,6 +74,4 @@ export class AddNewProductPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
     }*/
-  } 
-}
 }

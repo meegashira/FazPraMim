@@ -51,7 +51,7 @@ export class StoreProvider {
      return  firebase.auth().onAuthStateChanged( user => {
       if(user){
         this.currentUser = user;
-        this.StoreSeller = firebase.database().ref(`/userProfile/Seller/${user.uid}`);
+        this.StoreSeller = firebase.database().ref(`userProfile/Seller/${user.uid}`);
       }
     //var StoreRef= firebase.database().ref('userProfile/Seller/Store ');
     //var UserStoreRef=StoreRef.child(user.uid);
@@ -59,7 +59,6 @@ export class StoreProvider {
     Store.set({name: name, categoria: categoria, descricao: descricao });
   })
   }
-
 
 
   /*
@@ -70,7 +69,7 @@ export class StoreProvider {
   return  firebase.auth().onAuthStateChanged( user => {
    if(user){
      this.currentUser = user;
-     this.StoreSeller = firebase.database().ref(`/userProfile/Seller/${user.uid}`);
+     this.StoreSeller = firebase.database().ref(`userProfile/Seller/${user.uid}`);
    }
  //var StoreRef= firebase.database().ref('userProfile/Seller/Store ');
  //var UserStoreRef=StoreRef.child(user.uid);
