@@ -14,7 +14,7 @@ import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 })
 
 export class AddNewProductPage {
-  public signupForm: FormGroup;
+  public testeAnuncio: FormGroup;
   public loading: Loading;
   constructor(
     public navCtrl: NavController,
@@ -23,7 +23,7 @@ export class AddNewProductPage {
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController
   ) {
-    this.signupForm = formBuilder.group({
+    this.testeAnuncio = formBuilder.group({
       tipoAnuncio: ['', Validators.required],
       NomeAnuncio: ['', Validators.required],
       CategoriaAnuncio: ['', Validators.required],
@@ -33,68 +33,21 @@ export class AddNewProductPage {
 
     });
   }
-<<<<<<< HEAD
+  
   signupAnuncio(): void{
-    if (!this.signupForm.valid){
-      console.log(this.signupForm.value);
+    if (!this.testeAnuncio.valid){
+      console.log(this.testeAnuncio.value);
     } else {
       this.anuncioProvider.createAnuncio(
-        this.signupForm.value.tipoAnuncio,
+        this.testeAnuncio.value.tipoAnuncio,
 
-        this.signupForm.value.NomeAnuncio,
-        this.signupForm.value.CategoriaAnuncio,
-        this.signupForm.value.ValorAnuncio,
-        this.signupForm.value.UnidadeAnuncio,
-        this.signupForm.value.DescricaoAnuncio);
+        this.testeAnuncio.value.NomeAnuncio,
+        this.testeAnuncio.value.CategoriaAnuncio,
+        this.testeAnuncio.value.ValorAnuncio,
+        this.testeAnuncio.value.UnidadeAnuncio,
+        this.testeAnuncio.value.DescricaoAnuncio);
 
       this.navCtrl.push('ProfileVendedorPage');
     }
   }
  }
-=======
- /*
-                document.getElementById('address').value="...";
-                document.getElementById('neighborhood').value="...";
-                document.getElementById('city').value="...";
-                document.getElementById('state').value="...";
-                
-*/
-
-  /*signupProduto(){
-    if (!this.signupForm.valid){
-      console.log(this.signupForm.value);
-    } else {
-      this.storeProductProvider.createProduct(
-        this.signupForm.value.nameProduto,
-        this.signupForm.value.valorProduto,
-        this.signupForm.value.tipoUnidadeProduto,
-        this.signupForm.value.descricaoProduto,
-        this.signupForm.value.CategoriaProduto 
-      )
-      
-      .then(() => {
-        this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot('UserProfilePage');
-          this.navCtrl.push('EndSignUpPage');
-        });
-      }, (error) => {
-        this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
-              }
-            ]
-          });
-          alert.present();
-        });
-      });
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
-    }
-  } 
-}*/
-}
->>>>>>> master
