@@ -17,11 +17,11 @@
   <h3 id="header3">Caro Vendedor</h3>
   <h4 id="header4">Preencha os dados abaixo sobre o seu produto ou serviço.</h4>
     
-  <form [formGroup]="signupForm" (submit)="signupStore()" novalidate>
+  <form [formGroup]="createAnuncioForm" (submit)="createAnuncio()" novalidate>
 
     <ion-item class="Fundo">
       <ion-label color="danger" fixed>Tipo</ion-label>
-      <ion-select placeholder="Selecione" class="Fundo">
+      <ion-select placeholder="Selecione" class="Fundo" formControlName="tipoAnuncio">
         <ion-option value="produto">Produto</ion-option>
         <ion-option value="servico">Serviço</ion-option>
       </ion-select>
@@ -29,12 +29,12 @@
 
     <ion-item class="Fundo">
       <ion-label color="danger" fixed>Nome</ion-label>
-      <ion-input class="Texto" type="text" placeholder="Insira o nome do produto"></ion-input>
+      <ion-input class="Texto" type="text" placeholder="Insira o nome do produto" formControlName="NomeAnuncio"></ion-input>
     </ion-item>
 
     <ion-item class="Fundo">
         <ion-label color="danger" fixed>Categoria</ion-label>
-        <ion-select  placeholder="Selecione" class="Fundo">
+        <ion-select  placeholder="Selecione" class="Fundo" formControlName="CategoriaAnuncio">
             <ion-option value="alimentacao">Alimentação</ion-option>
             <ion-option value="assistencia">Assistência Técnica</ion-option>
             <ion-option value="educacao">Educação</ion-option>
@@ -49,12 +49,12 @@
 
     <ion-item class="Fundo">
       <ion-label color="danger" fixed>Preço(R$)</ion-label>
-      <ion-input class="Texto" type="text" placeholder="Ex. 10,00"></ion-input>
+      <ion-input class="Texto" type="text" placeholder="Ex. 10,00" formControlName="ValorAnuncio"></ion-input>
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="danger" fixed>Por</ion-label>
-      <ion-select  placeholder="Selecione" class="Fundo">
+      <ion-select  placeholder="Selecione" class="Fundo" formControlName="UnidadeAnuncio">
           <ion-option value = "un">Unidade</ion-option>
           <ion-option value = "dz">Dezena</ion-option>
           <ion-option value = "cnt">Cento</ion-option>
@@ -70,10 +70,10 @@
 
     <ion-item class="Fundo">
         <ion-label color="danger" fixed>Descrição</ion-label>
-        <ion-textarea class="Texto" placeholder="Descreva brevemente seu produto."></ion-textarea>
+        <ion-textarea class="Texto" placeholder="Descreva brevemente seu produto."formControlName="DescricaoAnuncio"></ion-textarea>
     </ion-item>
     <div id=spacer2></div>
-    <button id="botoes" ion-button block type="submit" (click)="signupAnuncio()">
+    <button id="botoes" ion-button block type="submit" >
         Cadastrar Anuncio
     </button>
     </form>
