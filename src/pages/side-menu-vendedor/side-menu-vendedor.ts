@@ -22,7 +22,7 @@ export class SideMenuVendedorPage {
 
   pages: PageInterface[] = [
     {title: 'Inicio', pageName: 'ProfileVendedorPage', icon: 'home'},
-    {title: 'Cadastrar Loja', pageName: 'CadastroLojaPage', icon: 'clipboard'},
+    {title: 'Gerenciar Lojas', pageName: 'StoreListPage', icon: 'clipboard'},
     {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'}    
   ]
 

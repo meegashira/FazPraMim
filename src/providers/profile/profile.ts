@@ -25,6 +25,17 @@ export class ProfileProvider {
     return this.userProfile.update({ name, surname });
   }
 
+  updateRG(rg: string): Promise<any> {
+    return this.userProfile.update({ rg });
+  }
+
+  updateCPF(cpf: string): Promise<any> {
+    return this.userProfile.update({ cpf });
+  }
+  updateAddress(cep: string, state: string, city: string, neighborhood: string, address: string, complement: string): Promise<any> {
+    return this.userProfile.update({ cep, state, city, neighborhood, address, complement });
+  }
+
   updateEmail(newEmail: string, password: string): Promise<any> {
     const credential: AuthCredential = firebase.auth.
       EmailAuthProvider.credential(

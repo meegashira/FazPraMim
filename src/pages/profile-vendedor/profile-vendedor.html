@@ -64,9 +64,11 @@
   </ion-grid>
 
   <ion-list>
+
     <ion-list-header>
       Informação Pessoal
     </ion-list-header>
+
     <ion-item (click)="updateName()">
       <ion-grid>
         <ion-row>
@@ -80,6 +82,49 @@
         </ion-row>
       </ion-grid>
     </ion-item>
+
+    <ion-item (click)="updateRG()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> RG </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.rg">
+            {{userProfile?.rg}} 
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.rg">
+            <span> RG </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateCPF()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> CPF </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.cpf">
+            {{userProfile?.cpf}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.cpf">
+            <span> CPF </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateAddress()">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6> Endereço </ion-col>
+            <ion-col col-6 *ngIf="userProfile?.address">
+              {{userProfile?.address}} {{userProfile?.complement}}
+            </ion-col>
+            <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.address">
+              <span> Endereço </span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
     <ion-item (click)="updateEmail()">
       <ion-grid>
         <ion-row>

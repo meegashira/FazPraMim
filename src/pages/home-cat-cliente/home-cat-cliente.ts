@@ -10,7 +10,7 @@ import { SearchResultPage } from '../search-result/search-result';
  */
 
 @IonicPage({
-  name: 'Home_Cat_Cliente'
+  name: 'HomeCatClientePage'
 })
 @Component({
   selector: 'page-home-cat-cliente',
