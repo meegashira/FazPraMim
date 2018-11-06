@@ -30,10 +30,11 @@
   </ion-item>
 
   <ion-list>
-      <ion-item *ngFor="let event of eventList" (click)="goToEventDetail(event.id)">
-        <h2>{{event?.name}}</h2>
-        <p>Ticket: <strong>${{event?.category}}</strong></p>
-        <p>Date: <strong>{{event?.description}}</strong></p>
-    </ion-item>
+    <ion-item-sliding *ngFor="let store of stores | async">
+      <ion-item>
+          <h1>{{ store.name}}</h1>
+          <p>{{ store.description }}</p>
+      </ion-item>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
