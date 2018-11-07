@@ -20,7 +20,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
-import { LoginPage } from '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
@@ -48,13 +47,11 @@ const firebaseConfig = {
     HomePage,
     HomeClientePage,
     HomeVendedorPage,
-    LoginPage,
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
     SideMenuClientePage,
-    SideMenuVendedorPage,
     AvaliacaoPage,
     AvaliacaoConcluidaPage,
     SideMenuContentComponent,
@@ -74,13 +71,11 @@ const firebaseConfig = {
     HomePage,
     HomeClientePage,
     HomeVendedorPage,
-    LoginPage,
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
     SideMenuClientePage,
-    SideMenuVendedorPage,
     AvaliacaoPage,
     AvaliacaoConcluidaPage
      ],
@@ -94,14 +89,11 @@ const firebaseConfig = {
     Camera,
     FilePath,
     ProfileProvider,
-    //AngularFireDatabaseProvider,
     StoreProvider,
     AnunciosProvider,
   ]
 })
 export class AppModule {
-  // Make the injector to be available in the entire module
-  // so we can use it in the custom decorator
   static injector: Injector;
 
   constructor(injector: Injector) {
