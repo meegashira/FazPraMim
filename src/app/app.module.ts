@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -15,7 +15,7 @@ import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { StarRatingModule } from 'ionic3-star-rating';
-import { AngularFireDatabase, AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
+import { AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
 
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
@@ -26,12 +26,10 @@ import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { ProfileProvider } from '../providers/profile/profile';
-import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
 import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 import { StoreProvider } from '../providers/store/store';
 import { AnunciosProvider } from '../providers/anuncios/anuncios';
-import { AddNewProductPage } from '../pages/add-new-product/add-new-product';
 
 const firebaseConfig = { 
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -53,7 +51,6 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    SideMenuVendedorPage,
     AvaliacaoPage,
     AvaliacaoConcluidaPage
   ],
@@ -76,7 +73,6 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    SideMenuVendedorPage,
     AvaliacaoPage,
     AvaliacaoConcluidaPage
      ],
