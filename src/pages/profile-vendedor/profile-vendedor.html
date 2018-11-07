@@ -27,23 +27,23 @@
     </ion-row>
     <button id="botoes" ion-button round class="button-assertive center" (click)="goToAvaliacao()">Avaliar</button>
 
-  
+
    <!-- <ion-row>
       <ion-col col-6>
         <button ion-button round class="default" id="botoes" ion-button block (click)="goToCadastroLoja()">
           <div>
-            <img id="button_icon1" src="assets/imgs/add-shop_icon.png"> 
-            <p>Cadastrar loja</p>  
-          </div>          
+            <img id="button_icon1" src="assets/imgs/add-shop_icon.png">
+            <p>Cadastrar loja</p>
+          </div>
         </button>
       </ion-col>
 
         <ion-col col-6>
             <button ion-button round class="default" id="botoes" ion-button block (click)="goToAnuncioPage()">
               <div>
-                <img id="button_icon2" src="assets/imgs/add-service_icon.png"> 
-                <p>Adicionar Serviços</p>  
-              </div>          
+                <img id="button_icon2" src="assets/imgs/add-service_icon.png">
+                <p>Adicionar Serviços</p>
+              </div>
             </button>
         </ion-col>
     </ion-row>
@@ -55,11 +55,11 @@
       <ion-col col-8>
           <button ion-button round class="default center" id="botoes" ion-button block (click)="logOut()">
               <div>
-                <img id="button_icon3" src="assets/imgs/logout.png"> 
-                <p>Sair</p>  
-              </div>          
+                <img id="button_icon3" src="assets/imgs/logout.png">
+                <p>Sair</p>
+              </div>
           </button>
-      </ion-col>  
+      </ion-col>
     </ion-row> -->
   </ion-grid>
 
@@ -88,7 +88,7 @@
         <ion-row>
           <ion-col col-6> RG </ion-col>
           <ion-col col-6 *ngIf="userProfile?.rg">
-            {{userProfile?.rg}} 
+            {{userProfile?.rg}}
           </ion-col>
           <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.rg">
             <span> RG </span>
@@ -138,7 +138,7 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-    
+
     <ion-item (click)="updatePassword()">
         <ion-grid>
           <ion-row>

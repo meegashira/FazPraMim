@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
+import { ErrorHandler, NgModule, Injector } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -30,10 +30,10 @@ import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vend
 import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
 import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 import { StoreProvider } from '../providers/store/store';
-import { AnunciosProvider } from '../providers/anuncios/anuncios';
-import { AddNewProductPage } from '../pages/add-new-product/add-new-product';
+import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 
-const firebaseConfig = { 
+const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
   authDomain: "fazpramim-4bbe8.firebaseapp.com",
   databaseURL: "https://fazpramim-4bbe8.firebaseio.com",
@@ -53,9 +53,11 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
+    SideMenuClientePage,
     SideMenuVendedorPage,
     AvaliacaoPage,
-    AvaliacaoConcluidaPage
+    AvaliacaoConcluidaPage,
+    SideMenuContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +79,7 @@ const firebaseConfig = {
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
+    SideMenuClientePage,
     SideMenuVendedorPage,
     AvaliacaoPage,
     AvaliacaoConcluidaPage
@@ -96,4 +99,12 @@ const firebaseConfig = {
     AnunciosProvider,
   ]
 })
-export class AppModule {}
+export class AppModule {
+  // Make the injector to be available in the entire module
+  // so we can use it in the custom decorator
+  static injector: Injector;
+
+  constructor(injector: Injector) {
+    AppModule.injector = injector;
+  }
+}

@@ -9,6 +9,7 @@ import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { FirebaseAppProvider } from 'angularfire2';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
+import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 
 
 @Component({
@@ -21,9 +22,9 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(
-    public platform: Platform, 
-    public statusBar: StatusBar, 
-    public splashScreen: SplashScreen, 
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
     public menu: MenuController,
   ) {
     this.initializeApp();
@@ -32,7 +33,7 @@ export class MyApp {
     this.pages = [
       {title: 'Meu Perfil', component: 'ProfileClientePage'},
       {title: 'Categorias', component: HomeCatClientePage}
-    ];  
+    ];
   }
 
     openPage(page){
@@ -52,7 +53,7 @@ export class MyApp {
         storageBucket: "fazpramim-4bbe8.appspot.com",
         messagingSenderId: "639256908870"
       });
-      
+
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         var UserRef = firebase.database().ref(`userProfile/${user.uid}`);
         this.rootPage = HomePage;

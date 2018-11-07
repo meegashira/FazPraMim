@@ -10,6 +10,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { EmailValidator } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth/auth';
 import { ResetPasswordPage } from '../../pages/reset-password/reset-password';
+import { SideMenuClientePage } from '../side-menu-cliente/side-menu-cliente';
 
 @IonicPage({
   name: 'LoginClientePage'
@@ -49,7 +50,8 @@ export class LoginClientePage {
         this.loginForm.value.password)
       .then( authData => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot('HomeCatClientePage');
+          //this.navCtrl.setRoot('HomeCatClientePage');
+          this.navCtrl.setRoot(SideMenuClientePage);
         });
       }, error => {
         this.loading.dismiss().then( () => {
@@ -69,7 +71,7 @@ export class LoginClientePage {
       this.loading.present();
     }
   }
-  
+
   goToResetPassword(): void {
     this.navCtrl.push(ResetPasswordPage);
   }
