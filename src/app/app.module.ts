@@ -32,6 +32,7 @@ import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-c
 import { StoreProvider } from '../providers/store/store';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
+import { AnunciosProvider } from '../providers/anuncios/anuncios';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",

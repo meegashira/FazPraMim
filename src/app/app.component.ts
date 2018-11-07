@@ -54,29 +54,41 @@ export class MyApp {
         messagingSenderId: "639256908870"
       });
 
-      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      /*const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         var UserRef = firebase.database().ref(`userProfile/${user.uid}`);
         this.rootPage = HomePage;
         /*if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
-        } 
+        }
         UserRef.on("value", function(snapshot) {
           console.log(snapshot.val().userType);
           if (snapshot.val().userType as String == "Seller") {
-            this.nav.rootPage = 'SideMenuVendedorPage';          
+            this.nav.rootPage = 'SideMenuVendedorPage';
             unsubscribe();
           }
           else if (snapshot.val().userType as String == "Client") {
-            this.nav.rootPage = 'SideMenuClientePage';          
+            this.nav.rootPage = 'SideMenuClientePage';
             unsubscribe();
           }
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
-        });*/
+        });
+      });*/
+
+      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+          this.rootPage = HomePage;
+          unsubscribe();
+        } else {
+        //this.rootPage = SideMenuClientePage;
+          this.rootPage = SideMenuVendedorPage;
+          unsubscribe();
+        }
       });
 
     });
   }
 }
+
 
