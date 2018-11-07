@@ -77,14 +77,14 @@ export class MyApp {
       });*/
 
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-        if (!user) {
+        //if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
-        } else {
+        //} else {
         //this.rootPage = SideMenuClientePage;
-          this.rootPage = SideMenuVendedorPage;
-          unsubscribe();
-        }
+        //  this.rootPage = SideMenuVendedorPage;
+        //  unsubscribe();
+        //}
       });
 
     });
