@@ -1,7 +1,9 @@
 page-profile-vendedor {
     *{
        // font-family: Noto Sans, sans-serif;
-    }	
+    }
+
+    .toolbar-background { background-color: #fff !important; }
 
     ion-content{
         font-family: Noto Sans, sans-serif;
@@ -31,36 +33,36 @@ page-profile-vendedor {
         margin-left:auto;
         margin-right:auto;
     }
-    
+
     #botoes{
-        background-color:#0D60BF; 
-    }	
+        background-color:#0D60BF;
+    }
 
    #avatar{
-    height: 200px; 
-    width: 200px; 
-    border: 2px solid #fff; 
+    height: 200px;
+    width: 200px;
+    border: 2px solid #fff;
     box-shadow: 0 0 5px gray;
    }
 
    #button_icon1{
     margin-top: -13px;
-    height: 100px; 
-    width: 100px;   
+    height: 100px;
+    width: 100px;
    }
 
    #button_icon2{
     margin-bottom:20px;
     object-fit: resize;
     height: auto !important;
-    width: 40%;	 
+    width: 40%;
    }
 
    #button_icon3{
     margin-bottom:20px;
     object-fit: resize;
     height: auto !important;
-    width: 40%;	 
+    width: 40%;
    }
 
    #Nome_Vendedor{

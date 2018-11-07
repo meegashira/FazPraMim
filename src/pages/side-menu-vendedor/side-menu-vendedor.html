@@ -1,24 +1,24 @@
-<ion-menu [content]="content">
+<ion-menu id="Menu1" [content]="contentVend">
   <ion-header>
-  
-    <ion-navbar>
+    <ion-navbar color="FundoClaro">
       <ion-title>Menu</ion-title>
     </ion-navbar>
-  
   </ion-header>
-  
-  
-  <ion-content class="FundoSM" padding>
+
+<ion-content class="FundoSM">
+  <side-menu-content class="Vendedor"  [settings]="sideMenuSettings" [options]="options" (change)="onOptionSelected($event)"></side-menu-content>
+</ion-content>
+
+<!--<ion-content class="FundoSM" padding>
     <ion-list class="FundoSM">
-      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)" [color]="isActive(p)"> 
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)" [color]="isActive(p)">
         <ion-icon item start [name]="p.icon" ></ion-icon> {{p.title}}
       </button>
     </ion-list>
-  
-  </ion-content>
+  </ion-content> -->
 
   <ion-footer>
-      <ion-toolbar>
+      <ion-toolbar color="FundoClaro">
         <button class="Rodape" menuClose ion-button full clear icon-center (click)="logOut()">
           <ion-icon name="log-out"> </ion-icon>  Logout
         </button>
@@ -26,5 +26,5 @@
     </ion-footer>
 
   </ion-menu>
-  
-  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+  <ion-nav [root]="rootPage" #contentVend swipeBackEnabled="false"></ion-nav>

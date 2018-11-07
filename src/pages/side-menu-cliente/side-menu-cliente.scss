@@ -1,8 +1,8 @@
-page-side-menu-cliente {
+/*page-side-menu-cliente {
     ion-title {
 		text-align: center;
-    }	
-    
+    }
+
     ion-content{
       font-family: Noto Sans, sans-serif;
       //background: #610B1C !important;
@@ -16,4 +16,64 @@ page-side-menu-cliente {
     .Rodape{
       font-size:18px;
     }
+}*/
+
+.FundoSM2{
+  background: map-get($colors , FClaroTwo);
+}
+.Rodape2{
+  font-weight: bold;
+  color: #610B1C;
+  font-size:18px;
+}
+
+
+side-menu-content.Cliente{
+
+  $active-colorCliente: map-get($colors, secondaryTwo);
+  $FundaoTopCliente: map-get($colors, FClaroTwo);
+  $FundoSubopion: map-get($colors, FundoClaro);
+
+  // In this example, we have used the following name
+  // for the selected option in the settings object:
+  // selectedOptionClass: 'active-side-menu-option'
+
+  // Single option
+  // ------------------
+  ion-item.item.item-block.option {
+      background-color:#FFF4F0;
+      font-weight: bold;
+      color: #610B1C;
+
+      &.active-side-menu-option {
+          background-color: $active-colorCliente;
+          color: $FundaoTopCliente;
+          font-weight: 700;
+      }
+  }
+
+  // Header
+  // ------------------
+  ion-item.item.item-block.header {
+      background-color: #FFF4F0;
+      font-weight: bold;
+      color: #610B1C;
+
+      &.active-side-menu-option {
+          color: #610B1C;
+          font-weight: 700;
+      }
+  }
+
+  // Sub option
+  // ------------------
+  ion-item.item.item-block.sub-option {
+      color: #BF0C2B;
+
+      &.active-side-menu-option {
+          background-color: #F25F2C;
+          color: $FundaoTopCliente;
+          font-weight: 700;
+      }
+  }
 }
