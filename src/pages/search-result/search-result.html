@@ -7,7 +7,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <ion-searchbar
     [(ngModel)]="myInput"
@@ -30,11 +29,11 @@
   </ion-item>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let store of stores | async">
-      <ion-item>
-          <h1>{{ store.name}}</h1>
-          <p>{{ store.description }}</p>
-      </ion-item>
-    </ion-item-sliding>
+    <ion-item *ngFor="let item of store ">
+     {{ item?.name}} 
+     
+    </ion-item>
   </ion-list>
+
+
 </ion-content>

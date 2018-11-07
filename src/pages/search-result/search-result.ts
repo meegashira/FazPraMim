@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, Alert, AlertController } from 'ionic-angular';
 import { StoreProvider } from '../../providers/store/store';
-import { Observable } from 'rxjs/Observable';
+
+
 
 /**
  * Generated class for the SearchResultPage page.
@@ -14,15 +15,52 @@ import { Observable } from 'rxjs/Observable';
   selector: 'page-search-result',
   templateUrl: 'search-result.html',
 })
-export class SearchResultPage {
-  stores: Observable<any>;
 
-  constructor(public navCtrl: NavController,private provider: StoreProvider) {
-      this.stores = this.provider.getAll();
+export class SearchResultPage {
+  public StoreTeste: any;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public app: App,
+    public alertCtrl: AlertController,
+    public ProviderStore: StoreProvider,
+    ) {
   }
-  
+  public store: Array<any> = [];
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchResultPage');
+    this.ProviderStore.getStore().on('value', itemSnapshot => {
+      this.store = [];
+      itemSnapshot.forEach( itemSnap => {
+        //this.store.push(itemSnap.val());
+         this.store.push({ 
+          uid: itemSnap.key,
+          name: itemSnap.val().name,
+          price: itemSnap.val().price,
+          description: itemSnap.val().description,
+        });
+        return false;
+      });
+    });
   }
+/*
+
+this.ProviderStore.getStore() .subscribe(snapshots=>{
+        snapshots.forEach(snapshot => {
+          console.log(snapshot.key, snapshot.val());
+        });
+    })
+
+
+    .subscribe(users=>{
+
+this.af.database.list('/users', { preserveSnapshot: true})
+    .subscribe(snapshots=>{
+        snapshots.forEach(snapshot => {
+          console.log(snapshot.key, snapshot.val());
+        });
+    })
+*/
+
 
 }

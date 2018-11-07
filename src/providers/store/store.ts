@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import firebase, { User } from 'firebase/app';
 import 'firebase/database';
+import { database } from 'firebase';
 
 /*
   Generated class for the StoreProvider provider.
@@ -12,9 +13,10 @@ import 'firebase/database';
 @Injectable()
 
 export class StoreProvider {
-  private PATH = 'stores/';
+  private PATH = 'store/';
   public StoreSeller: User;
   public store: firebase.database.Reference;
+  public itemRef: firebase.database.Reference = firebase.database().ref('/store');
 
   constructor(private db: AngularFireDatabase) {
     firebase.auth().onAuthStateChanged( user => {
@@ -29,11 +31,7 @@ export class StoreProvider {
     return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid })
   } 
 
-  getAll() {
-    return this.db.list(this.PATH)
-      .snapshotChanges()
-      .map(changes => {
-        return changes.map(c => ({key: c.payload.key, ...c.payload.val() }));
-      })
+  getStore(): firebase.database.Reference {
+    return this.itemRef;
   }
 }
