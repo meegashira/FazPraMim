@@ -31,6 +31,8 @@ import { StoreProvider } from '../providers/store/store';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 import { AnunciosProvider } from '../providers/anuncios/anuncios';
+import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
+import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -47,6 +49,7 @@ const firebaseConfig = {
     HomePage,
     HomeClientePage,
     HomeVendedorPage,
+    LoginVendedorPage,
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,
@@ -71,6 +74,7 @@ const firebaseConfig = {
     HomePage,
     HomeClientePage,
     HomeVendedorPage,
+    LoginVendedorPage,
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,

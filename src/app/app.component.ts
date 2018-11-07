@@ -75,7 +75,6 @@ export class MyApp {
           console.log("The read failed: " + errorObject.code);
         });
       });*/
-
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         //if (!user) {
           this.rootPage = HomePage;
