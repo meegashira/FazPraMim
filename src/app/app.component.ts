@@ -76,14 +76,14 @@ export class MyApp {
         });
       });*/
       const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-        //if (!user) {
+        if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
-        //} else {
-        //this.rootPage = SideMenuClientePage;
-        //  this.rootPage = SideMenuVendedorPage;
-        //  unsubscribe();
-        //}
+        } else {
+          //this.rootPage = SideMenuClientePage;
+          this.rootPage = SideMenuVendedorPage;
+          unsubscribe();
+        }
       });
 
     });
