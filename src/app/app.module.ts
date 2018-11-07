@@ -26,7 +26,6 @@ import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { ProfileProvider } from '../providers/profile/profile';
-import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
 import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 import { StoreProvider } from '../providers/store/store';

@@ -38,10 +38,6 @@ export class LoginClientePage {
       });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginClientePage');
-  }
-
   loginUser(): void {
     if (!this.loginForm.valid){
       console.log(this.loginForm.value);
@@ -73,8 +69,7 @@ export class LoginClientePage {
   }
 
   goToResetPassword(): void {
-    this.navCtrl.push(ResetPasswordPage);
+    this.navCtrl.push('ResetPasswordPage');
   }
 
 }
-
