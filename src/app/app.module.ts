@@ -15,8 +15,8 @@ import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { StarRatingModule } from 'ionic3-star-rating';
-import { AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
-
+//import { AngularFireDatabase, AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -60,7 +60,8 @@ const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    StarRatingModule
+    StarRatingModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -86,7 +87,7 @@ const firebaseConfig = {
     Camera,
     FilePath,
     ProfileProvider,
-    AngularFireDatabaseProvider,
+    //AngularFireDatabaseProvider,
     StoreProvider,
     AnunciosProvider,
   ]
