@@ -38,7 +38,7 @@ export class SideMenuClientePage {
   };
 
   pages: PageInterface[] = [
-    {title: 'Inicio', pageName: 'HomeCatClientePage', icon: 'home'},
+    {title: 'Meu Perfil', pageName: 'ProfileClientePage', icon: 'home'},
     {title: 'Alterar Cadastro', pageName: 'AlterarCadastroClientePage', icon: 'clipboard'},
     {title: 'Historico de Compras', pageName: 'HistoricoComprasPage', icon: 'add'}
   ]
@@ -67,8 +67,8 @@ export class SideMenuClientePage {
 		// ------------------------------------------
 		this.options.push({
 			iconName: 'home',
-			displayText: 'Catalago',
-			component: 'HomeCatClientePage',
+			displayText: 'Meu Perfil',
+			component: 'ProfileClientePage',
 		});
 
 		this.options.push({
@@ -87,7 +87,7 @@ export class SideMenuClientePage {
 			displayText: 'Configurar Perfil',
 			suboptions:[{ iconName: 'build',
                     displayText: 'Alterar Perfil',
-                    component: 'AlterarCadastroVendedorPage'},
+                    component: 'AlterarCadastroClientePage'},
                   { iconName: 'remove',
                     displayText: 'Excluir Perfil',
                     component: 'HomeCatClientePage'}] //ALTERAAAA PARA A PAGINA CERTA

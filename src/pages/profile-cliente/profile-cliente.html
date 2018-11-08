@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons left>
+          <button ion-button menuToggle>
+            <ion-icon side="right" name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>Perfil Cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <img class="round-img" id="avatar" src="{{userProfile?.photoUrl}}">
+      <h2 id="titulo_Cliente">{{userProfile?.name}} {{userProfile?.surname}}</h2>
+      <h4 id="h4_style">{{userProfile?.email}}</h4>
+    </ion-row>
+
+    <ion-row>
+      <div>
+      </div>
+    </ion-row>
+   
+   <ion-row>
+      <ion-col col-6>
+        <button ion-button round class="default" id="botoes" ion-button block (click)="goToCategorias()">
+          <div>
+            <img id="button_icon1" src="assets/imgs/search-icon.png">
+            <p>Buscar Serviços</p>
+          </div>
+        </button>
+      </ion-col>
+
+        <ion-col col-6>
+            <button ion-button round class="default" id="botoes" ion-button block (click)="goToHistoricoCompras()">
+              <div>
+                <img id="button_icon2" src="assets/imgs/shopping_history-icon.jpg">
+                <p>Histórico de Compras</p>
+              </div>
+            </button>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

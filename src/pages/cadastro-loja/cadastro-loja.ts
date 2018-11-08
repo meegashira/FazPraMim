@@ -6,6 +6,7 @@ import { IonicPage,
   AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreProvider } from '../../providers/store/store';
+import { CadastroLojaConcluidoPage } from '../cadastro-loja-concluido/cadastro-loja-concluido';
 
 @IonicPage( {name: 'CadastroLojaPage'} )
 @Component({
@@ -40,8 +41,7 @@ export class CadastroLojaPage {
         this.createStoreForm.value.name,
         this.createStoreForm.value.categoria,
         this.createStoreForm.value.descricao);
-
-      this.navCtrl.push('CadastroLojaPage');
+      this.navCtrl.push(CadastroLojaConcluidoPage);
     }
   }
 }

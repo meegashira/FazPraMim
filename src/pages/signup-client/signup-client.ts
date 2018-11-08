@@ -9,6 +9,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { CpfValidator } from '../../validators/cpf';
 import { EmailValidator } from '../../validators/email';
 import { CepValidator } from '../../validators/cep';
+import { EndSignUpPage } from '../end-sign-up/end-sign-up';
 
 @IonicPage({
   name: 'SignupClientPage'
@@ -75,7 +76,7 @@ export class SignupClientPage {
       .then(() => {
         this.loading.dismiss().then( () => {
           this.navCtrl.setRoot('HomeCatClientePage');
-          this.navCtrl.push('EndSignUpPage');
+          this.navCtrl.push(EndSignUpPage);
         });
       }, (error) => {
         this.loading.dismiss().then( () => {

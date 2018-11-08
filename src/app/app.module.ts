@@ -14,6 +14,7 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
 import { StarRatingModule } from 'ionic3-star-rating';
 //import { AngularFireDatabase, AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -32,7 +33,10 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 import { AnunciosProvider } from '../providers/anuncios/anuncios';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
-import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
+//import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
+import { StoreViewPage } from '../pages/store-view/store-view';
+import { ImageProvider } from '../providers/image/image';
+import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
 
 
 const firebaseConfig = {
@@ -49,21 +53,19 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     HomeClientePage,
-<<<<<<< HEAD
-    LoginPage,
-=======
     HomeVendedorPage,
->>>>>>> master
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,
     LoginClientePage,
-    LoginVendedorPage,
+    //LoginVendedorPage,
+    CadastroLojaConcluidoPage,
     SideMenuClientePage,
     SideMenuVendedorPage,
     AvaliacaoPage,
     AvaliacaoConcluidaPage,
     SideMenuContentComponent,
+    StoreViewPage
   ],
   imports: [
     BrowserModule,
@@ -79,20 +81,18 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     HomeClientePage,
-<<<<<<< HEAD
-    LoginPage,
-=======
     HomeVendedorPage,
->>>>>>> master
     SignupClientPage,
     SignupFreelancerPage,
+    CadastroLojaConcluidoPage,
     ResetPasswordPage,
     LoginClientePage,
-    LoginVendedorPage,
+    //LoginVendedorPage,
     SideMenuClientePage,
     SideMenuVendedorPage,
     AvaliacaoPage,
-    AvaliacaoConcluidaPage
+    AvaliacaoConcluidaPage,
+    StoreViewPage
      ],
   providers: [
     StatusBar,
@@ -102,10 +102,12 @@ const firebaseConfig = {
     File,
     Transfer,
     Camera,
+    ImagePicker,
     FilePath,
     ProfileProvider,
     StoreProvider,
     AnunciosProvider,
+    ImageProvider,
   ]
 })
 export class AppModule {

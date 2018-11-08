@@ -14,22 +14,22 @@
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>Nome</ion-label>
-      <ion-input class="Texto" formControlName="name" type="text" ></ion-input> <!--placeholder="Nomes"--> 
+      <ion-input class="Texto" formControlName="name" type="text" ></ion-input> 
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>Sobrenome</ion-label>
-      <ion-input class="Texto" formControlName="surname" type="text" type="text" ></ion-input><!--placeholder="Sobrenomes"-->
+      <ion-input class="Texto" formControlName="surname" type="text" type="text" ></ion-input>
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>RG</ion-label>
-      <ion-input class="Texto" formControlName="rg" type="text" placeholder="'       Apenas números"></ion-input> 
+      <ion-input class="Texto" formControlName="rg" type="text" placeholder="Apenas números"></ion-input> 
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>CPF</ion-label>
-      <ion-input class="Texto" formControlName="cpf" type="text" placeholder="'         Apenas números"></ion-input> 
+      <ion-input class="Texto" formControlName="cpf" type="text" placeholder="Apenas números"></ion-input> 
     </ion-item>
 
     <ion-item class="Fundo">
@@ -40,18 +40,18 @@
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>Senha</ion-label>
-      <ion-input class="Texto" formControlName="password" type="password" placeholder="'            Mínimo de 6 caracteres" [class.invalid]="!signupForm.controls.password.valid && blur">
+      <ion-input class="Texto" formControlName="password" type="password" placeholder="Mínimo de 6 caracteres" [class.invalid]="!signupForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>Confirme sua Senha</ion-label>
-      <ion-input class="Texto" formControlName="password" type="password" ></ion-input> <!--placeholder="Confirme sua senha"-->
+      <ion-input class="Texto" formControlName="password" type="password" ></ion-input> 
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>Logradouro</ion-label>
-      <ion-input class="Texto" formControlName="address" type="text" ></ion-input> <!--placeholder="Rua/Av/Estrada"--> 
+      <ion-input class="Texto" formControlName="address" type="text" ></ion-input> 
     </ion-item>
 
     <ion-item class="Fundo">
@@ -71,16 +71,15 @@
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>UF</ion-label>
-      <ion-input class="Texto" formControlName="state" type="text" type="text" placeholder="'      Ex: SP"></ion-input>
+      <ion-input class="Texto" formControlName="state" type="text" placeholder="Ex: SP"></ion-input>
     </ion-item>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>CEP</ion-label>
-      <ion-input class="Texto" formControlName="cep" type="text"  type="text" placeholder="'        Apenas números"></ion-input>
+      <ion-input class="Texto" formControlName="cep" type="text" placeholder="Apenas números"></ion-input>
     </ion-item>
 
     <div id=spacer2></div>
-    <button id=botoes ion-button block type="submit" [disabled]="!signupForm.valid">Criar uma conta
-    </button>
+    <button id=botoes ion-button block type="submit" [disabled]="!signupForm.valid">Criar uma conta</button>
   </form>
 </ion-content>
