@@ -1,0 +1,84 @@
+page-profile-cliente {
+	ion-content{
+		font-family: Noto Sans, sans-serif;
+		background: #610B1C !important;
+		//background: #BF0C2B !important;
+	}
+
+	img {
+		object-fit: resize;
+		height: auto !important;
+		width: 50%;	
+	}
+
+	p{
+		margin-top:-15px;
+		text-align: bottom;
+	}
+
+	/*classes*/
+	img.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
+	}
+
+	.round-img {
+		border-radius: 50%;
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	button.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
+	}
+
+	button.default{
+        height: 100px;
+        font-size: 12px;
+        text-align: bottom;
+	}
+	
+	/*id's*/
+	#avatar{
+		height: 200px;
+		width: 200px;
+		border: 2px solid #fff;
+		box-shadow: 0 0 5px gray;
+	}
+
+    #botoes{
+    	background-color: #F5C05E;
+		color: #BF0C2B;
+	}
+
+	#button_icon1{
+		margin-top: -13px;
+		height: 100px;
+		width: 100px;
+	}
+	
+	#button_icon2{
+		margin-bottom:20px;
+		object-fit: resize;
+		height: auto !important;
+		width: 40%;
+	}
+	
+	#titulo_Cliente{
+		color: #F25F2C;
+		font-weight:600;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#h4_style{
+		color:#F1FCFB;
+		text-align:center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

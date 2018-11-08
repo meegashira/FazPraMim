@@ -72,5 +72,4 @@ export class ProfileProvider {
         console.error(error);
       });
   }
-
 }

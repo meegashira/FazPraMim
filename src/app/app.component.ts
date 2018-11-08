@@ -4,10 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
-import { initializeApp } from 'firebase/app';
-import { HomeCatClientePage } from '../pages/home-cat-cliente/home-cat-cliente';
-import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
-import { FirebaseAppProvider } from 'angularfire2';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 
@@ -32,7 +28,7 @@ export class MyApp {
 
     this.pages = [
       {title: 'Meu Perfil', component: 'ProfileClientePage'},
-      {title: 'Categorias', component: HomeCatClientePage}
+      {title: 'Categorias', component: 'HomeCatClientePage'},    
     ];
   }
 
@@ -54,28 +50,28 @@ export class MyApp {
         messagingSenderId: "639256908870"
       });
 
-      /*const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         var UserRef = firebase.database().ref(`userProfile/${user.uid}`);
-        this.rootPage = HomePage;
-        /*if (!user) {
-          this.rootPage = HomePage;
+        this.nav.setRoot(HomePage);
+        if (!user) {
+          this.nav.setRoot(HomePage);
           unsubscribe();
         }
         UserRef.on("value", function(snapshot) {
           console.log(snapshot.val().userType);
           if (snapshot.val().userType as String == "Seller") {
-            this.nav.rootPage = 'SideMenuVendedorPage';
+            this.nav.setRoot(SideMenuClientePage);
             unsubscribe();
           }
           else if (snapshot.val().userType as String == "Client") {
-            this.nav.rootPage = 'SideMenuClientePage';
+            this.nav.setRoot(SideMenuVendedorPage);
             unsubscribe();
           }
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
         });
-      });*/
-      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      });
+      /* const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
@@ -84,7 +80,7 @@ export class MyApp {
           //this.rootPage = SideMenuVendedorPage;
           unsubscribe();
         }
-      });
+      }); */
 
     });
   }

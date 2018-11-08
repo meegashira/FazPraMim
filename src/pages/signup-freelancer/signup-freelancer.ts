@@ -64,6 +64,7 @@ export class SignupFreelancerPage {
         this.signupForm.value.city,
         this.signupForm.value.state,
         this.signupForm.value.cep,
+        this.signupForm.value.photo,
         'Seller'
       )
       .then(() => {

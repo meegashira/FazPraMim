@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, Alert, AlertController } from 'ionic-angular';
 import { StoreProvider } from '../../providers/store/store';
-
-
+import { StoreViewPage } from '../store-view/store-view';
 
 /**
  * Generated class for the SearchResultPage page.
@@ -28,6 +27,10 @@ export class SearchResultPage {
   }
   public store: Array<any> = [];
 
+  goToStorePage(){
+    this.navCtrl.push(StoreViewPage);
+  }
+
   ionViewDidLoad() {
     this.ProviderStore.getStore().on('value', itemSnapshot => {
       this.store = [];
@@ -38,6 +41,7 @@ export class SearchResultPage {
           name: itemSnap.val().name,
           price: itemSnap.val().price,
           description: itemSnap.val().description,
+          storePhoto: itemSnap.val().storePhoto
         });
         return false;
       });
