@@ -80,8 +80,8 @@ export class MyApp {
           this.rootPage = HomePage;
           unsubscribe();
         } else {
-          //this.rootPage = SideMenuClientePage;
-          this.rootPage = SideMenuVendedorPage;
+          this.rootPage = SideMenuClientePage;
+          //this.rootPage = SideMenuVendedorPage;
           unsubscribe();
         }
       });

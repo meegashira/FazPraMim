@@ -34,7 +34,6 @@ import { AnunciosProvider } from '../providers/anuncios/anuncios';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
   authDomain: "fazpramim-4bbe8.firebaseapp.com",
@@ -49,11 +48,7 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     HomeClientePage,
-<<<<<<< HEAD
-    LoginPage,
-=======
     HomeVendedorPage,
->>>>>>> master
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,
@@ -79,11 +74,7 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     HomeClientePage,
-<<<<<<< HEAD
-    LoginPage,
-=======
     HomeVendedorPage,
->>>>>>> master
     SignupClientPage,
     SignupFreelancerPage,
     ResetPasswordPage,

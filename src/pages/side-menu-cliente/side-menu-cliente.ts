@@ -76,10 +76,10 @@ export class SideMenuClientePage {
       displayText: 'Orçamentos',
       suboptions:[{ iconName: 'ios-create',
                     displayText: 'Pedidos',
-                    component: 'AlterarCadastroVendedorPage'},
+                    component: 'PedidosClientePage'},
                   { iconName: 'checkmark-circle',
                     displayText: 'Aprovados',
-                    component: 'HomeCatClientePage'}] //ALTERAAAA PARA A PAGINA CERTA
+                    component: 'PedidosAprovadosClientePage'}] //ALTERAAAA PARA A PAGINA CERTA
 		});
 
 		this.options.push({
@@ -87,7 +87,7 @@ export class SideMenuClientePage {
 			displayText: 'Configurar Perfil',
 			suboptions:[{ iconName: 'build',
                     displayText: 'Alterar Perfil',
-                    component: 'AlterarCadastroVendedorPage'},
+                    component: 'AlterarCadastroClientePage'},
                   { iconName: 'remove',
                     displayText: 'Excluir Perfil',
                     component: 'HomeCatClientePage'}] //ALTERAAAA PARA A PAGINA CERTA

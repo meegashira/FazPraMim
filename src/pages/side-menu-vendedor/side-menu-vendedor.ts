@@ -37,6 +37,8 @@ export class SideMenuVendedorPage {
 
   pages: PageInterface[] = [
     {title: 'Inicio', pageName: 'ProfileVendedorPage', icon: 'home'},
+    //seria legal colocar outra página como página inicial
+    {title: 'Perfil', pageName: 'ProfileVendedorPage', icon: 'contact'},
     {title: 'Gerenciar Lojas', pageName: 'StoreListPage', icon: 'clipboard'},
     {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'}
   ]

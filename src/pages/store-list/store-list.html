@@ -6,12 +6,18 @@
               <ion-icon side="right" name="menu"></ion-icon>
             </button>
         </ion-buttons>
-      <ion-title>Gerenciamento das Lojas</ion-title>
+      <ion-title>Minhas Lojas</ion-title>
     </ion-navbar>
   
   </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+      <button (click) = "openStore(p)">
+        <ion-icon item start [name] = "home">
+          <!--Pode ser a "foto" da loja também, mas coloquei um ícone no lugar-->
+        </ion-icon> {{<!--p.storeName-->}}
+      </button>
+  </ion-list>
 </ion-content>
