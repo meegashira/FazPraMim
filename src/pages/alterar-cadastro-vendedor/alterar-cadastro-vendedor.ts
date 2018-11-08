@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App, Alert, AlertController } from 'ionic-angular';
-import { AuthProvider } from '../../providers/auth/auth';
-import { HomePage } from '../../pages/home/home';
-import { ProfileProvider } from "../../providers/profile/profile";
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the AlterarCadastroVendedorPage page.
  *
@@ -17,21 +15,9 @@ import { ProfileProvider } from "../../providers/profile/profile";
 })
 export class AlterarCadastroVendedorPage {
 
-  constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    public authProvider: AuthProvider,
-    public app: App,
-    public profileProvider: ProfileProvider,
-    public alertCtrl: AlertController,
-    ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
-  }
-  logOut(): void {
-        this.authProvider.logoutUser();
-        var nav = this.app.getRootNav();
-        nav.setRoot(HomePage);
-  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlterarCadastroVendedorPage');
   }

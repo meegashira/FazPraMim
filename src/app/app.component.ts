@@ -57,7 +57,7 @@ export class MyApp {
           this.nav.setRoot(HomePage);
           unsubscribe();
         }
-        UserRef.on("value", function(snapshot) {
+       /* UserRef.on("value", function(snapshot) {
           console.log(snapshot.val().userType);
           if (snapshot.val().userType as String == "Seller") {
             this.nav.setRoot(SideMenuClientePage);
@@ -69,15 +69,15 @@ export class MyApp {
           }
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
-        });
+        });*/
       });
       /* const unsubscribe = firebase.auth().onAuthStateChanged(user => {
         if (!user) {
           this.rootPage = HomePage;
           unsubscribe();
         } else {
-          this.rootPage = SideMenuClientePage;
-          //this.rootPage = SideMenuVendedorPage;
+          //this.rootPage = SideMenuClientePage;
+          this.rootPage = SideMenuVendedorPage;
           unsubscribe();
         }
       }); */

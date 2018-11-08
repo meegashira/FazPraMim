@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupFreelancerPage } from '../signup-freelancer/signup-freelancer';
 import { LoginVendedorPage } from '../login-vendedor/login-vendedor';
 
-
 @IonicPage({
   name: 'HomeVendedorPage'
 })
