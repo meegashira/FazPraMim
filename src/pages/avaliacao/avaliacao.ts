@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, Loading,
   AlertController } from 'ionic-angular';
   import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AvaliacaoConcluidaPage } from '../avaliacao-concluida/avaliacao-concluida';
+import { StoreProvider } from "../../providers/store/store";
 import { Events } from 'ionic-angular';
 import { StarRating } from 'ionic3-star-rating';
 
@@ -24,16 +25,17 @@ import { StarRating } from 'ionic3-star-rating';
 export class AvaliacaoPage {
   rating: number = 4;
   public avaliacaoForm: FormGroup;
-  storeProvider: any;
+  public StoreProvider: StoreProvider;
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
          events.subscribe('star-rating:changed', (starRating) => {
           console.log(starRating);
           this.rating = starRating;
           });
     }
-    med: number = (this.rating + this.storeProvider.getAvaliacao())/2;
+    /* na linha de baixo referencia da avaliacao this.storeProvider.getAvaliacao( ), 10)*/
+    med: number = (this.rating + 3 ) /2;
   avaliarGoToThaksPage(): void {
-      this.storeProvider.updateAvaliacao(this.rating);
+      this.StoreProvider.updateAvaliacao(this.med);
         this.navCtrl.push(AvaliacaoConcluidaPage);
   }
 

@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Resultado da pesquisa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
+
+  <ion-item id="spacer2">
+    <ion-label>
+      <ion-icon name="list"></ion-icon> &nbsp;	Ordenar Por
+    </ion-label>
+
+    <ion-select [(ngModel)]="ordem" placeholder="Selecione">
+      <ion-option value = "avaliacao">Avaliação</ion-option>
+      <ion-option value = "distancia">Distância</ion-option>
+      <ion-option value = "preco">Preço</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+     <button ion-item *ngFor="let item of store " (click)="goToStorePage()">
+        <h2>{{ item?.name}} </h2>
+        <p>{{ item?.description }}</p>
+        <ion-thumbnail item-end>
+            <img src="{{item?.storePhoto}}"> 
+        </ion-thumbnail>
+      </button>    
+  </ion-list>
+</ion-content>
