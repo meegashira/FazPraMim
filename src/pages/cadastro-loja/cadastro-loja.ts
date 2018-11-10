@@ -32,7 +32,9 @@ export class CadastroLojaPage {
     });
   }
     
-
+  GoToCadastroConcluido(){
+    this.navCtrl.push(CadastroLojaConcluidoPage);
+  }
   createStore(): void {
     if (!this.createStoreForm.valid){
       console.log(this.createStoreForm.value);

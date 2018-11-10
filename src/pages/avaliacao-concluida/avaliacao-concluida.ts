@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {ProfileClientePage} from '../profile-cliente/profile-cliente';
 /**
  * Generated class for the AvaliacaoConcluidaPage page.
  *
@@ -22,7 +22,7 @@ export class AvaliacaoConcluidaPage {
     console.log('ionViewDidLoad AvaliacaoConcluidaPage');
   }
 
-  goToUserProfile(): void{
-    this.navCtrl.push('HomeCatCCliente');
+  goToUserProfile(){
+    this.navCtrl.push('ProfileClientePage');
   }
 }
