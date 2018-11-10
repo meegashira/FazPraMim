@@ -6,45 +6,61 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>AlterarCadastroVendedor</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Alterar Cadastro Vendedor</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list>
 
-  <ion-item>
-  <ion-label class="dob-label">Date of Birth</ion-label>
-  <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" 
-  [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
-</ion-item>
-<ion-item (click)="updateEmail()">
+  <!--Cabeçalho da página-->
+  <img src="assets/imgs/seller_icon.png" class="center">
+  <h3 id="header3">Caro Vendedor</h3>
+  <h4 id="header4">Altere seus dados cadastrais</h4>
+
+  <ion-list>
+
+  <ion-item class="Fundo">
+    <ion-label >Data de aniversário</ion-label>
+    <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" 
+    [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
+  </ion-item>
+
+<ion-item class="Fundo" (click)="updateEmail()">
   <ion-grid>
     <ion-row>
-      <ion-col col-6> Email </ion-col>
+      <ion-col col-6> E-mail </ion-col>
       <ion-col col-6 *ngIf="userProfile?.email">
         {{userProfile?.email}}
       </ion-col>
       <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
-        <span> Tap here to edit. </span>
+        <span class="Texto"> Clique para editar </span>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-item>
 
-<ion-item (click)="updatePassword()">
+<ion-item class="Fundo" (click)="updatePassword()">
     <ion-grid>
       <ion-row>
-        <ion-col col-6> Password </ion-col>
+        <ion-col col-6> Senha </ion-col>
         <ion-col col-6 class="placeholder-profile">
-          <span> Tap here to edit. </span>
+          <span class="Texto"> Clique para editar </span>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-item>
 </ion-list>
+
+<div id=spacer2></div>
+<button id="botoes" ion-button block type="submit" (click)="GoToAlteracaoConcluida()">
+  Enviar Alterações
+</button>
+
+<button id="botoes" ion-button block type="submit" (click)="GoToProfileVendedor()">
+  Cancelar Alterações
+</button>
 
 </ion-content>

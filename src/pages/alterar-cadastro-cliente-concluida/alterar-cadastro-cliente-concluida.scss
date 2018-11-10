@@ -1,21 +1,12 @@
-page-alterar-cadastro-cliente {
-	*{
-		//font-family: Noto Sans, sans-serif;
-	}
-
-	ion-content{
+page-alterar-cadastro-cliente-concluida {
+    /*tags modificadas*/
+*{
+    //font-family: Noto Sans, sans-serif;
+}
+    ion-content{
 		font-family: Noto Sans, sans-serif;
 		background: #610B1C !important;
 		//background: #BF0C2B !important;
-	}
-	ion-label{
-		color:#F25F2C;
-	}
-
-	.label[floating],
-	.label[stacked],
-	.input-has-focus .label[floating] {
-    	color: #F25F2C;
 	}
 
 	img {
@@ -31,33 +22,39 @@ page-alterar-cadastro-cliente {
   		margin-right:auto;
 	}
 
-	.Fundo{
-		background-color: #610B1C;
-	}
-
-	.Texto{
-		color: #F1FCFB; 
-	}
-
 	button.center{
 		display:block;
   		margin-left:auto;
   		margin-right:auto;
 	}
 
+	.Fundo{
+		background-color: #610B1C;
+	}
+	.Texto{
+		color: #F1FCFB; 
+	}
+
 	/*id's*/
-	#header3{
-		color:#F25F2C;
+	#titulo_Cliente{
+		color: #F25F2C;
+		//color: #00C29C;
+		//color:#FFFFFF;
 		font-weight:600;
 		text-align:center;
 	}
 
-	#header4{
+	#h4_style{
+		color:#F1FCFB;
+		text-align:center;
+	}
+
+	#h4_style2{
 		color:#F1FCFB;
 		font-weight:300;
 		text-align:center;
 	}
-	
+
 	#botoes{
 		background-color: #F5C05E;
 		color: #BF0C2B;
@@ -65,8 +62,19 @@ page-alterar-cadastro-cliente {
 		font-size:20px;
 	}
 
+	#botoes2{
+		color: #BF0C2B;
+    	font-weight:600;
+    	font-size:15px;
+	}
+
+	#spacer1{
+		width: auto !important;
+		height: 40px;
+	}
+
 	#spacer2{
 		width: auto !important;
-		height: 48px;
+		height: 20px;
 	}
 }

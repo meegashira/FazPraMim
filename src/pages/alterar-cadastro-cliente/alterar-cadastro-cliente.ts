@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams, App, Alert, AlertController } from
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../../pages/home/home';
 import { ProfileProvider } from "../../providers/profile/profile";
-
+import { ProfileClientePage } from "../profile-cliente/profile-cliente";
+import {AlterarCadastroClienteConcluidaPage} from "../alterar-cadastro-cliente-concluida/alterar-cadastro-cliente-concluida";
 /**
  * Generated class for the AlterarCadastroClientePage page.
  *
@@ -35,6 +36,14 @@ export class AlterarCadastroClientePage {
     this.authProvider.logoutUser();
     var nav = this.app.getRootNav();
     nav.setRoot(HomePage);
+  }
+
+  goToProfileCliente(){
+    this.navCtrl.push('ProfileClientePage');
+  }
+
+  GoToAlteracaoConcluida(){
+    this.navCtrl.push('AlterarCadastroClienteConcluidaPage');
   }
 
   updateEmail(): void {

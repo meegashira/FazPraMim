@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ProfileVendedorPage } from "../profile-vendedor/profile-vendedor";
 /**
  * Generated class for the AlterarCadastroVendedorConcluidaPage page.
  *
@@ -22,4 +22,7 @@ export class AlterarCadastroVendedorConcluidaPage {
     console.log('ionViewDidLoad AlterarCadastroVendedorConcluidaPage');
   }
 
+  goToProfileVendedor(){
+    this.navCtrl.push('ProfileVendedorPage');
+  }
 }

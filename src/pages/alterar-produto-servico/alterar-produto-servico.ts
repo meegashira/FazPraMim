@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import{ProfileVendedorPage} from '../profile-vendedor/profile-vendedor';
+import{AlterarProdutoServicoConcluidaPage} from '../alterar-produto-servico-concluida/alterar-produto-servico-concluida';
 /**
  * Generated class for the AlterarProdutoServicoPage page.
  *
@@ -18,6 +19,12 @@ export class AlterarProdutoServicoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  GoToProdutoConcluida(){
+    this.navCtrl.push('AlterarProdutoServicoConcluidaPage');
+  }
+  GoToProfileVendedor(){
+    this.navCtrl.push('ProfileVendedorPage');
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlterarProdutoServicoPage');
   }
