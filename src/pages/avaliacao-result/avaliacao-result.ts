@@ -38,7 +38,7 @@ export class AvaliacaoResultPage {
         //this.store.push(itemSnap.val());
          this.store.push({ 
           uid: itemSnap.key,
-          name: itemSnap.val().name,
+          avaliacao: itemSnap.val().avaliacao,
           price: itemSnap.val().price,
           description: itemSnap.val().description,
           storePhoto: itemSnap.val().storePhoto
