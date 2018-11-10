@@ -28,7 +28,7 @@ export class StoreProvider {
   }
 
   createStore(name: string, categoria: string, descricao: string): firebase.database.ThenableReference {    
-    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid, storePhoto: 'https://firebasestorage.googleapis.com/v0/b/fazpramim-4bbe8.appspot.com/o/no-Storeimage.png?alt=media&token=820edc2e-a79f-4a8b-aef1-6e93f7aeeed6' , avaliacao: 0})
+    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid, storePhoto: 'https://firebasestorage.googleapis.com/v0/b/fazpramim-4bbe8.appspot.com/o/no-Storeimage.png?alt=media&token=820edc2e-a79f-4a8b-aef1-6e93f7aeeed6'})
   } 
 
   getAvaliacao(): firebase.database.Reference {
