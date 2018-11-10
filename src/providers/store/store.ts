@@ -16,6 +16,7 @@ export class StoreProvider {
   public StoreSeller: User;
   public store: firebase.database.Reference;
   public itemRef: firebase.database.Reference = firebase.database().ref('/store');
+  public avaliacao: firebase.database.Reference = firebase.database().ref('/store/avaliacao');
 
   constructor(private db: AngularFireDatabase) {
     firebase.auth().onAuthStateChanged( user => {
@@ -27,8 +28,16 @@ export class StoreProvider {
   }
 
   createStore(name: string, categoria: string, descricao: string): firebase.database.ThenableReference {    
-    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid, storePhoto: 'https://firebasestorage.googleapis.com/v0/b/fazpramim-4bbe8.appspot.com/o/no-Storeimage.png?alt=media&token=820edc2e-a79f-4a8b-aef1-6e93f7aeeed6' })
+    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid, storePhoto: 'https://firebasestorage.googleapis.com/v0/b/fazpramim-4bbe8.appspot.com/o/no-Storeimage.png?alt=media&token=820edc2e-a79f-4a8b-aef1-6e93f7aeeed6'})
   } 
+
+  getAvaliacao(): firebase.database.Reference {
+    return this.avaliacao;
+  }
+
+  updateAvaliacao(avaliacao: number): Promise<any> {
+    return this.store.update({ avaliacao });
+  }
 
   getStore(): firebase.database.Reference {
     return this.itemRef;

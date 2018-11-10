@@ -26,13 +26,15 @@ export class AuthProvider {
         .child(newUser.uid)
         .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, 
             complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep, 
-            userType: userType,photo:this.noImage});
+            userType: userType,photo:this.noImage, avaliacao: 0});
       })
       .catch(error => {
         console.error(error);
         throw new Error(error);
       });
   }
+
+  
 
   resetPassword(email: string): Promise<void> {
     return firebase.auth().sendPasswordResetEmail(email);

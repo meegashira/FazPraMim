@@ -41,6 +41,7 @@ export class CadastroLojaPage {
         this.createStoreForm.value.name,
         this.createStoreForm.value.categoria,
         this.createStoreForm.value.descricao);
+        
       this.navCtrl.push(CadastroLojaConcluidoPage);
     }
   }

@@ -25,6 +25,10 @@ export class ProfileVendedorPage {
   goToAnuncioPage(){
 		this.navCtrl.push("AdicionarAnuncioPage"); 
   }
+
+  goToAvaliacao(){
+		this.navCtrl.push("AvaliacaoPage"); 
+  }
   
   goToCadastroLoja(){
 		this.navCtrl.push("CadastroLojaPage"); 
