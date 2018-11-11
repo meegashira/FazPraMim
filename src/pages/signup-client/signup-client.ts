@@ -75,7 +75,7 @@ export class SignupClientPage {
       )
       .then(() => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot('HomeCatClientePage');
+          this.navCtrl.setRoot('SideMenuClientePage');
           this.navCtrl.push(EndSignUpPage);
         });
       }, (error) => {

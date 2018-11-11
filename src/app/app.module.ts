@@ -15,9 +15,10 @@ import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { Crop } from '@ionic-native/crop';
 import { StarRatingModule } from 'ionic3-star-rating';
-//import { AngularFireDatabase, AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -35,7 +36,6 @@ import { AnunciosProvider } from '../providers/anuncios/anuncios';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 import { StoreViewPage } from '../pages/store-view/store-view';
-import { ImageProvider } from '../providers/image/image';
 import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
 
 const firebaseConfig = {
@@ -73,7 +73,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     StarRatingModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -102,11 +103,11 @@ const firebaseConfig = {
     Transfer,
     Camera,
     ImagePicker,
+    Crop,
     FilePath,
     ProfileProvider,
     StoreProvider,
     AnunciosProvider,
-    ImageProvider,
   ]
 })
 export class AppModule {

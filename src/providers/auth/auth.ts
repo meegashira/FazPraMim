@@ -1,7 +1,5 @@
 import { Injectable} from '@angular/core';
 import firebase from 'firebase';
-import { FirebaseApp } from 'angularfire2';
-import { storage } from 'firebase/app';
 
 @Injectable()
 export class AuthProvider {
@@ -26,7 +24,7 @@ export class AuthProvider {
         .child(newUser.uid)
         .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, 
             complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep, 
-            userType: userType,photo:this.noImage});
+            userType: userType,photoUrl:this.noImage});
       })
       .catch(error => {
         console.error(error);

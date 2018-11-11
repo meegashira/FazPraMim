@@ -17,14 +17,27 @@
   <ion-grid>
     <ion-row>
       <img class="round-img" id="avatar" src="{{userProfile?.photoUrl}}">
-      <h2 id="Nome_Vendedor">{{userProfile?.name}} {{userProfile?.surname}}</h2>
-      <h4 id="E-mail">{{userProfile?.email}}</h4>
     </ion-row>
 
     <ion-row>
-      <div>
+      <button class="round-button" id="button_camera">
+        <ion-icon name="camera" ></ion-icon>
+      </button>
+    </ion-row>
+  
+    <ion-row>
+      <div id="spacer2">
       </div>
     </ion-row>
+
+    <ion-row>
+      <h2 id="Nome_Vendedor">{{userProfile?.name}} {{userProfile?.surname}}</h2>
+    </ion-row>
+
+    <ion-row>
+        <h4 id="E-mail">{{userProfile?.email}}</h4>
+    </ion-row>
+
     <button id="botoes" ion-button round class="button-assertive center" (click)="goToAvaliacao()">Avaliar</button>
 
 

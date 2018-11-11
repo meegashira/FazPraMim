@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import firebase, { User } from 'firebase/app';
-import 'firebase/database';
+import { User } from 'firebase/app';
+import * as firebase from 'firebase';
 import AuthCredential from 'firebase/auth';
+import { FirebaseApp } from 'angularfire2';
 
 @Injectable()
 export class ProfileProvider {
   public userProfile: firebase.database.Reference;
   public currentUser: User;
+  public fb: FirebaseApp;
   
   constructor() {
     firebase.auth().onAuthStateChanged( user => {
@@ -71,5 +73,11 @@ export class ProfileProvider {
       .catch(error => {
         console.error(error);
       });
+  }
+
+  uploadPhoto(item:any){
+    let storageRef = this.fb.storage().ref();
+    let uploadTask = storageRef.child(this.currentUser.photoURL).putString(item.fileToUpload, 'base64');
+    this.currentUser.photoURL = uploadTask.snapshot.downloadURL;    
   }
 }

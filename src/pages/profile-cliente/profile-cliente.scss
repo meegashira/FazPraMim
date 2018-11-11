@@ -45,7 +45,7 @@ page-profile-cliente {
 	/*id's*/
 	#avatar{
 		height: 200px;
-		width: 200px;
+		width: 230px;
 		border: 2px solid #fff;
 		box-shadow: 0 0 5px gray;
 	}
@@ -53,6 +53,16 @@ page-profile-cliente {
     #botoes{
     	background-color: #F5C05E;
 		color: #BF0C2B;
+	}
+
+	#button_camera{
+		background-color: #FE9A2E;
+		display:block;
+		height: 50px;
+		width: 55px;
+		border-radius: 50%;
+		margin-left: 200px;
+		margin-top: -45px;
 	}
 
 	#button_icon1{
@@ -80,5 +90,10 @@ page-profile-cliente {
 		text-align:center;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	#spacer2{
+		width: auto !important;
+		height: 15px;
 	}
 }
