@@ -1,5 +1,9 @@
 page-alterar-produto-servico {
-  ion-content{
+	*{
+		//font-family: Noto Sans, sans-serif;
+	}
+	
+	ion-content{
 		font-family: Noto Sans, sans-serif;
 		background: #0B3A61 !important;
 	}
@@ -23,8 +27,7 @@ page-alterar-produto-servico {
 
 	.Fundo{
 		background-color: #0B3A61;
-    }
-    
+	}
 	.Texto{
 		color: #F1FCFB; 
 	}

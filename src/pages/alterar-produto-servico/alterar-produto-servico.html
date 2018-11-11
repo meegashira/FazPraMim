@@ -25,8 +25,8 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6> Nome </ion-col>
-          <ion-col col-6 *ngIf="">
-            <!--Importar o nome do produto/serviço do BD-->
+          <ion-col col-6 class="placeholder-profile">
+              <span class="Texto"> Clique aqui para editar </span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -37,8 +37,8 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6> Tipo </ion-col>
-          <ion-col col-6 *ngIf="">
-            <!--Importar o tipo produto ou serviço do BD-->
+          <ion-col col-6 class="placeholder-profile">
+              <span class="Texto"> Clique aqui para editar </span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -49,8 +49,8 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6> Categoria </ion-col>
-          <ion-col col-6 *ngIf="">
-            <!--Importar a categoria do BD-->
+          <ion-col col-6 class="placeholder-profile">
+              <span class="Texto"> Clique aqui para editar </span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -60,12 +60,10 @@
     <ion-item class="Fundo" (click)="updatePrice()">
       <ion-grid>
         <ion-row>
-          <ion-col col-6> Preçp </ion-col>
-          <ion-col col-6 *ngIf="">
-
-          </ion-col>
-          <ion-col col-6 class="" *ngIf="">
-            <span> Tap here to edit. </span>
+          <ion-col col-6> Preço </ion-col>
+          
+          <ion-col col-6 class="placeholder-profile">
+            <span class="Texto"> Clique aqui para editar </span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -76,8 +74,8 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6> Medida </ion-col>
-          <ion-col col-6 *ngIf="">
-
+          <ion-col col-6 class="placeholder-profile">
+              <span class="Texto"> Clique aqui para editar </span>
           </ion-col>
           <ion-col col-6 class="" *ngIf="">
             <span> Tap here to edit. </span>
@@ -91,8 +89,8 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6> Descrição </ion-col>
-          <ion-col col-6 *ngIf="">
-            
+          <ion-col col-6 class="placeholder-profile">
+              <span class="Texto"> Clique aqui para editar </span>
           </ion-col>
           <ion-col col-6 class="" *ngIf="">
             <span> Tap here to edit. </span>
@@ -104,12 +102,12 @@
   </ion-list>
 <!--Botão para enviar alterações-->
   <div id=spacer2></div>
-    <button id="botoes" ion-button block type="submit">
+    <button id="botoes" ion-button block type="submit" (click)="GoToProdutoConcluida()">
         Enviar Alterações
     </button>
 
     <!--Botão para cancelar alteração-->
-   <button id="botoes" ion-button block type="cancel"> <!--A função cancela pode somente trocar de página-->
+   <button id="botoes" ion-button block type="cancel" (click)="GoToProfileVendedor()"> <!--A função cancela pode somente trocar de página-->
        Cancelar Alterações
    </button>
 

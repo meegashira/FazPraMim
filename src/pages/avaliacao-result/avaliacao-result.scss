@@ -1,21 +1,27 @@
-page-alterar-cadastro-vendedor {
-    *{
+page-avaliacao-result {
+	*{
 		//font-family: Noto Sans, sans-serif;
 	}
-	
+
 	ion-content{
 		font-family: Noto Sans, sans-serif;
-		background: #0B3A61 !important;
+		background: #610B1C !important;
+		//background: #BF0C2B !important;
+	}
+	ion-label{
+		color:#F25F2C;
 	}
 
-	ion-label{
-		color:#F5C05E;
+	.label[floating],
+	.label[stacked],
+	.input-has-focus .label[floating] {
+    	color: #F25F2C;
 	}
 
 	img {
 		object-fit: resize;
 		height: auto !important;
-		width: 30%;	
+		width: 50%;	
 	}
 
 	/*classes*/
@@ -26,30 +32,37 @@ page-alterar-cadastro-vendedor {
 	}
 
 	.Fundo{
-		background-color: #0B3A61;
+		background-color: #610B1C;
 	}
+
 	.Texto{
 		color: #F1FCFB; 
 	}
 
-	/*id's*/
-	#botoes{
-	    background-color: #0D60BF;
-	    color: #EEEC91;
-	    font-weight:600;
-		font-size:20px;
+	button.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
 	}
 
+	/*id's*/
 	#header3{
-		color:#FFCF40;
+		color:#F25F2C;
 		font-weight:600;
 		text-align:center;
 	}
 
 	#header4{
-		color:#FFFFFF;
+		color:#F1FCFB;
 		font-weight:300;
 		text-align:center;
+	}
+	
+	#botoes{
+		background-color: #F5C05E;
+		color: #BF0C2B;
+		font-weight:600;
+		font-size:20px;
 	}
 
 	#spacer2{
@@ -57,3 +70,4 @@ page-alterar-cadastro-vendedor {
 		height: 48px;
 	}
 }
+

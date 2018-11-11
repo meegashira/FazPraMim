@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons left>
+          <button ion-button menuToggle>
+            <ion-icon side="right" name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>Avaliações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="Fundo">
+  <img src="assets/imgs/rate_icon.png" class="center">
+  <h3 id="header3">Lista de Avaliações</h3>
+  
+  <ion-list>
+     
+    <button class="Fundo" ion-item *ngFor="let item of store ">
+        <h2>{{ item?.avaliacao}} </h2>
+        <p class="Texto">{{ item?.description }}</p>
+      </button>    
+  </ion-list>
+</ion-content>

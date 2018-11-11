@@ -61,8 +61,6 @@ const firebaseConfig = {
     CadastroLojaConcluidoPage,
     SideMenuClientePage,
     SideMenuVendedorPage,
-    AvaliacaoPage,
-    AvaliacaoConcluidaPage,
     SideMenuContentComponent,
     StoreViewPage
   ],
@@ -90,8 +88,6 @@ const firebaseConfig = {
     LoginVendedorPage,
     SideMenuClientePage,
     SideMenuVendedorPage,
-    AvaliacaoPage,
-    AvaliacaoConcluidaPage,
     StoreViewPage
      ],
   providers: [

@@ -30,6 +30,10 @@ export class ProfileProvider {
   updateRG(rg: string): Promise<any> {
     return this.userProfile.update({ rg });
   }
+  
+  updateAvaliacao(avaliacao: number): Promise<any> {
+    return this.userProfile.update({ avaliacao });
+  }
 
   updateCPF(cpf: string): Promise<any> {
     return this.userProfile.update({ cpf });

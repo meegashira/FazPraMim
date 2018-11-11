@@ -32,7 +32,9 @@ export class CadastroLojaPage {
     });
   }
     
-
+  GoToCadastroConcluido(){
+    this.navCtrl.push(CadastroLojaConcluidoPage);
+  }
   createStore(): void {
     if (!this.createStoreForm.valid){
       console.log(this.createStoreForm.value);
@@ -41,6 +43,7 @@ export class CadastroLojaPage {
         this.createStoreForm.value.name,
         this.createStoreForm.value.categoria,
         this.createStoreForm.value.descricao);
+        
       this.navCtrl.push(CadastroLojaConcluidoPage);
     }
   }

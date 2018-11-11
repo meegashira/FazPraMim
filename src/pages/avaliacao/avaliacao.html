@@ -1,5 +1,5 @@
 <!--
-  Generated template for the CadastroLojaPage page.
+  Generated template for the AvaliacaoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -22,44 +22,38 @@
     <img src="assets/imgs/rate_icon.png" class="center">
     <h3 id="titulo_Cliente">Caro Cliente</h3>
     <h4 id="h4_style2">Preencha os dados abaixo para avaliar o profissional</h4>
-
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <h4 id="h4_style2">Nota</h4>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
+    <h4 id="h4_style2">Nota</h4>
+        
+        
+        <ion-row>
+        <ion-label color="danger" fixed>Categoria</ion-label>
         <ion-col col-3>
-        </ion-col>
-        <ion-col col-9>
-          <ionic3-star-rating
-            activeIcon = "ios-star"
-            defaultIcon = "ios-star-outline"
-            activeColor = "#FFFF00" 
-            defaultColor = "#f4f4f4"
-            readonly="false"
-            [rating]="5">
-          </ionic3-star-rating>
-        </ion-col>
-      </ion-row>
+          </ion-col>
+          <ion-col col-9>
+            <ionic3-star-rating
+              activeIcon = "ios-star"
+              defaultIcon = "ios-star-outline"
+              activeColor = "#FFFF00" 
+              defaultColor = "#f4f4f4"
+              readonly="false"
+              [rating]="3">
+            </ionic3-star-rating>
+          </ion-col>
+        </ion-row>
 
-      <ion-row>
-        <div id="spacer2"></div>
-      </ion-row>
+        <form [formGroup]="createAvaliacaoForm" (submit)="createAvaliacao()" novalidate>
 
-      <ion-row>
-        <ion-col>
-            <h4 id="h4_style2">Algo a acrescentar?</h4>
-            <ion-textarea class="Texto"  placeholder="Descreva mais sobre sua experiência de compra com esse vendedor."></ion-textarea>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+            <ion-item class="Fundo">
+                <ion-label color="danger" fixed>Comentário</ion-label>
+                <ion-textarea class="Texto"  placeholder="Adicione um comentário." formControlName="descricao"></ion-textarea>
+            </ion-item>
+            
+            <div id=spacer2></div>
 
-  
-    <button id="botoes" ion-button block type="submit" (click)="avaliarGoToThaksPage()">
-        Avaliar
-    </button>
+          <button id="botoes" ion-button block type="submit">
+              Avaliar
+          </button>
+        </form>
+
 
 </ion-content>
