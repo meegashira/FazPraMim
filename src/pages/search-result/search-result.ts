@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams, App, Alert, AlertController } from
 import { StoreProvider } from '../../providers/store/store';
 import { StoreViewPage } from '../store-view/store-view';
 
-/**
- * Generated class for the SearchResultPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-search-result',
@@ -17,30 +11,49 @@ import { StoreViewPage } from '../store-view/store-view';
 
 export class SearchResultPage {
   public StoreTeste: any;
+  public store: Array<any> = [];
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public app: App,
     public alertCtrl: AlertController,
-    public ProviderStore: StoreProvider,
-    ) {
-  }
-  public store: Array<any> = [];
+    public storeProvider: StoreProvider,
+    ) { }
 
-  goToStorePage(){
-    this.navCtrl.push(StoreViewPage);
-  }
-
-  ionViewDidLoad() {
-    this.ProviderStore.getStore().on('value', itemSnapshot => {
+  filterStore(event: string): void {
+    //this.storeProvider.filterStore(event);
+    this.storeProvider.getStore().orderByChild(event).on('value', itemSnapshot => {
       this.store = [];
       itemSnapshot.forEach( itemSnap => {
-        //this.store.push(itemSnap.val());
          this.store.push({ 
           uid: itemSnap.key,
           name: itemSnap.val().name,
-          price: itemSnap.val().price,
+          avaliacao: itemSnap.val().avaliacao,
           description: itemSnap.val().description,
+          category: itemSnap.val().category,
+          seller: itemSnap.val().seller,
+          storePhoto: itemSnap.val().storePhoto
+        })
+        return false;
+      })
+    });
+  }
+
+  goToStorePage(): void {
+    this.navCtrl.push(StoreViewPage);
+  }
+
+  ionViewDidLoad(): void {
+    this.storeProvider.getStore().on('value', itemSnapshot => {
+      this.store = [];
+      itemSnapshot.forEach( itemSnap => {
+         this.store.push({ 
+          uid: itemSnap.key,
+          name: itemSnap.val().name,
+          avaliacao: itemSnap.val().avaliacao,
+          description: itemSnap.val().description,
+          category: itemSnap.val().category,
+          seller: itemSnap.val().seller,
           storePhoto: itemSnap.val().storePhoto
         });
         return false;
@@ -49,7 +62,7 @@ export class SearchResultPage {
   }
 /*
 
-this.ProviderStore.getStore() .subscribe(snapshots=>{
+this.storeProvider.getStore() .subscribe(snapshots=>{
         snapshots.forEach(snapshot => {
           console.log(snapshot.key, snapshot.val());
         });

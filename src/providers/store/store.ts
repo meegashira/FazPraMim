@@ -15,10 +15,11 @@ export class StoreProvider {
   private PATH = 'store/';
   public StoreSeller: User;
   public store: firebase.database.Reference;
-  public itemRef: firebase.database.Reference = firebase.database().ref('/store');
   public avaliacao: firebase.database.Reference = firebase.database().ref('/store/avaliacao');
+  public storeList: any;
 
   constructor(private db: AngularFireDatabase) {
+    this.storeList = [];
     firebase.auth().onAuthStateChanged( user => {
       if(user){
         this.StoreSeller = user;
@@ -40,6 +41,6 @@ export class StoreProvider {
   }
 
   getStore(): firebase.database.Reference {
-    return this.itemRef;
+    return this.store;
   }
 }

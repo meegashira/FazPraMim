@@ -84,4 +84,12 @@ export class ProfileProvider {
     let uploadTask = storageRef.child(this.currentUser.photoURL).putString(item.fileToUpload, 'base64');
     this.currentUser.photoURL = uploadTask.snapshot.downloadURL;    
   }
+
+  deleteProfile(): void {
+    firebase.auth().currentUser.delete().then(function() {
+      // User deleted.
+    }).catch(function(error) {
+      console.error(error);
+    });
+  }
 }

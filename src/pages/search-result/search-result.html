@@ -11,7 +11,7 @@
   <ion-searchbar
     [(ngModel)]="myInput"
     [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
+    (ionInput)="filterStore($event)"
     (ionCancel)="onCancel($event)">
   </ion-searchbar>
 
@@ -21,7 +21,7 @@
       <ion-icon name="list"></ion-icon> &nbsp;	Ordenar Por
     </ion-label>
 
-    <ion-select [(ngModel)]="ordem" placeholder="Selecione">
+    <ion-select [(ngModel)]="selectedType" placeholder="Selecione" (ionChange)="filterStore($event)" cancelText="Cancelar">
       <ion-option value = "avaliacao">Avaliação</ion-option>
       <ion-option value = "distancia">Distância</ion-option>
       <ion-option value = "preco">Preço</ion-option>
@@ -30,10 +30,10 @@
 
   <ion-list>
      <button ion-item *ngFor="let item of store " (click)="goToStorePage()">
-        <h2>{{ item?.name}} </h2>
+        <h2>{{ item?.name }} </h2>
         <p>{{ item?.description }}</p>
         <ion-thumbnail item-end>
-            <img src="{{item?.storePhoto}}"> 
+        <img src="{{item?.storePhoto}}"> 
         </ion-thumbnail>
       </button>    
   </ion-list>
