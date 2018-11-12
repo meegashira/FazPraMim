@@ -1,8 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import firebase, { User } from 'firebase/app';
+import 'firebase/database';
+import { Geolocation } from '@ionic-native/geolocation';
 
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+declare var geolib:any;
+
 
 /*
   Generated class for the GoogleMapsProvider provider.
@@ -13,12 +16,38 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class GoogleMapsProvider {
+  private PATH = 'localizacao/';
+  public LocalizacoSeller: User;
+  public localizacao: firebase.database.Reference;
+  public localRef: firebase.database.Reference = firebase.database().ref('/localizacao');
 
-  constructor(public http: HttpClient) {
-    console.log('Hello GoogleMapsProvider Provider');
+  constructor(private db: AngularFireDatabase) {
+    firebase.auth().onAuthStateChanged( user => {
+      if(user){
+        this.LocalizacoSeller = user;
+        this.localizacao = firebase.database().ref(`/localizacao`);
+        }
+    }); 
   }
 
+
 }
+
+/*
+  createStore(name: string, categoria: string, descricao: string): firebase.database.ThenableReference {    
+    return this.store.push({name: name, category: categoria, description: descricao , seller: this.StoreSeller.uid, storePhoto: 'https://firebasestorage.googleapis.com/v0/b/fazpramim-4bbe8.appspot.com/o/no-Storeimage.png?alt=media&token=820edc2e-a79f-4a8b-aef1-6e93f7aeeed6' })
+  } 
+
+  getStore(): firebase.database.Reference {
+    return this.itemRef;
+  }
+}
+
+*/
+
+
+
+
 
 
 /*

@@ -19,6 +19,9 @@ export class AnunciosProvider {
     return this.anuncio.push({type:tipoAnuncio, name: NomeAnuncio, category: CategoriaAnuncio,price:ValorAnuncio,unidade:UnidadeAnuncio, description: DescricaoAnuncio , store: "0" })
   }
 
+
+  
+
   deleteAnuncio(uid: string): void {
     firebase.database().ref(`/anuncio/${uid}`).remove();
   }

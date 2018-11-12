@@ -60,7 +60,6 @@ export class SearchResultPage {
     });
   }
 /*
-
 this.storeProvider.getStore() .subscribe(snapshots=>{
         snapshots.forEach(snapshot => {
           console.log(snapshot.key, snapshot.val());

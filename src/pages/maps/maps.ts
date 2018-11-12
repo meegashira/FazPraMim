@@ -1,6 +1,10 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
 import { IonicPage, NavController, Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { StoreProvider } from '../../providers/store/store';
+import { ProfileProvider } from "../../providers/profile/profile";
+
+
 
 /**
  * Generated class for the MapsPage page.
@@ -19,7 +23,8 @@ declare var google: any;
   templateUrl: 'maps.html',
 })
 export class MapsPage {
-
+  
+  public endereco: Array<any> = [];
   map: any;
   markers:any;
 
@@ -37,8 +42,12 @@ export class MapsPage {
     longitude: -45.7951
   }];
 
-
-  constructor(public navCtrl: NavController, public geolocation: Geolocation, public platform:Platform) {}
+  constructor
+  (public navCtrl: NavController, 
+    public geolocation: Geolocation, 
+    public platform:Platform, 
+    public storeProvider: StoreProvider,
+    public profileProvider: ProfileProvider,) {}
 
   ionViewWillEnter(){
     this.platform.ready().then(() => {
@@ -137,5 +146,50 @@ export class MapsPage {
     goToEmpresa(empresa) {
       alert('Click');
     }
+
+      /////// ######################################## NOVO TESTE ##### ///////////////////
+
+
+      
+
+
+
+    private GetDistanc(origin,destination)// recebe objeto com latitude e longitude
+    {
+      let distance= this.GetDistanc(origin,destination);
+    }
+/*  #### SALVAR AS COISAS DO  BD AQUI, outras tentativas deram errado
+    
+    ionViewDidLoad(): void {
+      this.profileProvider.getUserProfile().on('value', itemSnapshot => {
+        this.endereco = [];
+        itemSnapshot.forEach( itemSnap => {
+           this.endereco.push({ 
+            uid: itemSnap.key,
+            name: itemSnap.val().name,
+            avaliacao: itemSnap.val().avaliacao,
+            description: itemSnap.val().description,
+            category: itemSnap.val().category,
+            seller: itemSnap.val().seller,
+            storePhoto: itemSnap.val().storePhoto
+          });
+          return false;
+        });
+      });
+
+    }
+    */
+    private GetAllDistances(origin,destination)
+    {
+     this.geolocation.getCurrentPosition().then(resp=>
+        {
+          for(let i=0; i<Array.length;i++)
+          {
+            Array[i];
+          }
+
+        })
+    }
+
 }
 

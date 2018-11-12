@@ -21,6 +21,7 @@ export class ProfileVendedorPage {
     public alertCtrl: AlertController,
     ) {
   }
+  
 
   goToAnuncioPage(){
 		this.navCtrl.push("AdicionarAnuncioPage"); 
