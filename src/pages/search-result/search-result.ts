@@ -21,7 +21,6 @@ export class SearchResultPage {
     ) { }
 
   filterStore(event: string): void {
-    //this.storeProvider.filterStore(event);
     this.storeProvider.getStore().orderByChild(event).on('value', itemSnapshot => {
       this.store = [];
       itemSnapshot.forEach( itemSnap => {

@@ -87,7 +87,7 @@ export class ProfileProvider {
 
   deleteProfile(): void {
     firebase.auth().currentUser.delete().then(function() {
-      // User deleted.
+      this.userProfile.object(`userProfile/${this.user.uid}`).remove();
     }).catch(function(error) {
       console.error(error);
     });
