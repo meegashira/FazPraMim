@@ -24,11 +24,7 @@ export class AuthProvider {
         .child(newUser.uid)
         .set({ email: email , name: name, surname: surname, rg: rg, cpf: cpf, address: address, 
             complement: complement, neighborhood: neighborhood, city: city, state: state, cep: cep, 
-<<<<<<< HEAD
-            userType: userType,photoUrl:this.noImage});
-=======
             userType: userType,photo:this.noImage, avaliacao: 0});
->>>>>>> 7d1a1cbf1c1341d6fb43aa0ae23be9dde3fe4280
       })
       .catch(error => {
         console.error(error);
