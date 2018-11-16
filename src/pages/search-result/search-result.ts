@@ -38,8 +38,8 @@ export class SearchResultPage {
     });
   }
 
-  goToStorePage(): void {
-    this.navCtrl.push(StoreViewPage);
+  goToStorePage(storeId: string): void {
+    this.navCtrl.push(StoreViewPage, { storeId: storeId });
   }
 
   ionViewDidLoad(): void {
@@ -59,23 +59,4 @@ export class SearchResultPage {
       });
     });
   }
-/*
-this.storeProvider.getStore() .subscribe(snapshots=>{
-        snapshots.forEach(snapshot => {
-          console.log(snapshot.key, snapshot.val());
-        });
-    })
-
-
-    .subscribe(users=>{
-
-this.af.database.list('/users', { preserveSnapshot: true})
-    .subscribe(snapshots=>{
-        snapshots.forEach(snapshot => {
-          console.log(snapshot.key, snapshot.val());
-        });
-    })
-*/
-
-
 }

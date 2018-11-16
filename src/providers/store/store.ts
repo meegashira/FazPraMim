@@ -47,4 +47,8 @@ export class StoreProvider {
   deleteStore(uid: string): void {
     firebase.database().ref(`/store/${uid}`).remove();
   }
+
+  getStoreDetail(storeId:string): firebase.database.Reference {
+    return this.store.child(storeId);
+  }
 }
