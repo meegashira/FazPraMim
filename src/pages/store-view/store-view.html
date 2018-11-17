@@ -19,4 +19,27 @@
     <h2><strong>Produtos e Serviços</strong></h2>
   </ion-item-divider>
 
-</ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of anuncioList">
+      <h2 text-wrap>{{ item?.name }} </h2>
+      <p text-wrap>{{ item?.description }}</p>
+      <ion-thumbnail item-end>
+        <p id="center_price">R${{ item?.price }}/{{ item?.unidade }}</p>
+        <button ion-button small icon-only clear="true" id="add_button" (click)="addToShoppingCart(item?.id)">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+        <button ion-button small icon-only clear="true" id="remove_button" (click)="removeFromShoppingCart(item?.id)">
+          <ion-icon name="remove-circle"></ion-icon>
+        </button>
+      </ion-thumbnail>
+    </ion-item>    
+  </ion-list>
+
+  <button id="botoes" ion-button block (click)="goToSolicitarOrcamento(shoppingCart)">
+    <ion-icon name="basket" id="icon_basket"></ion-icon>
+    <h6 id="total_price">Total: R${{totalPedido}},00</h6>
+    <h6 id="text1">Solicitar Orçamento</h6>
+    <ion-icon name="arrow-dropright" id="icon_next"></ion-icon>
+  </button>
+
+</ion-content> 

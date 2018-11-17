@@ -1,3 +1,48 @@
 page-store-view {
+    #add_button{
+        background-color:#FFFFFF;
+        color: #2EFE2E;
+        margin-bottom:15px;
+    }
 
+    #remove_button{
+        color: #BF0C2B;
+        background-color:#FFFFFF;
+        margin-bottom:15px;
+    }
+
+    #center_price{
+        margin-top:25px;
+    }
+
+    #botoes{
+		background-color: #F5C05E;
+		color: #BF0C2B;
+		font-weight:600;
+		font-size:20px;
+    }
+    
+    #text1{
+        font-weight:600;
+        position: absolute;
+        right: 35px;  
+        margin-top:-1px;
+    }
+
+    #total_price{
+        font-weight:600;
+        position: absolute;
+        left: 38px;
+        margin-top:0px;
+    }
+
+    #icon_basket{
+        position: absolute;
+        left: 10px;
+    }
+
+    #icon_next{
+        position: absolute;
+        right: 10px;
+    }
 }

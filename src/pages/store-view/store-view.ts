@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StoreProvider } from '../../providers/store/store';
 import { AnunciosProvider } from '../../providers/anuncios/anuncios';
+import { Events } from 'ionic-angular'
+import { SolicitarOrcamentoPage } from '../solicitar-orcamento/solicitar-orcamento';
 
 @IonicPage({
   segment: "store-view/:storeId"
@@ -13,14 +15,43 @@ import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 })
 export class StoreViewPage {
   public currentStore: any = {};
+  public currentAnuncio: any = {};
   public anuncioList:Array<any> = [];
+  public totalPedido: number = 0;
+  public shoppingCart: Array<any> = [];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public storeProvider: StoreProvider,
     public anuncioProvider: AnunciosProvider,
-    ) { }
+    public events: Events
+    ){ 
+      events.subscribe('star-rating:changed', (starRating) => {console.log(starRating)});
+    }
+  
+  addToShoppingCart(anuncioId: string): void{
+    this.currentAnuncio = this.anuncioProvider.getAnuncioDetail(anuncioId);
+    this.shoppingCart.push(this.currentAnuncio);
+    this.totalPedido = this.totalPedido + this.currentAnuncio.price;
+  }
+
+  removeFromShoppingCart(anuncioId: string): void{
+    if(this.totalPedido > 0){
+      this.currentAnuncio = this.anuncioProvider.getAnuncioDetail(anuncioId);
+      this.shoppingCart.pop();
+      this.totalPedido = this.totalPedido - this.currentAnuncio.price;
+    }
+      
+  }
+
+  goToSolicitarOrcamento(shoppingCart: Array<any>){
+    this.navCtrl.push(SolicitarOrcamentoPage,{shoppingCart:shoppingCart});
+  }
+
+  returnTotal(): number{
+    return Number(this.totalPedido);
+  }
 
   ionViewDidLoad() {
     this.storeProvider
@@ -52,5 +83,4 @@ export class StoreViewPage {
         });
       });
   }
-
 }
