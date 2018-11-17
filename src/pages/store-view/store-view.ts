@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StoreProvider } from '../../providers/store/store';
 import { AnunciosProvider } from '../../providers/anuncios/anuncios';
+import firebase, { User }  from 'firebase';
 
 @IonicPage({
   segment: "store-view/:storeId"
@@ -14,13 +15,34 @@ import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 export class StoreViewPage {
   public currentStore: any = {};
   public anuncioList:Array<any> = [];
-
+  public user: User;
+  data = { seller:'', buyer:'', store:'' };
+  chatroomRef = firebase.database().ref('chatroom/');
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public storeProvider: StoreProvider,
     public anuncioProvider: AnunciosProvider,
-    ) { }
+    ) { firebase.auth().onAuthStateChanged( user => {
+        if(user){
+          this.user = user;
+        }
+        }); 
+      }
+
+  goToChat(): void{
+    this.data.seller = this.currentStore.seller;
+    this.data.buyer = this.user.uid;
+    this.data.store = this.navParams.get("storeId");
+    let newData = this.chatroomRef.push();
+    newData.set({
+      seller:this.data.seller,
+      buyer:this.data.buyer,
+      store:this.data.store,
+    });
+    this.navCtrl.pop();
+    //this.navCtrl.push('ChatroomPage');
+  }
 
   ionViewDidLoad() {
     this.storeProvider
