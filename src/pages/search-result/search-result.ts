@@ -53,9 +53,7 @@ export class SearchResultPage {
         return false;
       }
     });
-  
     console.log(q, this.storeList.length);
-  
   }
 
   initializeItems(): void {
