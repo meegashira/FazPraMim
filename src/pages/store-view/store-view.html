@@ -15,4 +15,15 @@
       <p>Avaliação: <strong>{{-currentStore?.avaliacao}}</strong></p>
     </ion-card-content>
   </ion-card>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of anuncioList">
+       <h2>{{ item?.name }} </h2>
+       <p>{{ item?.description }}</p>
+       <ion-thumbnail item-end>
+          <p>{{ item?.price }} {{ item?.unidade }}</p>
+        <!-- <img src="{{item?.anuncioPhoto}}"> -->
+       </ion-thumbnail>
+     </button>    
+ </ion-list>
 </ion-content>

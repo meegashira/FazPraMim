@@ -15,14 +15,29 @@ export class AnunciosProvider {
     });
   }
 
-  createAnuncio(tipoAnuncio:string, NomeAnuncio: string, CategoriaAnuncio: string, ValorAnuncio:string, UnidadeAnuncio:string, DescricaoAnuncio: string): firebase.database.ThenableReference {    
-    return this.anuncio.push({type:tipoAnuncio, name: NomeAnuncio, category: CategoriaAnuncio,price:ValorAnuncio,unidade:UnidadeAnuncio, description: DescricaoAnuncio , store: "0" })
+  getAnuncio(): firebase.database.Reference {
+    return this.anuncio;
   }
 
-
-  
+  createAnuncio(tipoAnuncio:string, NomeAnuncio: string, CategoriaAnuncio: string, ValorAnuncio:string, UnidadeAnuncio:string, DescricaoAnuncio: string): firebase.database.ThenableReference {    
+    return this
+    .anuncio
+    .push({
+      type:tipoAnuncio, 
+      name: NomeAnuncio, 
+      category: CategoriaAnuncio,
+      price:ValorAnuncio,
+      unidade:UnidadeAnuncio, 
+      description: DescricaoAnuncio , 
+      store: "0" 
+    })
+  }
 
   deleteAnuncio(uid: string): void {
     firebase.database().ref(`/anuncio/${uid}`).remove();
+  }
+
+  getAnuncioDetail(parameter:string): firebase.database.Reference {
+    return this.anuncio.child(parameter);
   }
 }
