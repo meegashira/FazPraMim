@@ -5,16 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      {{currentStore?.name}}
-    </ion-card-header>
-    <ion-card-content>
+  <ion-item>
+    <h2><strong>{{currentStore?.name}}</strong></h2>
+    <p text-wrap>{{currentStore?.description}}</p>  
+    <ion-thumbnail item-end>
       <img src="{{currentStore?.storePhoto}}"> 
-      <p><strong>{{currentStore?.description}}</strong></p>
-      <p>Avaliação: <strong>{{-currentStore?.avaliacao}}</strong></p>
-    </ion-card-content>
-  </ion-card>
+    </ion-thumbnail>
+    <br>
+    <h4>Avaliação:<strong>{{-currentStore?.avaliacao}}</strong></h4>
+  </ion-item>
+
+  <ion-item-divider>
+    <h2><strong>Produtos e Serviços</strong></h2>
+  </ion-item-divider>
 
   <ion-list>
     <button ion-item *ngFor="let item of anuncioList">
