@@ -4,6 +4,7 @@ import { StoreProvider } from '../../providers/store/store';
 import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 import { Events } from 'ionic-angular'
 import { SolicitarOrcamentoPage } from '../solicitar-orcamento/solicitar-orcamento';
+import firebase, { User }  from 'firebase';
 
 @IonicPage({
   segment: "store-view/:storeId"
@@ -19,15 +20,22 @@ export class StoreViewPage {
   public anuncioList:Array<any> = [];
   public totalPedido: number = 0;
   public shoppingCart: Array<any> = [];
-
+  public user: User;
+  data = { seller:'', buyer:'', store:'' };
+  chatroomRef = firebase.database().ref('chatroom/');
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public storeProvider: StoreProvider,
     public anuncioProvider: AnunciosProvider,
-    public events: Events
-    ){ 
+    public events: Events){ 
       events.subscribe('star-rating:changed', (starRating) => {console.log(starRating)});
+      firebase.auth().onAuthStateChanged( user => {
+        if(user){
+          this.user = user;
+        }
+        }); 
     }
   
   addToShoppingCart(anuncioId: string): void{
@@ -51,6 +59,20 @@ export class StoreViewPage {
 
   returnTotal(): number{
     return Number(this.totalPedido);
+  }
+
+  goToChat(): void{
+    this.data.seller = this.currentStore.seller;
+    this.data.buyer = this.user.uid;
+    this.data.store = this.navParams.get("storeId");
+    let newData = this.chatroomRef.push();
+    newData.set({
+      seller:this.data.seller,
+      buyer:this.data.buyer,
+      store:this.data.store,
+    });
+    this.navCtrl.pop();
+    //this.navCtrl.push('ChatroomPage');
   }
 
   ionViewDidLoad() {

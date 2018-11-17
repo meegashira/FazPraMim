@@ -40,7 +40,8 @@ export class SideMenuClientePage {
   pages: PageInterface[] = [
     {title: 'Meu Perfil', pageName: 'ProfileClientePage', icon: 'home'},
     {title: 'Alterar Cadastro', pageName: 'AlterarCadastroClientePage', icon: 'clipboard'},
-    {title: 'Historico de Compras', pageName: 'HistoricoComprasPage', icon: 'add'}
+    {title: 'Historico de Compras', pageName: 'HistoricoComprasPage', icon: 'add'},
+    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'}
   ]
 
   constructor(public navCtrl: NavController,
@@ -91,6 +92,12 @@ export class SideMenuClientePage {
                   { iconName: 'remove',
                     displayText: 'Excluir Perfil',
                     component: 'HomeCatClientePage'}] //ALTERAAAA PARA A PAGINA CERTA
+    });
+
+    this.options.push({
+      iconName: 'chatbubbles',
+			displayText: 'Chat',
+			component: 'ChatListPage',
     });
   }
 

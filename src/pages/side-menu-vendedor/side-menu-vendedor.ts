@@ -38,7 +38,8 @@ export class SideMenuVendedorPage {
   pages: PageInterface[] = [
     {title: 'Inicio', pageName: 'ProfileVendedorPage', icon: 'home'},
     {title: 'Gerenciar Lojas', pageName: 'StoreListPage', icon: 'clipboard'},
-    {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'}
+    {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'},
+    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'}
   ]
 
   constructor(public navCtrl: NavController,
@@ -101,7 +102,13 @@ export class SideMenuVendedorPage {
                   { iconName: 'remove-circle',
                     displayText: 'Excluir Produto/Serviço',
                     component: 'ProfileVendedorPage'}] //ALTERAAAA PARA A PAGINA CERTA
-		});
+    });
+    
+    this.options.push({
+      iconName: 'chatbubbles',
+			displayText: 'Chat',
+			component: 'ChatListPage',
+    });
 
 		/*this.options.push({
 			iconName: 'bowtie',
