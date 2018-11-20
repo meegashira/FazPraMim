@@ -5,7 +5,7 @@ import { HomePage } from '../home/home';
 import { SideMenuContentComponent } from '../../shared/side-menu-content/side-menu-content.component';
 import { SideMenuOption } from '../../shared/side-menu-content/models/side-menu-option';
 import { SideMenuSettings } from '../../shared/side-menu-content/models/side-menu-settings';
-
+import { GerenciadorFinancasPage } from '../gerenciador-financas/gerenciador-financas';
 export interface PageInterface{
   title: string;
   pageName: string;
@@ -39,7 +39,8 @@ export class SideMenuVendedorPage {
     {title: 'Inicio', pageName: 'ProfileVendedorPage', icon: 'home'},
     {title: 'Gerenciar Lojas', pageName: 'StoreListPage', icon: 'clipboard'},
     {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'},
-    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'}
+    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'},
+    {title: 'Finanças', pageName:'GerenciadorFinancasPage', icon: 'stats'}
   ]
 
   constructor(public navCtrl: NavController,
@@ -109,6 +110,13 @@ export class SideMenuVendedorPage {
 			displayText: 'Chat',
 			component: 'ChatListPage',
     });
+
+    this.options.push({
+      iconName:'stats',
+      displayText: 'Finanças',
+      component: 'GerenciadorFinancasPage'
+    });
+
 
 		/*this.options.push({
 			iconName: 'bowtie',
