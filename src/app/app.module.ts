@@ -19,6 +19,7 @@ import { Crop } from '@ionic-native/crop';
 import { StarRatingModule } from 'ionic3-star-rating';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
+import {ChartsModule} from 'ng2-charts';
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -74,7 +75,8 @@ const firebaseConfig = {
     AngularFirestoreModule,
     StarRatingModule,
     AngularFireDatabaseModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
