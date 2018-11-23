@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Pagamento por Cartão de Crédito
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <img src="assets/imgs/credit-card.png" class="center">
+  <h5 id="h4_style2">Preencha os dados abaixo para realizar o pagamento</h5>
+
+  <form [formGroup]="signupForm" (submit)="Payment()" novalidate>
+
+    <ion-item class="Fundo">
+      <ion-label color="dangerTwo" floating>Numéro do Cartão</ion-label>
+      <ion-input class="Texto" formControlName="numero" type="text" ></ion-input> 
+    </ion-item>
+
+    <ion-item class="Fundo">
+      <ion-label color="dangerTwo" floating>Data de Vencimento</ion-label>
+      <ion-input class="Texto" formControlName="vencimento" type="text" type="text" ></ion-input>
+    </ion-item>
+
+    <ion-item class="Fundo">
+      <ion-label color="dangerTwo" floating>CVV</ion-label>
+      <ion-input class="Texto" formControlName="cvv" type="text" ></ion-input> 
+    </ion-item>
+
+   
+    <ion-item class="Fundo">
+      <ion-label color="danger" fixed>Bandeira</ion-label>
+      <ion-select  placeholder="Selecione" class="Fundo" formControlName="bandeira">
+          <ion-option>Visa</ion-option>
+          <ion-option>Master</ion-option>
+          <ion-option>American Express</ion-option>
+          <ion-option>Discover</ion-option>
+          <ion-option>Outros</ion-option>
+      </ion-select>
+  </ion-item>
+
+    <div id=spacer2></div>
+    <button id=botoes ion-button block type="submit" [disabled]="!signupForm.valid">Realizar Pagamento</button>
+  </form>
+</ion-content>

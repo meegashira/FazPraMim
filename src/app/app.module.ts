@@ -37,6 +37,7 @@ import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vend
 import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 import { StoreViewPage } from '../pages/store-view/store-view';
 import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
+import { EndCreditPage } from '../pages/end-credit/end-credit';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -62,7 +63,8 @@ const firebaseConfig = {
     SideMenuClientePage,
     SideMenuVendedorPage,
     SideMenuContentComponent,
-    StoreViewPage
+    StoreViewPage,
+    EndCreditPage
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,8 @@ const firebaseConfig = {
     LoginVendedorPage,
     SideMenuClientePage,
     SideMenuVendedorPage,
-    StoreViewPage
+    StoreViewPage,
+    EndCreditPage
      ],
   providers: [
     StatusBar,
