@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
 import firebase, { User } from 'firebase/app';
 import 'firebase/database';
 
@@ -10,7 +9,7 @@ export class CreditCardsProvider {
   public Client: User;
   public creditcards: firebase.database.Reference;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor() {
     firebase.auth().onAuthStateChanged( user => {
       if(user){
         this.Client = user;
@@ -27,7 +26,7 @@ export class CreditCardsProvider {
       validade: validade, 
       cvv: cvv, 
       bandeira:bandeira,
-      cliente: 1,
+      cliente: this.Client.uid,
       valor: 2,
       vendedor:1111  })
   }
