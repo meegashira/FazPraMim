@@ -1,3 +1,29 @@
 page-solicitar-orcamento {
+    ion-content{
+        background: #FFF4F0!important;
+    }
+    
+    #botoes{
+		background-color: #F5C05E;
+		color: #BF0C2B;
+		font-weight:600;
+		font-size:20px;
+    }
+    
+    #text1{
+        font-weight:600;
+        position: absolute;
+        text-align: center;
+    }
 
+    #total_price{
+        font-weight:600;
+        position: absolute;
+        left: 38px;
+        margin-top:0px;
+    }
+
+    #center_price{
+        margin-top:25px;
+    }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SolicitacaoConcluidaPage } from '../solicitacao-concluida/solicitacao-concluida';
 
 /**
  * Generated class for the SolicitarOrcamentoPage page.
@@ -16,6 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SolicitarOrcamentoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  goToSolicitacaoConcluida(){
+    this.navCtrl.push(SolicitacaoConcluidaPage);
   }
 
   ionViewDidLoad() {
