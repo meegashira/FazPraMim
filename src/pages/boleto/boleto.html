@@ -9,6 +9,9 @@
 <ion-content padding>
   <img src="assets/imgs/credit-card.png" class="center">
   <div id=spacer2></div>
-    <button id=botoes ion-button block type="submit">Gerar Boleto</button>
+  <div id="tabela">
+    <img src="assets/imgs/boleto.png" class="center">
+</div>
+    <button id=botoes ion-button block type="submit" (click)="CriaPDF()">Gerar Boleto</button>
 
 </ion-content>
