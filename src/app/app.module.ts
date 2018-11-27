@@ -40,13 +40,11 @@ import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 import { StoreViewPage } from '../pages/store-view/store-view';
 import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
 import { EndCreditPage } from '../pages/end-credit/end-credit';
-<<<<<<< HEAD
 import { BoletoPage } from '../pages/boleto/boleto';
 import { CreditPage } from '../pages/credit/credit';
-=======
 import { SolicitarOrcamentoPage } from '../pages/solicitar-orcamento/solicitar-orcamento';
 import { SolicitacaoConcluidaPage } from '../pages/solicitacao-concluida/solicitacao-concluida';
->>>>>>> master
+import { DinheiroPage } from '../pages/dinheiro/dinheiro';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -74,13 +72,11 @@ const firebaseConfig = {
     SideMenuContentComponent,
     StoreViewPage,
     EndCreditPage,
-<<<<<<< HEAD
+    DinheiroPage,
     BoletoPage,
     CreditPage,
-=======
     SolicitacaoConcluidaPage,
     SolicitarOrcamentoPage
->>>>>>> master
   ],
   imports: [
     BrowserModule,
@@ -108,15 +104,13 @@ const firebaseConfig = {
     SideMenuClientePage,
     SideMenuVendedorPage,
     StoreViewPage,
-<<<<<<< HEAD
     EndCreditPage,
     BoletoPage,
     CreditPage,
-=======
+    DinheiroPage,
     EndCreditPage, 
     SolicitacaoConcluidaPage,
     SolicitarOrcamentoPage
->>>>>>> master
      ],
   providers: [
     StatusBar,
