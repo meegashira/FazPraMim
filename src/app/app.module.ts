@@ -34,11 +34,17 @@ import { StoreProvider } from '../providers/store/store';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 import { AnunciosProvider } from '../providers/anuncios/anuncios';
+import { CreditCardsProvider } from '../providers/creditcards/creditcards';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 import { StoreViewPage } from '../pages/store-view/store-view';
 import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
 import { EndCreditPage } from '../pages/end-credit/end-credit';
+import { BoletoPage } from '../pages/boleto/boleto';
+import { CreditPage } from '../pages/credit/credit';
+import { SolicitarOrcamentoPage } from '../pages/solicitar-orcamento/solicitar-orcamento';
+import { SolicitacaoConcluidaPage } from '../pages/solicitacao-concluida/solicitacao-concluida';
+import { DinheiroPage } from '../pages/dinheiro/dinheiro';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -65,7 +71,12 @@ const firebaseConfig = {
     SideMenuVendedorPage,
     SideMenuContentComponent,
     StoreViewPage,
-    EndCreditPage
+    EndCreditPage,
+    DinheiroPage,
+    BoletoPage,
+    CreditPage,
+    SolicitacaoConcluidaPage,
+    SolicitarOrcamentoPage
   ],
   imports: [
     BrowserModule,
@@ -93,7 +104,13 @@ const firebaseConfig = {
     SideMenuClientePage,
     SideMenuVendedorPage,
     StoreViewPage,
-    EndCreditPage
+    EndCreditPage,
+    BoletoPage,
+    CreditPage,
+    DinheiroPage,
+    EndCreditPage, 
+    SolicitacaoConcluidaPage,
+    SolicitarOrcamentoPage
      ],
   providers: [
     StatusBar,
@@ -109,6 +126,7 @@ const firebaseConfig = {
     ProfileProvider,
     StoreProvider,
     AnunciosProvider,
+    CreditCardsProvider,
   ]
 })
 export class AppModule {

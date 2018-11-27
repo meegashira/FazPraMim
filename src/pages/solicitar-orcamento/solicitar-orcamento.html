@@ -7,12 +7,31 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>SolicitarOrcamento</ion-title>
+    <ion-title>Solicitação de Orçamento</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of anuncioList">
+      <h2 text-wrap>{{ item?.name }} </h2>
+      <p text-wrap>{{ item?.description }}</p>
+      <ion-thumbnail item-end>
+        <p id="center_price">R${{ item?.price }}/{{ item?.unidade }}</p>
+      </ion-thumbnail>
+    </ion-item>    
+
+    <ion-item>
+      <ion-thumbnail item-end>
+        <h6 id="total_price">Total: R${{totalPedido}},00</h6>
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+
+  <button id="botoes" ion-button block (click)="goToSolicitacaoConcluida()">
+    <h6 id="text1">Solicitar Orçamento</h6>
+  </button>
 
 </ion-content>
