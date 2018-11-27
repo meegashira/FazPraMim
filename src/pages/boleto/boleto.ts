@@ -21,17 +21,18 @@ export class BoletoPage {
     style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
     style = style + "padding: 2px 3px;text-align: center;}";
     style = style + "</style>";
-    // CRIA UM OBJETO WINDOW
-    var win = window.open('', '', 'height=700,width=700');
+
+    
+    var win = window.open('', '', 'height=1000,width=1000');
     win.document.write('<html><head>');
-    win.document.write('<title>Empregados</title>');   // <title> CABEÇALHO DO PDF.
-    win.document.write(style);                                     // INCLUI UM ESTILO NA TAB HEAD
+    win.document.write('<title>Boleto</title>');  
+    win.document.write(style);                                   
     win.document.write('</head>');
     win.document.write('<body>');
-    win.document.write(minhaTabela);                          // O CONTEUDO DA TABELA DENTRO DA TAG BODY
+    win.document.write(minhaTabela);                         
     win.document.write('</body></html>');
-    win.document.close(); 	                                         // FECHA A JANELA
-    win.print();                                                            // IMPRIME O CONTEUDO
+    win.document.close(); 	                                        
+    win.print();                                                            
 }
   
  
