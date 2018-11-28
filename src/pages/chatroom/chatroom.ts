@@ -54,7 +54,7 @@ export class ChatroomPage {
     this.data.message = '';
   }
 
-  exitChat() {
+  /*exitChat() {
     let exitData = firebase.database().ref('chatroom/'+this.roomkey+'/chat').push();
     exitData.set({
       type:'exit',
@@ -68,7 +68,7 @@ export class ChatroomPage {
     this.navCtrl.push('ChatListPage', {
       name:this.name
     });
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatroomPage');

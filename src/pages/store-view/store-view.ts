@@ -50,7 +50,6 @@ export class StoreViewPage {
       this.shoppingCart.pop();
       this.totalPedido = this.totalPedido - this.currentAnuncio.price;
     }
-      
   }
 
   goToSolicitarOrcamento(shoppingCart: Array<any>){
@@ -65,14 +64,14 @@ export class StoreViewPage {
     this.data.seller = this.currentStore.seller;
     this.data.buyer = this.user.uid;
     this.data.store = this.navParams.get("storeId");
-    let newData = this.chatroomRef.push();
-    newData.set({
+    let newDataKey = this.chatroomRef.push().key;
+    firebase.database().ref('chatroom/' + newDataKey).set({
       seller:this.data.seller,
       buyer:this.data.buyer,
       store:this.data.store,
     });
     this.navCtrl.push('ChatroomPage', {
-      key:'uid',
+      key:newDataKey,
       userUid:this.user.uid
     });
   }
