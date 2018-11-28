@@ -19,6 +19,10 @@
     <h2><strong>Produtos e Serviços</strong></h2>
   </ion-item-divider>
 
+  <button ion-button color="secondary" (click)="goToChat()">
+    Converse com o vendedor!
+  </button>
+
   <ion-list>
     <ion-item *ngFor="let item of anuncioList">
       <h2 text-wrap>{{ item?.name }} </h2>
@@ -41,8 +45,5 @@
     <h6 id="text1">Solicitar Orçamento</h6>
     <ion-icon name="arrow-dropright" id="icon_next"></ion-icon>
   </button>
-  
-  <button ion-button color="secondary" (click)="goToChat()">
-    Chat
-  </button>
+
 </ion-content>

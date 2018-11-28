@@ -40,7 +40,8 @@ export class SideMenuVendedorPage {
     {title: 'Gerenciar Lojas', pageName: 'StoreListPage', icon: 'clipboard'},
     {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'},
     {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'},
-    {title: 'Finanças', pageName:'GerenciadorFinancasPage', icon: 'stats'}
+    {title: 'Finanças', pageName:'GerenciadorFinancasPage', icon: 'stats'},
+    {title: 'Sugestões', pageName:'RequestNewCategoryPage', icon:'body' },
   ]
 
   constructor(public navCtrl: NavController,
@@ -115,6 +116,12 @@ export class SideMenuVendedorPage {
       iconName:'stats',
       displayText: 'Finanças',
       component: 'GerenciadorFinancasPage'
+    });
+
+    this.options.push({
+      iconName: 'body',
+			displayText: 'Sugestões',
+			component: 'RequestNewCategoryPage',
     });
 
 

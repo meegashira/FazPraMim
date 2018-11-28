@@ -71,8 +71,10 @@ export class StoreViewPage {
       buyer:this.data.buyer,
       store:this.data.store,
     });
-    this.navCtrl.pop();
-    //this.navCtrl.push('ChatroomPage');
+    this.navCtrl.push('ChatroomPage', {
+      key:'uid',
+      userUid:this.user.uid
+    });
   }
 
   ionViewDidLoad() {

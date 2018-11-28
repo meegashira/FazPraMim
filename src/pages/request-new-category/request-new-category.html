@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons left>
+          <button ion-button menuToggle>
+            <ion-icon side="right" name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>Novas Sugestões</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h4 id="header4">Nós da equipe do Faz Pra Mim levamos a opinião dos nossos usuários muito a sério! Caso tenho uma nova sugestão de categoria, diga aqui e levaremos sua sugestão a nossos superiores.</h4>
+
+    <form [formGroup]="requestNewCategoryForm" (submit)="requestNewCategory()" novalidate>
+
+      <ion-item class="Fundo">
+        <ion-label color="danger" fixed>Nova categoria</ion-label>
+        <ion-input class="Texto" type="text" placeholder="Nome da categoria" formControlName="category"></ion-input>
+      </ion-item>
+
+      <ion-item class="Fundo">
+          <ion-label color="danger" fixed>Descrição</ion-label>
+          <ion-textarea class="Texto"  placeholder="Descreva brevemente sua sugestão." formControlName="description"></ion-textarea>
+      </ion-item>
+      
+      <div id=spacer2></div>
+
+      <button id="botoes" ion-button block type="submit" (click)="goToRequestNewCategoryDone()">
+          Mandar Sugestão
+      </button>
+    </form>
+
+</ion-content>

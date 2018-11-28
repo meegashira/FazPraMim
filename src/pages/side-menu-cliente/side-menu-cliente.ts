@@ -41,7 +41,8 @@ export class SideMenuClientePage {
     {title: 'Meu Perfil', pageName: 'ProfileClientePage', icon: 'home'},
     {title: 'Alterar Cadastro', pageName: 'AlterarCadastroClientePage', icon: 'clipboard'},
     {title: 'Historico de Compras', pageName: 'HistoricoComprasPage', icon: 'add'},
-    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'}
+    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'},
+    {title: 'Sugestões', pageName:'RequestNewCategoryPage', icon:'body' },
   ]
 
   constructor(public navCtrl: NavController,
@@ -98,6 +99,12 @@ export class SideMenuClientePage {
       iconName: 'chatbubbles',
 			displayText: 'Chat',
 			component: 'ChatListPage',
+    });
+
+    this.options.push({
+      iconName: 'body',
+			displayText: 'Sugestões',
+			component: 'RequestNewCategoryPage',
     });
   }
 
