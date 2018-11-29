@@ -21,9 +21,9 @@ export class StoreViewPage {
   public totalPedido: number = 0;
   public shoppingCart: Array<any> = [];
   public user: User;
-  data = { seller:'', buyer:'', store:'' };
+  data = { seller:'', buyer:'', store:'' , key:''};
   chatroomRef = firebase.database().ref('chatroom/');
-  
+  anuncioRef = firebase.database().ref('anuncio/');
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -35,7 +35,11 @@ export class StoreViewPage {
         if(user){
           this.user = user;
         }
-        }); 
+      }); 
+      this.anuncioRef.on('value', resp => {
+        this.shoppingCart = [];
+        this.shoppingCart = snapshotToArray(resp);
+      });
     }
   
   addToShoppingCart(anuncioId: string): void{
@@ -64,16 +68,31 @@ export class StoreViewPage {
     this.data.seller = this.currentStore.seller;
     this.data.buyer = this.user.uid;
     this.data.store = this.navParams.get("storeId");
-    let newDataKey = this.chatroomRef.push().key;
-    firebase.database().ref('chatroom/' + newDataKey).set({
-      seller:this.data.seller,
-      buyer:this.data.buyer,
-      store:this.data.store,
-    });
-    this.navCtrl.push('ChatroomPage', {
-      key:newDataKey,
-      userUid:this.user.uid
-    });
+
+    this.chatroomRef
+      .orderByChild("seller")
+      .equalTo(this.data.seller)
+      .on('value', itemSnapshot => {
+        let chatroom = itemSnapshot.val();
+        if(chatroom !== null) {
+          this.data.key = chatroom.uid;
+        }
+        else {
+          this.data.key = this.chatroomRef.push().key;
+          console.log("1: ", this.data.key);
+          firebase.database().ref('chatroom/' + this.data.key).set({
+            seller:this.data.seller,
+            buyer:this.data.buyer,
+            store:this.data.store,
+          });
+          return false;
+        }
+      });
+      console.log("3: ", this.data.key);
+      this.navCtrl.push('ChatroomPage', {
+        key:this.data.key,
+        userUid:this.user.uid
+      });
   }
 
   ionViewDidLoad() {
@@ -107,3 +126,15 @@ export class StoreViewPage {
       });
   }
 }
+
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.key = childSnapshot.key;
+      returnArr.push(item);
+  });
+
+  return returnArr;
+};
