@@ -39,6 +39,12 @@ import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 import { StoreViewPage } from '../pages/store-view/store-view';
 import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
 import { EndCreditPage } from '../pages/end-credit/end-credit';
+import { ChatPage } from '../pages/chat/chat';
+import { UserService } from '../providers/user/user.service';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { ChatService } from '../providers/chat/chat.service';
+import { MessageService } from '../providers/message/message.service';
+import { MessageBoxComponent } from '../components/message-box/message-box.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -65,7 +71,9 @@ const firebaseConfig = {
     SideMenuVendedorPage,
     SideMenuContentComponent,
     StoreViewPage,
-    EndCreditPage
+    EndCreditPage,
+    ChatPage,
+    MessageBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +82,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     StarRatingModule,
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpClientModule,
     ChartsModule,
@@ -93,13 +102,16 @@ const firebaseConfig = {
     SideMenuClientePage,
     SideMenuVendedorPage,
     StoreViewPage,
-    EndCreditPage
+    EndCreditPage,
+    ChatPage
      ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    AngularFireAuth,
+    ChatService,
     File,
     Transfer,
     Camera,
@@ -109,6 +121,8 @@ const firebaseConfig = {
     ProfileProvider,
     StoreProvider,
     AnunciosProvider,
+    UserService,
+    MessageService,
   ]
 })
 export class AppModule {
