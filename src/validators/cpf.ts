@@ -4,9 +4,7 @@ export class CpfValidator {
   static isValid(control: FormControl) {
     let cpf:string = control.value;
 
-  if (cpf == null) {
-    return {invalidcpf: true};
-  }
+ 
   if (cpf.length != 11) {
     return {invalidcpf: true};
   }

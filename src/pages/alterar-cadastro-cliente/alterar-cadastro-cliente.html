@@ -5,7 +5,12 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="primary">
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button menuToggle>
+              <ion-icon side="right" name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
       <ion-title>Alterar Cadastro do Cliente</ion-title>
     </ion-navbar>
   </ion-header>
@@ -16,57 +21,93 @@
       <h3 id="header3">Caro Cliente</h3>
       <h4 id="header4">Altere seus dados cadastrais</h4>
 
-    <ion-list>
-      <!--Alteração do nome de usuário-->
-      <ion-item class="Fundo" (click)="updateName()">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6> Nome </ion-col>
-            <ion-col col-6 *ngIf="userProfile?.firstName || userProfile?.lastName">
-              {{userProfile?.firstName}} {{userProfile?.lastName}}
-            </ion-col>
-            <ion-col col-6 class="placeholder-profile" 
-            *ngIf="!userProfile?.firstName">
-              <span class="Texto"> Clique para editar </span>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
+      <ion-list>
 
-    <!--
-      <ion-item class="Fundo">
-        <ion-label >Data de Aniversário</ion-label>
-        <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" 
-        [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
-      </ion-item> -->
-
-      <!--Alteração do Email-->
-      <ion-item class="Fundo" (click)="updateEmail()">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6> E-mail </ion-col>
-            <ion-col col-6 *ngIf="userProfile?.email">
-              {{userProfile?.email}}
-            </ion-col>
-            <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
-              <span class="Texto"> Ex. name@email.com </span>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-      
-      <!--Alteração de senha-->
-      <ion-item class="Fundo" (click)="updatePassword()">
+        <ion-list-header class="Fundo Texto">
+          Informação Pessoal
+        </ion-list-header>
+    
+        <ion-item class="Fundo Texto" (click)="updateName()">
           <ion-grid>
             <ion-row>
-              <ion-col col-6> Senha </ion-col>
-              <ion-col col-6 class="placeholder-profile">
-                <span class="Texto"> Clique para editar </span>
+              <ion-col col-6> Nome </ion-col>
+              <ion-col col-6 *ngIf="userProfile?.name || userProfile?.surname">
+                {{userProfile?.name}} {{userProfile?.surname}}
+              </ion-col>
+              <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.name">
+                <span> Nome </span>
               </ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
-      </ion-list>
+    
+        <ion-item class="Fundo Texto" (click)="updateRG()">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6> RG </ion-col>
+              <ion-col col-6 *ngIf="userProfile?.rg">
+                {{userProfile?.rg}}
+              </ion-col>
+              <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.rg">
+                <span> RG </span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+    
+        <ion-item class="Fundo Texto" (click)="updateCPF()">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6> CPF </ion-col>
+              <ion-col col-6 *ngIf="userProfile?.cpf">
+                {{userProfile?.cpf}}
+              </ion-col>
+              <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.cpf">
+                <span> CPF </span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+    
+        <ion-item class="Fundo Texto" (click)="updateAddress()">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-6> Endereço </ion-col>
+                <ion-col col-6 *ngIf="userProfile?.address">
+                  {{userProfile?.address}} {{userProfile?.complement}}
+                </ion-col>
+                <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.address">
+                  <span> Endereço </span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+    
+        <ion-item class="Fundo Texto" (click)="updateEmail()">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6> Email </ion-col>
+              <ion-col col-6 *ngIf="userProfile?.email">
+                {{userProfile?.email}}
+              </ion-col>
+              <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
+                <span> Email </span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+    
+        <ion-item class="Fundo Texto" (click)="updatePassword()">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-6> Senha </ion-col>
+                <ion-col col-6 class="placeholder-profile">
+                  <span> Senha </span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
 
  <!--Botão para enviar alterações-->
   <div id=spacer2></div>

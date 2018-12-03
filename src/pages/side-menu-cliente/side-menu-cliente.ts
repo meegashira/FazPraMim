@@ -41,7 +41,8 @@ export class SideMenuClientePage {
     {title: 'Meu Perfil', pageName: 'ProfileClientePage', icon: 'home'},
     {title: 'Alterar Cadastro', pageName: 'AlterarCadastroClientePage', icon: 'clipboard'},
     {title: 'Historico de Compras', pageName: 'HistoricoComprasPage', icon: 'add'},
-    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'}
+    {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'},
+    {title: 'Sugestões', pageName:'RequestNewCategoryPage', icon:'body' },
   ]
 
   constructor(public navCtrl: NavController,
@@ -88,7 +89,7 @@ export class SideMenuClientePage {
 			displayText: 'Configurar Perfil',
 			suboptions:[{ iconName: 'build',
                     displayText: 'Alterar Perfil',
-                    component: 'AlterarCadastroVendedorPage'},
+                    component: 'AlterarCadastroClientePage'},
                   { iconName: 'remove',
                     displayText: 'Excluir Perfil',
                     component: 'HomeCatClientePage'}] //ALTERAAAA PARA A PAGINA CERTA
@@ -98,6 +99,12 @@ export class SideMenuClientePage {
       iconName: 'chatbubbles',
 			displayText: 'Chat',
 			component: 'ChatListPage',
+    });
+
+    this.options.push({
+      iconName: 'body',
+			displayText: 'Sugestões',
+			component: 'RequestNewCategoryPage',
     });
   }
 
@@ -109,8 +116,6 @@ export class SideMenuClientePage {
 	public collapseMenuOptions(): void {
 		this.sideMenu.collapseAllOptions();
 	}
-
-
 
   isActive(page: PageInterface){
     if(this.nav.getActive() && this.nav.getActive().name === page.pageName)

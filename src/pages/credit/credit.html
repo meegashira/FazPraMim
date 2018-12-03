@@ -10,7 +10,7 @@
   <img src="assets/imgs/credit-card.png" class="center">
   <h5 id="h4_style2">Preencha os dados abaixo para realizar o pagamento</h5>
 
-  <form [formGroup]="signupForm" (submit)="Payment()" novalidate>
+  <form [formGroup]="PaymentForm" (submit)="Payment()" novalidate>
 
     <ion-item class="Fundo">
       <ion-label color="dangerTwo" floating>Numéro do Cartão</ion-label>
@@ -40,6 +40,6 @@
   </ion-item>
 
     <div id=spacer2></div>
-    <button id=botoes ion-button block type="submit" [disabled]="!signupForm.valid">Realizar Pagamento</button>
+    <button id=botoes ion-button block type="submit" [disabled]="!PaymentForm.valid">Realizar Pagamento</button>
   </form>
 </ion-content>

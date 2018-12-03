@@ -21,14 +21,15 @@ export class ChatroomPage {
     this.name = this.navParams.get("userUid") as string;
     this.data.type = 'message';
     this.data.name = this.name;
-  console.log(this.name);
-    let joinData = firebase.database().ref('chatroom/'+this.roomkey+'/chat').push();
+    console.log(this.name);
+    /*let joinData = firebase.database().ref('chatroom/'+this.roomkey+'/chat').push();
     joinData.set({
       type:'join',
       user:this.name,
       message:this.name+' entrou no chat. Diga olá!',
       sendDate:Date()
     });
+    */
     this.data.message = '';
   
     firebase.database().ref('chatroom/'+this.roomkey+'/chat').on('value', resp => {
@@ -53,7 +54,7 @@ export class ChatroomPage {
     this.data.message = '';
   }
 
-  exitChat() {
+  /*exitChat() {
     let exitData = firebase.database().ref('chatroom/'+this.roomkey+'/chat').push();
     exitData.set({
       type:'exit',
@@ -67,7 +68,7 @@ export class ChatroomPage {
     this.navCtrl.push('ChatListPage', {
       name:this.name
     });
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatroomPage');

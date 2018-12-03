@@ -34,11 +34,17 @@ import { StoreProvider } from '../providers/store/store';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
 import { AnunciosProvider } from '../providers/anuncios/anuncios';
+import { CreditCardsProvider } from '../providers/creditcards/creditcards';
 import { SideMenuVendedorPage } from '../pages/side-menu-vendedor/side-menu-vendedor';
 import { LoginVendedorPage } from '../pages/login-vendedor/login-vendedor';
 import { StoreViewPage } from '../pages/store-view/store-view';
 import { CadastroLojaConcluidoPage } from '../pages/cadastro-loja-concluido/cadastro-loja-concluido';
 import { EndCreditPage } from '../pages/end-credit/end-credit';
+import { BoletoPage } from '../pages/boleto/boleto';
+import { CreditPage } from '../pages/credit/credit';
+import { SolicitarOrcamentoPage } from '../pages/solicitar-orcamento/solicitar-orcamento';
+import { SolicitacaoConcluidaPage } from '../pages/solicitacao-concluida/solicitacao-concluida';
+import { DinheiroPage } from '../pages/dinheiro/dinheiro';
 import { ChatPage } from '../pages/chat/chat';
 import { UserService } from '../providers/user/user.service';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
@@ -74,6 +80,12 @@ const firebaseConfig = {
     EndCreditPage,
     ChatPage,
     MessageBoxComponent
+    EndCreditPage,
+    DinheiroPage,
+    BoletoPage,
+    CreditPage,
+    SolicitacaoConcluidaPage,
+    SolicitarOrcamentoPage
   ],
   imports: [
     BrowserModule,
@@ -104,6 +116,13 @@ const firebaseConfig = {
     StoreViewPage,
     EndCreditPage,
     ChatPage
+    EndCreditPage,
+    BoletoPage,
+    CreditPage,
+    DinheiroPage,
+    EndCreditPage, 
+    SolicitacaoConcluidaPage,
+    SolicitarOrcamentoPage
      ],
   providers: [
     StatusBar,
@@ -123,6 +142,7 @@ const firebaseConfig = {
     AnunciosProvider,
     UserService,
     MessageService,
+    CreditCardsProvider,
   ]
 })
 export class AppModule {
