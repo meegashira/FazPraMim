@@ -17,7 +17,6 @@ import {ProfileVendedorPage} from '../profile-vendedor/profile-vendedor';
   templateUrl: 'alterar-cadastro-vendedor.html',
 })
 export class AlterarCadastroVendedorPage {
-
   public userProfile: any;
   constructor(
     public navCtrl: NavController, 
@@ -28,16 +27,13 @@ export class AlterarCadastroVendedorPage {
     public alertCtrl: AlertController,
     ) {
   }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AlterarCadastroVendedorPage');
-  }
-
+  
   GoToAlteracaoConcluida(){
-    this.navCtrl.push('AlterarCadastroVendedorConcluidaPage');
+    this.navCtrl.push("AlterarCadastroVendedorConcluidaPage");
   }
 
   GoToProfileVendedor(){
-    this.navCtrl.push('ProfileVendedorPage');
+    this.navCtrl.push("ProfileVendedorPage");
   }
   
   updateEmail(): void {
@@ -103,5 +99,93 @@ export class AlterarCadastroVendedorPage {
       ]
     });
     alert.present();
+  }
+
+  updateRG(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Seu RG",
+      inputs: [ { name: "rg", placeholder: "Seu RG", value: this.userProfile.rg } ],
+      buttons: [ 
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateRG(data.rg);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  updateCPF(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Seu CPF",
+      inputs: [ { name: "cpf", placeholder: "Seu CPF", value: this.userProfile.cpf } ],
+      buttons: [ 
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateCPF(data.cpf);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  updateAddress(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "CEP",
+      inputs: [
+        {
+          name: "CEP",
+          placeholder: "CEP",
+          value: this.userProfile.cep
+        },
+        {
+          name: "state",
+          placeholder: "Estado",
+          value: this.userProfile.state
+        },
+        {
+          name: "city",
+          placeholder: "Cidade",
+          value: this.userProfile.city
+        },
+        {
+          name: "neighborhood",
+          placeholder: "Bairro",
+          value: this.userProfile.neighborhood
+        },
+        {
+          name: "address",
+          placeholder: "Endereço",
+          value: this.userProfile.address
+        },
+        {
+          name: "complement",
+          placeholder: "Complemento",
+          value: this.userProfile.complement
+        }
+      ],
+      buttons: [
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateAddress(data.cep, data.state, data.city, data.neighborhood, data.address, data.complement);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  ionViewDidLoad() {
+    this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
+      this.userProfile = userProfileSnapshot.val();
+    });
   }
 }
