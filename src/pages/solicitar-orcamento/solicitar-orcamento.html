@@ -15,19 +15,25 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of anuncioList">
-      <h2 text-wrap>{{ item?.name }} </h2>
-      <p text-wrap>{{ item?.description }}</p>
+    <ion-item>
+      <h2 text-wrap>Aula de Matemática - Fundamental II</h2>
+      <p text-wrap>Abrange assuntos do currículo de Matemática da quinta a nona série.</p>
       <ion-thumbnail item-end>
-        <p id="center_price">R${{ item?.price }}/{{ item?.unidade }}</p>
+        <p id="center_price">R$30,00</p>
       </ion-thumbnail>
-    </ion-item>    
+    </ion-item>  
+    
+    <ion-item>
+        <h2 text-wrap>Aula de Literatura - Fundamental II</h2>
+        <p text-wrap>Abrange assuntos do currículo de Literatura da quinta a nona série.</p>
+        <ion-thumbnail item-end>
+          <p id="center_price">R$20,00</p>
+        </ion-thumbnail>
+    </ion-item>   
 
     <ion-item>
-      <ion-thumbnail item-end>
-        <h6 id="total_price">Total: R${{totalPedido}},00</h6>
-      </ion-thumbnail>
-    </ion-item>
+      TOTAL : R${{totalPedido}},00
+    </ion-item>  
   </ion-list>
 
   <button id="botoes" ion-button block (click)="goToSolicitacaoConcluida()">

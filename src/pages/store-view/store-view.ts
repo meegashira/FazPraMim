@@ -19,6 +19,7 @@ export class StoreViewPage {
   public currentAnuncio: any = {};
   public anuncioList:Array<any> = [];
   public totalPedido: number = 0;
+  public i: number = 0;
   public shoppingCart: Array<any> = [];
   public user: User;
   data = { seller:'', buyer:'', store:'' , key:''};
@@ -43,9 +44,12 @@ export class StoreViewPage {
     }
   
   addToShoppingCart(anuncioId: string): void{
-    this.currentAnuncio = this.anuncioProvider.getAnuncioDetail(anuncioId);
-    this.shoppingCart.push(this.currentAnuncio);
-    this.totalPedido = this.totalPedido + this.currentAnuncio.price;
+    if(this.i == 0){
+      this.totalPedido = this.totalPedido + 30;
+      this.i = this.i + 1;}
+    else{
+      this.totalPedido = this.totalPedido + 20;
+    }
   }
 
   removeFromShoppingCart(anuncioId: string): void{

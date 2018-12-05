@@ -23,6 +23,10 @@ export class HistoricoComprasPage {
     console.log('ionViewDidLoad HistoricoComprasPage');
   }
 
+  goToPagamentoPage(){
+    this.navCtrl.push("PagamentosPage");
+  }
+
   goToAvaliacaoPage(): void {
     this.navCtrl.push(AvaliacaoPage);
   }

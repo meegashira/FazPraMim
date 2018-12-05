@@ -17,9 +17,13 @@
   <ion-list>
       <ion-item>
           <ion-icon name="basket" item-start></ion-icon>
-          Compra 1
-          <button ion-button round class="default" id="botoes" ion-button block (click)="goToAvaliacaoPage()">
-              Avalie sua compra
+          <h2 text-wrap id="titulo_Cliente">Pedido para Estudos 10 - Reforço Escolar</h2>
+          <p text-wrap>Aula de Matemática - Fundamental II      R$30,00</p>
+          <p text-wrap>Aula de Literatura - Fundamental II      R$20,00</p>
+          <p>Total:R$50,00</p>
+          <ion-icon name="checkmark-circle">Status: APROVADO</ion-icon>
+          <button ion-button round class="default" id="botoes" ion-button block (click)="goToPagamentoPage()">
+              Pagamento
           </button>
       </ion-item>
 

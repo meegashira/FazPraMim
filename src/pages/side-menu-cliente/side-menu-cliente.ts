@@ -78,10 +78,10 @@ export class SideMenuClientePage {
       displayText: 'Orçamentos',
       suboptions:[{ iconName: 'ios-create',
                     displayText: 'Pedidos',
-                    component: 'AlterarCadastroVendedorPage'},
+                    component: 'HistoricoComprasPage'},
                   { iconName: 'checkmark-circle',
                     displayText: 'Aprovados',
-                    component: 'HomeCatClientePage'}] //ALTERAAAA PARA A PAGINA CERTA
+                    component: 'HistoricoComprasPage'}] //ALTERAAAA PARA A PAGINA CERTA
 		});
 
 		this.options.push({

@@ -33,7 +33,11 @@ export class ProfileVendedorPage {
   
   goToCadastroLoja(){
 		this.navCtrl.push("CadastroLojaPage"); 
-	}
+  }
+  
+  GerenciarOrcamentos(){
+    this.navCtrl.push("HistoricoVendasPage");
+  }
 
   logOut(): void {
     this.authProvider.logoutUser();

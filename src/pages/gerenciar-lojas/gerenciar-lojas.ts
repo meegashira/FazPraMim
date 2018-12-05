@@ -29,51 +29,8 @@ export class GerenciarLojasPage {
     this.storeList = this.loadedStoreList;
   }  
 
-  ionViewDidLoad() {
-    let store_SellerID = this.userProfile.currentUser.providerId;
-    
-    if (store_SellerID != "all") {
-      this.storeProvider
-        .getStore()
-        .orderByChild("name")
-        .equalTo(store_SellerID)
-        .on('value', itemSnapshot => {
-          this.storeList = [];
-          itemSnapshot.forEach(itemSnap => {
-            this.storeList.push({
-              uid: itemSnap.key,
-              name: itemSnap.val().name,
-              avaliacao: itemSnap.val().avaliacao,
-              description: itemSnap.val().description,
-              category: itemSnap.val().category,
-              seller: itemSnap.val().seller,
-              storePhoto: itemSnap.val().storePhoto
-            });
-            this.loadedStoreList = this.storeList;
-            return false;
-          });
-        });
-    }
-    else {
-      this.storeProvider
-      .getStore()
-      .on('value', itemSnapshot => {
-        this.storeList = [];
-        itemSnapshot.forEach(itemSnap => {
-          this.storeList.push({
-            uid: itemSnap.key,
-            name: itemSnap.val().name,
-            avaliacao: itemSnap.val().avaliacao,
-            description: itemSnap.val().description,
-            category: itemSnap.val().category,
-            seller: itemSnap.val().seller,
-            storePhoto: itemSnap.val().storePhoto
-          });
-          this.loadedStoreList = this.storeList;
-          return false;
-        });
-      });
-    }
+  goToAddProdutoPage(){
+    this.navCtrl.push("AddNewProductPage");
   }
 }
 

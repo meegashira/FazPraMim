@@ -38,7 +38,20 @@
         <h4 id="E-mail">{{userProfile?.email}}</h4>
     </ion-row>
 
-    <button id="botoes" ion-button round class="button-assertive center" (click)="goToAvaliacao()">Avaliar</button>
+    <ion-row>
+      <ion-col col-2>
+      </ion-col>
+
+      <ion-col col-8>
+          <button ion-button round class="default center" id="botoes" ion-button block (click)="GerenciarOrcamentos()">
+              <div>
+                <img id="button_icon3" src="assets/imgs/add-service_icon.png">
+                <p>Orçamentos</p>
+              </div>
+          </button>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 
    <!-- <ion-row>

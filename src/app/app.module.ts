@@ -28,8 +28,6 @@ import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { ProfileProvider } from '../providers/profile/profile';
-import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
-import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 import { StoreProvider } from '../providers/store/store';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
@@ -43,7 +41,6 @@ import { EndCreditPage } from '../pages/end-credit/end-credit';
 import { BoletoPage } from '../pages/boleto/boleto';
 import { CreditPage } from '../pages/credit/credit';
 import { SolicitarOrcamentoPage } from '../pages/solicitar-orcamento/solicitar-orcamento';
-import { SolicitacaoConcluidaPage } from '../pages/solicitacao-concluida/solicitacao-concluida';
 import { DinheiroPage } from '../pages/dinheiro/dinheiro';
 import { ChatPage } from '../pages/chat/chat';
 import { UserService } from '../providers/user/user.service';
@@ -79,12 +76,7 @@ const firebaseConfig = {
     StoreViewPage,
     EndCreditPage,
     ChatPage,
-    MessageBoxComponent
-    EndCreditPage,
-    DinheiroPage,
-    BoletoPage,
-    CreditPage,
-    SolicitacaoConcluidaPage,
+    MessageBoxComponent,
     SolicitarOrcamentoPage
   ],
   imports: [
@@ -115,13 +107,7 @@ const firebaseConfig = {
     SideMenuVendedorPage,
     StoreViewPage,
     EndCreditPage,
-    ChatPage
-    EndCreditPage,
-    BoletoPage,
-    CreditPage,
-    DinheiroPage,
-    EndCreditPage, 
-    SolicitacaoConcluidaPage,
+    ChatPage,
     SolicitarOrcamentoPage
      ],
   providers: [

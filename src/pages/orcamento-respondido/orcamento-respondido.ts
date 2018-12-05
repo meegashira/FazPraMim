@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the HistoricoVendasPage page.
+ * Generated class for the OrcamentoRespondidoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-historico-vendas',
-  templateUrl: 'historico-vendas.html',
+  selector: 'page-orcamento-respondido',
+  templateUrl: 'orcamento-respondido.html',
 })
-export class HistoricoVendasPage {
+export class OrcamentoRespondidoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  OrcamentoAceito(){
-    this.navCtrl.push("OrcamentoRespondidoPage");
-  }
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoricoVendasPage');
+    console.log('ionViewDidLoad OrcamentoRespondidoPage');
   }
 
 }

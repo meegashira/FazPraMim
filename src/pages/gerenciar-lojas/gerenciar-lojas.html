@@ -7,20 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>GerenciarLojas</ion-title>
+    <ion-title>Suas Lojas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-      <button ion-item *ngFor="let item of storeList" (click)="goToStorePage(item?.uid)">
-        <h2>{{ item?.name }} </h2>
-        <p text-wrap>{{ item?.description }}</p>
-          <ion-thumbnail item-end>
-          <img src="{{item?.storePhoto}}"> 
-          </ion-thumbnail>
-        </button>    
+  <ion-list>      
+      <ion-item>
+        <h2 id="header3">Estudos 10 - Reforço Escolar</h2>
+        <p text-wrap>Aulas de Português, Literatura e Matemática para jovens do ensino fundamental.</p>
+        <ion-thumbnail item-end>
+        <img src="assets/imgs/no-Storeimage.png"> 
+        </ion-thumbnail>
+        <button id="botoes" ion-button round class="button-assertive center" (click)="goToAddProdutoPage()">
+          Adicionar Produtos/Serviços
+        </button>
+      </ion-item>
   </ion-list>
 </ion-content>

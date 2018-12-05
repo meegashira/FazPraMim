@@ -1,3 +1,55 @@
 page-gerenciar-lojas {
+    ion-content{
+		font-family: Noto Sans, sans-serif;
+		background: #A9E2F3 !important;
+	}
 
+	ion-label{
+		color:#F5C05E;
+	}
+
+	img {
+		object-fit: resize;
+		height: auto !important;
+		width: 30%;	
+	}
+
+	/*classes*/
+	img.center{
+		display:block;
+  		margin-left:auto;
+  		margin-right:auto;
+	}
+
+	.Fundo{
+		background-color:#A9E2F3;
+	}
+	.Texto{
+		color: #F1FCFB; 
+	}
+
+	/*id's*/
+	#botoes{
+	    background-color: #0D60BF;
+	    color: #EEEC91;
+	    font-weight:200;
+		font-size:10px;
+	}
+
+	#header3{
+		color:#FFCF40;
+		font-weight:600;
+		text-align:center;
+	}
+
+	#header4{
+		color:#FFFFFF;
+		font-weight:300;
+		text-align:center;
+	}
+
+	#spacer2{
+		width: auto !important;
+		height: 48px;
+	}
 }
