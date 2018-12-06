@@ -17,11 +17,5 @@ export class HomeCatClientePage {
   goToSearchPage(storeCategory: string):void {
   	this.navCtrl.push('SearchResultPage', {storeCategory: storeCategory})
   }
-
-  goToMAP():void
-  {
-    this.navCtrl.push('MapsPage')
-
-  }
   
 }

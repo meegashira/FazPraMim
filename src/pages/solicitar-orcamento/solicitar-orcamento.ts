@@ -15,7 +15,7 @@ import { AnunciosProvider } from '../../providers/anuncios/anuncios';
   templateUrl: 'solicitar-orcamento.html',
 })
 export class SolicitarOrcamentoPage {
-  public totalPedido = 50;
+  public totalPedido += {{item?.price}};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public anuncioProvider: AnunciosProvider) {
   }

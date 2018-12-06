@@ -27,5 +27,19 @@
           </button>
       </ion-item>
 
+
+      <ion-item>
+        <ion-icon name="basket" item-start></ion-icon>
+        <h2 text-wrap id="titulo_Cliente">Rosa Tortas & Salgados</h2>
+        <p text-wrap>Coxinha                 R$30,00</p>
+        <p text-wrap>Bolinhas de queijo      R$35,00</p>
+        <p>Total:R$65,00</p>
+        <ion-icon name="checkmark-circle">Status: EM ANÁLISE</ion-icon>
+
+        <button ion-button round class="default" id="botoes" ion-button block (click)="goToPagamentoPage()">
+            Pagamento
+        </button>
+    </ion-item>
+
   </ion-list>
 </ion-content>

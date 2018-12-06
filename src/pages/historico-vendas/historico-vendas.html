@@ -15,11 +15,16 @@
 <ion-content padding>
     <ion-list>
         <ion-item>
-          <h2 text-wrap id="header3">Pedido de Lucca Thiago</h2>
-          <p text-wrap>Aula de Matemática - Fundamental II      R$30,00</p>
-          <p text-wrap>Aula de Literatura - Fundamental II      R$20,00</p>
-          <p>Total:R$50,00</p>
-          <button ion-button small icon-only clear="true" id="aceita_button" (click)="OrcamentoAceito()">
+            <h2 ion-item *ngFor="let item of storeList | search : terms | sort: {property: column, order: order}" (click)="goToStorePage(item?.uid)">
+                <h2>{{ item?.name }} </h2>
+                <p text-wrap>{{ item?.description }}</p>
+                <p> {{item?.price}}</p>
+                </h2>
+
+                 <ion-item>
+                  TOTAL : R${{totalPedido}},00
+                   </ion-item>  
+                <button ion-button small icon-only clear="true" id="aceita_button" (click)="OrcamentoAceito()">
             <ion-icon name="checkmark-circle"></ion-icon>
           </button>
           <button ion-button small icon-only clear="true" id="recusa_button">

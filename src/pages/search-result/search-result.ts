@@ -36,6 +36,9 @@ export class SearchResultPage {
   goToStorePage(storeId: string): void {
     this.navCtrl.push(StoreViewPage, { storeId: storeId });
   }
+  goToMAP():void {
+    this.navCtrl.push('MapsPage')
+  }
 
   getItems(searchbar) {
     this.initializeItems();

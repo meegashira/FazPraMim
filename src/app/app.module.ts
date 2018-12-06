@@ -20,6 +20,8 @@ import { StarRatingModule } from 'ionic3-star-rating';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
 import {ChartsModule} from 'ng2-charts';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 import { HomeClientePage } from '../pages/home-cliente/home-cliente';
 import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
@@ -95,6 +97,7 @@ const firebaseConfig = {
     AngularFireDatabaseModule,
     HttpClientModule,
     ChartsModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -134,6 +137,8 @@ const firebaseConfig = {
     UserService,
     MessageService,
     CreditCardsProvider,
+    Geolocation,
+  
   ]
 })
 export class AppModule {

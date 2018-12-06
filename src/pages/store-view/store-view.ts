@@ -5,6 +5,7 @@ import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 import { Events } from 'ionic-angular'
 import { SolicitarOrcamentoPage } from '../solicitar-orcamento/solicitar-orcamento';
 import firebase, { User }  from 'firebase';
+import { isNumber } from 'ionic-angular/umd/util/util';
 
 @IonicPage({
   segment: "store-view/:storeId"
@@ -48,7 +49,7 @@ export class StoreViewPage {
       this.totalPedido = this.totalPedido + 30;
       this.i = this.i + 1;}
     else{
-      this.totalPedido = this.totalPedido + 20;
+      this.totalPedido = this.totalPedido + 35;
     }
   }
 
@@ -129,8 +130,8 @@ export class StoreViewPage {
         });
       });
   }
+  
 }
-
 export const snapshotToArray = snapshot => {
   let returnArr = [];
 
@@ -142,3 +143,5 @@ export const snapshotToArray = snapshot => {
 
   return returnArr;
 };
+
+

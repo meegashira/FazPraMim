@@ -15,20 +15,10 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item>
-      <h2 text-wrap>Aula de Matemática - Fundamental II</h2>
-      <p text-wrap>Abrange assuntos do currículo de Matemática da quinta a nona série.</p>
-      <ion-thumbnail item-end>
-        <p id="center_price">R$30,00</p>
-      </ion-thumbnail>
-    </ion-item>  
-    
-    <ion-item>
-        <h2 text-wrap>Aula de Literatura - Fundamental II</h2>
-        <p text-wrap>Abrange assuntos do currículo de Literatura da quinta a nona série.</p>
-        <ion-thumbnail item-end>
-          <p id="center_price">R$20,00</p>
-        </ion-thumbnail>
+      <h2 ion-item *ngFor="let item of storeList | search : terms | sort: {property: column, order: order}" (click)="goToStorePage(item?.uid)">
+          <h2>{{ item?.name }} </h2>
+          <p text-wrap>{{ item?.description }}</p>
+          <p>{{item?.price}}</p>
     </ion-item>   
 
     <ion-item>

@@ -1,10 +1,9 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
 import { IonicPage, NavController, Platform } from 'ionic-angular';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 import { Geolocation } from '@ionic-native/geolocation';
 import { StoreProvider } from '../../providers/store/store';
-import { ProfileProvider } from "../../providers/profile/profile";
-
-
+import { ProfileProvider } from "../../providers/profile/profile"
 
 /**
  * Generated class for the MapsPage page.
@@ -27,20 +26,19 @@ export class MapsPage {
   public endereco: Array<any> = [];
   map: any;
   markers:any;
-
-  estabelecimentos = [
+  estabelecimentos = [ /// alterando para aparecer na apresentação
   {
-    nome: 'Anunciante 1',
+    nome: 'Maria Doces',
     endereco: ' Pq Tecnológico',
     latitude: -23.1573,
     longitude: -45.7919
   },
   {
-    nome: 'Anunciante 2',
+    nome: 'Rose Tortas & Salgados',
     endereco: 'Fatec',
     latitude: -23.1626,
     longitude: -45.7951
-  }];
+  },];
 
   constructor
   (public navCtrl: NavController, 
@@ -55,14 +53,15 @@ export class MapsPage {
     });
   }
 
+  /* 
+*/
   initPage() {
+    //geocoder = new google.maps.Geocoder();
+
     this.geolocation.getCurrentPosition().then(result => {
       this.loadMap(result.coords.latitude, result.coords.longitude);
     });
   }
-
-  
-    
 
   private loadMap(lat, lng) {
       let latLng = new google.maps.LatLng(lat, lng);
@@ -147,18 +146,29 @@ export class MapsPage {
       alert('Click');
     }
 
-      /////// ######################################## NOVO TESTE ##### ///////////////////
-
-
-      
-
-
+  
+   function converteEndereco(endereco, avaliacao) {
+        geocoder.geocode( { 'Rua G': endereco}, function(resultado, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            var marcador = {
+                  latitude: resultado[0].geometry.location.k
+              , longitude: resultado[0].geometry.location.D	
+              , titulo: 'Novo marcador'
+              , imagem: avaliacao
+            }
+             criaMarcador(marcador, map)
+          } else {
+            alert('Erro ao converter endereço: ' + status);
+          }
+        });
+      }
 
     private GetDistanc(origin,destination)// recebe objeto com latitude e longitude
     {
       let distance= this.GetDistanc(origin,destination);
     }
-/*  #### SALVAR AS COISAS DO  BD AQUI, outras tentativas deram errado
+    
+
     
     ionViewDidLoad(): void {
       this.profileProvider.getUserProfile().on('value', itemSnapshot => {
@@ -166,19 +176,22 @@ export class MapsPage {
         itemSnapshot.forEach( itemSnap => {
            this.endereco.push({ 
             uid: itemSnap.key,
-            name: itemSnap.val().name,
-            avaliacao: itemSnap.val().avaliacao,
-            description: itemSnap.val().description,
-            category: itemSnap.val().category,
-            seller: itemSnap.val().seller,
-            storePhoto: itemSnap.val().storePhoto
+           :string, neighborhood:string, city:string, state:string, cep:number,
+              adress: itemSnap.val().adress,
+              complement: itemSnap.val(). complement,
+              neighborhood: itemSnap.val().neighborhood,
+              city: itemSnap.val().city,
+              state: itemSnap.val().state,
+              seller: itemSnap.val().seller,
+              cep: itemSnap.val().cep
           });
           return false;
         });
       });
 
     }
-    */
+    
+
     private GetAllDistances(origin,destination)
     {
      this.geolocation.getCurrentPosition().then(resp=>
@@ -192,4 +205,3 @@ export class MapsPage {
     }
 
 }
-
