@@ -72,6 +72,9 @@ const firebaseConfig = {
     SideMenuContentComponent,
     StoreViewPage,
     EndCreditPage,
+    ChatPage,
+    MessageBoxComponent
+    EndCreditPage,
     DinheiroPage,
     BoletoPage,
     CreditPage,
@@ -105,11 +108,7 @@ const firebaseConfig = {
     SideMenuVendedorPage,
     StoreViewPage,
     EndCreditPage,
-    BoletoPage,
-    CreditPage,
-    DinheiroPage,
-    EndCreditPage, 
-    SolicitacaoConcluidaPage,
+    ChatPage,
     SolicitarOrcamentoPage
      ],
   providers: [
