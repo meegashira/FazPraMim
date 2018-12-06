@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SolicitacaoConcluidaPage } from '../solicitacao-concluida/solicitacao-concluida';
+import { AnunciosProvider } from '../../providers/anuncios/anuncios';
 
 /**
  * Generated class for the SolicitarOrcamentoPage page.
@@ -15,16 +15,12 @@ import { SolicitacaoConcluidaPage } from '../solicitacao-concluida/solicitacao-c
   templateUrl: 'solicitar-orcamento.html',
 })
 export class SolicitarOrcamentoPage {
+  public totalPedido = 50;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public anuncioProvider: AnunciosProvider) {
   }
 
   goToSolicitacaoConcluida(){
-    this.navCtrl.push(SolicitacaoConcluidaPage);
+    this.navCtrl.push("SolicitacaoConcluidaPage");
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SolicitarOrcamentoPage');
-  }
-
 }

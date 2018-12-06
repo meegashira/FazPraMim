@@ -89,11 +89,18 @@ export class ProfileClientePage {
         console.error('Erro ao recuperar a imagem', error);
       });
   }
-  
+
 
   ionViewDidLoad() {
     this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
-      this.userProfile = userProfileSnapshot.val();
-    });
+      this.userProfile = userProfileSnapshot.val()/*.catch(this.handlePromiseError)*/;
+    }
+    );
   }
+
+  //ref.on("value", function(snapshot) {console.log(snapshot.val());}, function (errorObject) {console.log("The read failed: " + errorObject.code);});
+
+
 }
+
+

@@ -1,4 +1,59 @@
 <ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+        <button ion-button menuToggle>
+          <ion-icon side="right" name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+  <ion-title>Conversas</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="view">
+      <ion-segment-button value="chats">
+        Conversas
+      </ion-segment-button>
+      <ion-segment-button value="users">
+        Usuários
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <ion-toolbar><ion-searchbar (ionInput)="filterItems($event)"></ion-searchbar></ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div [ngSwitch]="view">
+
+    <ion-list *ngSwitchCase="'chats'" no-lines>
+      <button ion-item *ngFor="let chat of chats | async" (click)="onChatOpen(chat)">
+        <h2>{{ chat.title }}</h2>
+        <p *ngIf="chat.lastMessage; else customMessage">{{ chat.timestamp | date:'dd/MM/y H:mm' }} - {{ chat.lastMessage }}</p>
+        <ng-template #customMessage>
+          <p>No messages</p>
+        </ng-template>
+      </button>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'users'" no-lines>
+      <button ion-item *ngFor="let user of users | async "  (click)="onChatCreate(user)">
+        <!--<div *ngIf="user.userType == 'Client'">-->
+         {{ user.name }}
+        <!--</div>-->
+      </button>
+    </ion-list>
+
+
+  </div>
+
+
+</ion-content>
+
+
+<!-- <ion-header>
+  *ngIf="user.userType == 'Seller'"
     <ion-navbar>
         <ion-buttons left>
             <button ion-button menuToggle>
@@ -8,7 +63,7 @@
       <ion-title>Conversas</ion-title>
     </ion-navbar>
   </ion-header>
-  
+
   <ion-content padding>
     <ion-list>
       <ion-item *ngFor="let room of chatrooms">
@@ -16,4 +71,4 @@
         <ion-icon name="chatboxes" item-end (click)="joinChatroom(room.key)"></ion-icon>
       </ion-item>
     </ion-list>
-  </ion-content>
+  </ion-content> -->

@@ -28,10 +28,6 @@ export class AlterarCadastroClientePage {
               public alertCtrl: AlertController,) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AlterarCadastroClientePage');
-  }
-
   logOut(): void {
     this.authProvider.logoutUser();
     var nav = this.app.getRootNav();
@@ -48,15 +44,15 @@ export class AlterarCadastroClientePage {
 
   updateEmail(): void {
     let alert: Alert = this.alertCtrl.create({
-      inputs: [{ name: 'newEmail', placeholder: 'Your new email' },
-      { name: 'password', placeholder: 'Your password', type: 'password' }],
+      inputs: [{ name: 'newEmail', placeholder: 'Seu novo email' },
+      { name: 'password', placeholder: 'Sua senha', type: 'password' }],
       buttons: [
-        { text: 'Cancel' },
-        { text: 'Save',
+        { text: 'Cancelar' },
+        { text: 'Salvar',
           handler: data => {
             this.profileProvider
               .updateEmail(data.newEmail, data.password)
-              .then(() => { console.log('Email Changed Successfully'); })
+              .then(() => { console.log('Email foi mudado com sucesso!'); })
               .catch(error => { console.log('ERROR: ' + error.message); });
         }}]
     });
@@ -66,11 +62,11 @@ export class AlterarCadastroClientePage {
   updatePassword(): void {
     let alert: Alert = this.alertCtrl.create({
       inputs: [
-        { name: 'newPassword', placeholder: 'New password', type: 'password' },
-        { name: 'oldPassword', placeholder: 'Old password', type: 'password' }],
+        { name: 'newPassword', placeholder: 'Nova senha', type: 'password' },
+        { name: 'oldPassword', placeholder: 'Senha antiga', type: 'password' }],
       buttons: [
-        { text: 'Cancel' },
-        { text: 'Save',
+        { text: 'Cancelar' },
+        { text: 'Salvar',
           handler: data => {
             this.profileProvider.updatePassword(
               data.newPassword,
@@ -85,25 +81,25 @@ export class AlterarCadastroClientePage {
 
   updateName(): void {
     const alert: Alert = this.alertCtrl.create({
-      message: "Your first name & last name",
+      message: "Seu nome e sobrenome",
       inputs: [
         {
-          name: "firstName",
-          placeholder: "Your first name",
-          value: this.userProfile.firstName
+          name: "name",
+          placeholder: "Seu nome",
+          value: this.userProfile.name
         },
         {
-          name: "lastName",
-          placeholder: "Your last name",
-          value: this.userProfile.lastName
+          name: "surname",
+          placeholder: "Seu sobrenome",
+          value: this.userProfile.surname
         }
       ],
       buttons: [
-        { text: "Cancel" },
+        { text: "Cancelar" },
         {
-          text: "Save",
+          text: "Salvar",
           handler: data => {
-            this.profileProvider.updateName(data.firstName, data.lastName);
+            this.profileProvider.updateName(data.name, data.surname);
           }
         }
       ]
@@ -111,9 +107,94 @@ export class AlterarCadastroClientePage {
     alert.present();
   }
 
+  updateRG(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Seu RG",
+      inputs: [ { name: "rg", placeholder: "Seu RG", value: this.userProfile.rg } ],
+      buttons: [ 
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateRG(data.rg);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
-  
-  
+  updateCPF(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Seu CPF",
+      inputs: [ { name: "cpf", placeholder: "Seu CPF", value: this.userProfile.cpf } ],
+      buttons: [ 
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateCPF(data.cpf);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  updateAddress(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "CEP",
+      inputs: [
+        {
+          name: "CEP",
+          placeholder: "CEP",
+          value: this.userProfile.cep
+        },
+        {
+          name: "state",
+          placeholder: "Estado",
+          value: this.userProfile.state
+        },
+        {
+          name: "city",
+          placeholder: "Cidade",
+          value: this.userProfile.city
+        },
+        {
+          name: "neighborhood",
+          placeholder: "Bairro",
+          value: this.userProfile.neighborhood
+        },
+        {
+          name: "address",
+          placeholder: "Endereço",
+          value: this.userProfile.address
+        },
+        {
+          name: "complement",
+          placeholder: "Complemento",
+          value: this.userProfile.complement
+        }
+      ],
+      buttons: [
+        { text: "Cancelar" },
+        {
+          text: "Salvar",
+          handler: data => {
+            this.profileProvider.updateAddress(data.cep, data.state, data.city, data.neighborhood, data.address, data.complement);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  ionViewDidLoad() {
+    this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
+      this.userProfile = userProfileSnapshot.val();
+    });
+  }
+ 
   /*ionViewDidLoad() {
     this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
       this.userProfile = userProfileSnapshot.val();

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Nav, App, Platform, AlertController, MenuController } from 'ionic-angular';
+import { IonicPage, NavParams, Nav, App, Platform, AlertController, MenuController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { SideMenuContentComponent } from '../../shared/side-menu-content/side-menu-content.component';
@@ -21,7 +21,7 @@ export class SideMenuVendedorPage {
 
   rootPage = 'ProfileVendedorPage';
 
-  @ViewChild(Nav) nav: Nav
+  @ViewChild(Nav) navCtrl: Nav
 
   @ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
 
@@ -37,14 +37,14 @@ export class SideMenuVendedorPage {
 
   pages: PageInterface[] = [
     {title: 'Inicio', pageName: 'ProfileVendedorPage', icon: 'home'},
-    {title: 'Gerenciar Lojas', pageName: 'StoreListPage', icon: 'clipboard'},
+    {title: 'Gerenciar Lojas', pageName: 'GerenciarLojasPage', icon: 'clipboard'},
     {title: 'Adicionar Anúncios', pageName: 'AddNewProductPage', icon: 'add'},
     {title: 'Chat', pageName: 'ChatListPage', icon: 'chatbubbles'},
     {title: 'Finanças', pageName:'GerenciadorFinancasPage', icon: 'stats'},
     {title: 'Sugestões', pageName:'RequestNewCategoryPage', icon:'body' },
   ]
 
-  constructor(public navCtrl: NavController,
+  constructor(/*public navCtrl: NavController,*/
     public navParams: NavParams,
     public authProvider: AuthProvider,
     public app: App,
@@ -91,7 +91,7 @@ export class SideMenuVendedorPage {
                     component: 'CadastroLojaPage'},
                   { iconName: 'md-build',
                     displayText: 'Alterar Loja',
-                    component: 'ProfileVendedorPage'}, //ALTERAAAA PARA A PAGINA CERTA
+                    component: 'GerenciarLojasPage'}, 
                   { iconName: 'remove',
                     displayText: 'Excluir Loja',
                     component: 'ProfileVendedorPage'}, //ALTERAAAA PARA A PAGINA CERTA
@@ -105,7 +105,7 @@ export class SideMenuVendedorPage {
                     displayText: 'Excluir Produto/Serviço',
                     component: 'ProfileVendedorPage'}] //ALTERAAAA PARA A PAGINA CERTA
     });
-    
+
     this.options.push({
       iconName: 'chatbubbles',
 			displayText: 'Chat',
@@ -183,7 +183,7 @@ export class SideMenuVendedorPage {
 	}
 
   isActive(page: PageInterface){
-    if(this.nav.getActive() && this.nav.getActive().name === page.pageName)
+    if(this.navCtrl.getActive() && this.navCtrl.getActive().name === page.pageName)
       return 'secondary';
     else
       return 'FundoClaro';
@@ -191,7 +191,7 @@ export class SideMenuVendedorPage {
 
   logOut(): void {
     this.authProvider.logoutUser();
-    this.nav.setRoot(HomePage);
+    this.navCtrl.setRoot(HomePage);
     //var nav = this.app.getRootNav();
     //nav.setRoot(HomePage);
   }

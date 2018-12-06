@@ -50,4 +50,8 @@ export class AddNewProductPage {
       this.navCtrl.push('ProfileVendedorPage');
     }
   }
+
+  goToConcluido(){
+    this.navCtrl.push("AdicionarProdutoConcluidoPage");
+  }
  }

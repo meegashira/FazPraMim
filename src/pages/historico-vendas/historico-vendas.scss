@@ -1,11 +1,7 @@
-page-historico-vendas {
-    *{
-		//font-family: Noto Sans, sans-serif;
-	}
-	
+page-historico-vendas {	
 	ion-content{
 		font-family: Noto Sans, sans-serif;
-		background: #0B3A61 !important;
+		background: #A9E2F3 !important;
 	}
 
 	ion-label{
@@ -26,7 +22,7 @@ page-historico-vendas {
 	}
 
 	.Fundo{
-		background-color: #0B3A61;
+		background-color:#A9E2F3;
 	}
 	.Texto{
 		color: #F1FCFB; 
@@ -36,8 +32,8 @@ page-historico-vendas {
 	#botoes{
 	    background-color: #0D60BF;
 	    color: #EEEC91;
-	    font-weight:600;
-		font-size:20px;
+	    font-weight:200;
+		font-size:10px;
 	}
 
 	#header3{
@@ -56,4 +52,26 @@ page-historico-vendas {
 		width: auto !important;
 		height: 48px;
 	}
+
+	#icon_basket{
+        position: absolute;
+        left: 10px;
+    }
+
+    #icon_next{
+        position: absolute;
+        right: 10px;
+	}
+	
+	#aceita_button{
+        background-color:#FFFFFF;
+        color: #2EFE2E;
+        margin-bottom:15px;
+    }
+
+    #recusa_button{
+        color: #BF0C2B;
+        background-color:#FFFFFF;
+        margin-bottom:15px;
+    }
 }

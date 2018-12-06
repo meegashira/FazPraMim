@@ -18,6 +18,10 @@ export class HistoricoVendasPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  OrcamentoAceito(){
+    this.navCtrl.push("OrcamentoRespondidoPage");
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoricoVendasPage');
   }

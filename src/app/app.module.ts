@@ -28,8 +28,6 @@ import { SignupClientPage } from '../pages/signup-client/signup-client';
 import { SignupFreelancerPage } from '../pages/signup-freelancer/signup-freelancer';
 import { LoginClientePage } from '../pages/login-cliente/login-cliente';
 import { ProfileProvider } from '../providers/profile/profile';
-import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
-import { AvaliacaoConcluidaPage } from '../pages/avaliacao-concluida/avaliacao-concluida';
 import { StoreProvider } from '../providers/store/store';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { SideMenuClientePage } from '../pages/side-menu-cliente/side-menu-cliente';
@@ -43,8 +41,13 @@ import { EndCreditPage } from '../pages/end-credit/end-credit';
 import { BoletoPage } from '../pages/boleto/boleto';
 import { CreditPage } from '../pages/credit/credit';
 import { SolicitarOrcamentoPage } from '../pages/solicitar-orcamento/solicitar-orcamento';
-import { SolicitacaoConcluidaPage } from '../pages/solicitacao-concluida/solicitacao-concluida';
 import { DinheiroPage } from '../pages/dinheiro/dinheiro';
+import { ChatPage } from '../pages/chat/chat';
+import { UserService } from '../providers/user/user.service';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { ChatService } from '../providers/chat/chat.service';
+import { MessageService } from '../providers/message/message.service';
+import { MessageBoxComponent } from '../components/message-box/message-box.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA33azvrweCz6awhTe7zs2WbYlYPRnIDqo",
@@ -88,6 +91,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     StarRatingModule,
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpClientModule,
     ChartsModule,
@@ -116,6 +120,8 @@ const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    AngularFireAuth,
+    ChatService,
     File,
     Transfer,
     Camera,
@@ -125,6 +131,8 @@ const firebaseConfig = {
     ProfileProvider,
     StoreProvider,
     AnunciosProvider,
+    UserService,
+    MessageService,
     CreditCardsProvider,
   ]
 })

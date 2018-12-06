@@ -4,9 +4,7 @@ import { IonicPage,
   Loading,
   LoadingController,
   AlertController } from 'ionic-angular';
-  import { BoletoPage } from '../boleto/boleto';
-  import { CreditPage } from '../credit/credit';
-  import { DinheiroPage } from '../dinheiro/dinheiro';
+
 
 @IonicPage({
   name: 'PagamentosPage'
@@ -22,16 +20,15 @@ export class PagamentosPage {
     public alertCtrl: AlertController
   ) {
   }
- 
   
   GoToDinheiro(){
-    this.navCtrl.push(DinheiroPage);
+    this.navCtrl.push("DinheiroPage");
   }
   GoToCredito(){
-    this.navCtrl.push(CreditPage);
+    this.navCtrl.push("CreditPage");
   }
   GoToBoleto(){
-    this.navCtrl.push(BoletoPage);
+    this.navCtrl.push("BoletoPage");
   }
 
 }
